@@ -1,0 +1,73 @@
+<div class="container_con">
+    <div class="card_con">
+        <form class="form" method="post" onsubmit="toastify()" action="/connexion">
+            
+            <div class="left-side">
+                <div class="left-heading h3_i">
+                   Get Connect 
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="main active">
+                    <small><i class="fa fa-smile-o"></i></small>
+                    <div class="text">
+                        <h2>Place my credentials</h2>
+                        <p>Fill the inputs bellow to get into your personal page</p>
+                        <% if(message) {%><span style="color: red;"> <%- message %></span><% } %>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" name="login" required require id="user_name">
+                            <span>Login</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="password" name="password" required require>
+                            <span>Password</span>
+                        </div>
+                    </div>
+                   
+                    <div class="buttons">
+                        <button type="submit"  class="submit_button">Submit</button>
+                    </div>
+                </div>
+                
+                
+            
+                  
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="rs-partner" class="rs-partner pt-30 pb-70">
+        
+    <div class="container">
+        <div class="abt-title mb-70 text-center">
+            <h2>OUR PARTNERS</h2>      
+            <p>Considering desire as primary motivation for the generation of narratives is a useful concept.</p>
+        </div>
+        <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/1.png" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/2.jpeg" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/3.png" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/4.png" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/5.jpeg" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/6.jpeg" alt="Partner Image"></a>
+            </div>
+        </div>
+    </div>
+</div>

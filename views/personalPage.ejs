@@ -1,0 +1,483 @@
+<style>
+    th{
+        color: green;
+        font-style: italic;
+    }
+    .presentation td{
+        font-weight: bold;
+    }
+
+    .presentation  th { 
+        padding:0.5em; 
+        text-align: center; 
+    } 
+
+    .navbar td{
+        padding-left: 55px;
+    
+    } 
+    .deux > tr{
+        padding-top: 10px;
+    }
+    #show-form-changeimage{
+        border: 2px inset sienna;
+        border-radius: 5px;
+    }
+    .info:hover{
+        border-style: inherit;
+        /* background-color: bisque; */
+        position: relative;
+        border-color: brown;
+        border-radius: 10px;
+       
+    }
+    .navbar a:hover{
+        color:red;
+    }
+
+    .navbar{
+        background-color: rgba(40,90,45,0.03);
+    }
+
+    .active{
+        color: red;
+    }
+    
+    a:hover{
+        color:red;
+        font-weight: bold;
+    }
+
+
+</style>
+
+<% if(page == 0) { %>
+<center>
+ <h1 style="color:green"> Bienvenue dans votre espace privé </h1>
+<div id="toto" class="container" style="font-size:18px; width: 70%; text-align: center;">
+
+    <table  class="navbar">
+        <tr>
+            <td ><% if(path == "/personalpage") { %><a class="active" href="/personalpage">  Espace privé </a><% } else { %><a href="/personalpage">  Espace privé </a><% } %> </td>
+            <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href="/personalpage/modifPassword">  Modifier mon password </a><% } else { %><a href="/personalpage/modifPassword">Modifier mon password</a><% } %></td>
+            <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href="/personalpage/modifPhoto">  Modifier ma photo </a><% } else { %><a href="/personalpage/modifPhoto">Modifier ma photo</a><% } %></td>
+            <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href="/personalpage/consultNotes">  Consulter Mes Note </a><% } else { %><a href="/personalpage/consultNotes">Consulter Mes Note</a><% } %></td>
+         
+        </tr>
+    </table>
+
+</div>
+<br>
+
+
+ <div style="font-size:18px;border: 20px solid green; width: 70%;">
+<div class="container" >
+    
+    <div>
+        <div style=" color: green; border-bottom: 3px solid black;">
+            <span>Informations personnelles</span>
+        </div>
+    <br>
+        
+        <table class="presentation">
+            <tr>
+                <th>Nom :</th>
+                <td><strong><%- etudiant.dataValues.nom %> <%- etudiant.dataValues.prenom %></strong></td>
+            </tr>
+            <tr>
+                <th>Lieu de Naissance :</th>
+                <td><strong><%- etudiant.dataValues.lieu_de_naissance %></strong></td>
+            </tr>
+            <tr>
+                <th>Email :</th>
+                <td><strong><%- etudiant.dataValues.email %></strong></td>
+            </tr>
+            <tr>
+                <th>Numero de CNI :</th>
+                <td><strong><%- etudiant.dataValues.numero_cni %></strong></td>
+            </tr>
+            <tr>
+                <th>Pays de residence :</th>
+                <td><strong><%- etudiant.dataValues.pays %></strong></td>
+            </tr>
+            <tr>
+                <th>Region d'origine :</th>
+                <td><strong><%- etudiant.dataValues.region %></strong></td>
+            </tr>
+            <tr>
+                <th>Ville de residence :</th>
+                <td><strong><%- etudiant.dataValues.ville %></strong></td>
+            </tr>
+        </table>
+          
+        </div>
+        <br>
+
+        <a href="/personalPage/ma_fiche_inscription" target="_blank"><img src="/assets/images/main.png" height="50" width="50"  alt="main"/> Voir ma fiche d'inscription</a>
+
+</div>
+
+<br/>
+<br>
+<br/>
+<br>
+<!-- <div class="container text-align-center" style="border: 1px solid red;"> -->
+
+
+    <table class="deux" style="border-spacing:14px">
+        <tr>
+            <td ><a href="/personalPage/mesInfos" class="info"><img src="/assets/images/mesinformation.png" style="border: 2px solid green;" alt="" width="100" height="100"></a></td>
+            <td><a href="/personalpage/modifPhoto" class="info"><img src="/assets/images/maphoto.png"  style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
+            <td><a href="/personalpage/modifPassword" class="info"><img src="/assets/images/modepasse.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
+            <td> <a href="#" class="info"><img src="/assets/images/suggection.png"  style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
+            <td> <a href="#" class="info"><img src="/assets/images/message.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
+            <td> <a href="#" class="info"><img src="/assets/images/note.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
+
+        </tr>
+      
+    </table>
+    
+
+</div>
+</center>
+<br/>
+<br/>
+<% } else if(page == 1)  {%>
+
+   <div class="container" style="font-size:18px; width: 70%; text-align: center;">
+
+    <table class="navbar">
+        <tr>
+            <td ><% if(path == "/personalpage") { %><a class="active" href="/personalpage">  Espace privé </a><% } else { %><a href="/personalpage">  Espace privé </a><% } %> </td>
+            <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href="/personalpage/modifPassword">  Modifier mon password </a><% } else { %><a href="/personalpage/modifPassword"> Modifier mon password</a><% } %></td>
+            <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href="/personalpage/modifPhoto">  Modifier ma photo </a><% } else { %><a href="/personalpage/modifPhoto">Modifier ma photo</a><% } %></td>
+            <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href="/personalpage/consultNotes">  Consulter Mes Note </a><% } else { %><a href="/personalpage/consultNotes">Consulter Mes Note</a><% } %></td>
+         
+         
+        </tr>
+    </table>
+    
+
+
+<br>
+    <table class="deux" style="border-spacing:14px">
+        <tr>
+            <td ><a href="/personalPage/modifierInfos" class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
+            <td><a href="/personalpage/modifPhoto" class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
+            <td><a href="/personalpage/modifPassword" class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
+
+        </tr>
+    </table>
+
+    <br>
+</div>
+    <center><table border="1" width="70%" align="center">
+        <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
+            <td colspan="5">
+                Information Personnelle
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td width="100px" rowspan="9" align="center">
+                <a class="icon-16-trash" href="/espaceprive/uploadpic" >
+                    <img class="photo"id="show-form-changeimage" alt="<%- etudiant.dataValues.photo_profil %>" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="160" width="160" title="<%- etudiant.dataValues.photo_profil %>"><br>Modifier            </a>
+            </td>
+            <td width="200px" class="textstyle">Matricule : <strong>CM-BIAST-23GEEL001</strong></td>
+    
+            <td width="200px" class="textstyle">Nombre d'enfant : <strong><%- etudiant.dataValues.nbr_enfant %></strong></td>
+    
+        </tr>
+    
+        <tr>
+            <td width="200px" class="textstyle">Nom : <strong><%- etudiant.dataValues.nom %></strong></td>
+    
+            <td width="200px" class="textstyle">Prénom : <strong><%- etudiant.dataValues.prenom %></strong></td>
+    
+        </tr>
+
+        <tr>
+            <td width="200px" class="textstyle">Filiére : <strong><%- filiere %></strong></td>
+    
+            <td width="200px" class="textstyle">Specialité  : <strong><%- specialite %></strong></td>
+    
+        </tr>
+    
+        <tr>
+    
+            <td width="200px" class="textstyle">Sexe : <strong><%- etudiant.dataValues.sexe %></strong></td>
+            <td width="200px" class="textstyle">Date de Naissance : <strong><%- etudiant.dataValues.date_de_naissance.getDate()%>/<%- etudiant.dataValues.date_de_naissance.getMonth()%>/<%- etudiant.dataValues.date_de_naissance.getFullYear()%></strong></td>
+    
+    
+        </tr>
+    
+        <tr>
+            <td width="200px" class="textstyle">Lieu de Naissance : <strong><%- etudiant.dataValues.lieu_de_naissance %></strong></td>
+    
+            <td width="200px" class="textstyle">Nationalité : <strong><%- etudiant.dataValues.pays %></strong></td>
+    
+        </tr>
+        
+        <tr>
+            <td width="200px" class="textstyle">Région d'origine : <strong><%- etudiant.dataValues.region %></strong></td>
+    
+            <td width="200px" class="textstyle">Département d'origine : <strong><%- etudiant.dataValues.departement %></strong></td>
+    
+        </tr>
+    
+        <tr>
+    
+            <td width="200px" class="textstyle">Arrondissament d'origine : <strong><%- etudiant.dataValues.lieu_de_naissance %></strong></td>
+    
+            <td width="200px" class="textstyle">Situation familliale : <strong><%- etudiant.dataValues.status_matrimoniale %></strong></td>
+    
+        </tr>
+        
+        <tr>
+    
+            <td width="200px" class="textstyle">Nombre d'enfant : <strong><%- etudiant.dataValues.nbr_enfant %></strong></td>
+    
+            <td width="200px" class="textstyle">Situation emploi : <strong><%- etudiant.dataValues.emploi %></strong></td>
+    
+        </tr>
+        
+        <tr>
+    
+            <td width="200px" class="textstyle">Handicapé : <strong><%- etudiant.dataValues.handicape %></strong></td>
+    
+            <td width="200px" class="textstyle">Langue officielle : <strong><%- etudiant.dataValues.langue %></strong></td>
+    
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+    </tbody></table></center>
+     <center><table border="1" width="70%" align="center">
+        <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
+            <td colspan="5">
+                Adresse étudiants
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td width="100px" rowspan="3" align="center">&nbsp;</td>
+            <td width="200px" class="textstyle">Ville de résidence : <strong><%- etudiant.dataValues.ville %></strong></td>
+    
+            <td width="200px" class="textstyle">Code postal : <strong><%- etudiant.dataValues.code_postal %></strong></td>
+    
+        </tr>
+    
+        <tr>
+            <td width="200px" class="textstyle">Téléphone : <strong><%- etudiant.dataValues.telephone %></strong></td>
+    
+            <td width="200px" class="textstyle">CNI N° : <strong><%- etudiant.dataValues.numero_cni %></strong></td>
+    
+        </tr>
+    
+        <tr>
+            <td width="200px" class="textstyle">Dernier établissement fré quenté  : <strong><%- etudiant.dataValues.dernier_ecole %></strong></td>
+    
+            <td width="200px" class="textstyle">Email : <strong><%- etudiant.dataValues.email %></strong></td>
+    
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+    </tbody></table></center>
+
+     <center><table border="1" width="70%" align="center" >
+        <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
+            <td colspan="5">
+                Informations Parents
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        
+        <tr>
+            <td width="100px" rowspan="3" align="center">&nbsp;</td>
+            <td width="200px" class="textstyle">Nom du père : <strong><%- etudiant.dataValues.nom_pere %></strong></td>
+    
+            <td width="200px" class="textstyle">Profession du père : <strong><%- etudiant.dataValues.profession_pere %></strong></td>
+    
+        </tr>
+    
+        <tr>
+            <td width="200px" class="textstyle">Nom de la mère : <strong><%- etudiant.dataValues.nom_mere %></strong></td>
+    
+            <td width="200px" class="textstyle">Profession de la mère : <strong><%- etudiant.dataValues.profession_mere %></strong></td>
+    
+        </tr>
+    
+        <tr>
+            <td width="200px" class="textstyle">Autre adresse : <strong><%- etudiant.dataValues.addr_pere %></strong></td>
+    
+            
+    
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+    </tbody></table></center>
+<br/>
+<br/>
+
+<% } else if(page == 2) { %>
+
+    <div class="container" style="font-size:18px; width: 70%; text-align: center;">
+
+        <table class="navbar">
+            <tr>
+                <td ><% if(path == "/personalpage") { %><a class="active" href="/personalpage">  Espace privé </a><% } else { %><a href="/personalpage">  Espace privé </a><% } %> </td>
+                <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href="/personalpage/modifPassword">  Modifier mon password </a><% } else { %><a href="/personalpage/modifPassword">Modifier mon password</a><% } %></td>
+                <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href="/personalpage/modifPhoto">  Modifier ma photo </a><% } else { %><a href="/personalpage/modifPhoto">Modifier ma photo</a><% } %></td>
+                <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href="/personalpage/consultNotes">  Consulter Mes Note </a><% } else { %><a href="/personalpage/consultNotes">Consulter Mes Note</a><% } %></td>
+             
+             
+            </tr>
+        </table>
+        
+    
+    
+    <br>
+        <table class="deux" style="border-spacing:14px">
+            <tr>
+                <td ><a href="/personalPage/modifierInfos" class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
+                <td><a href="/personalpage/modifPhoto" class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
+                <td><a href="/personalpage/modifPassword" class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
+    
+            </tr>
+        </table>
+    
+        <br>
+    </div>
+    
+    
+        <center><table border="1" width="70%" align="center">
+            <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
+                <td colspan="5">
+                    Modifier Mon mot de passe
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="1" style="width: 100px;">  </td>
+                <td>
+                    <div class="input-text" style="color: red; font-style: italic; font-family: consolas;">
+                        <% if(message) { %><%- message %> <% } %>
+                    </div>
+
+                   <form action="/personalpage/modifPassword" method="post">
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" name="ancien" required require id="user_name">
+                            <span>Ancien password</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="password" name="nouveau" required require>
+                            <span>Nouveau password</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="password" name="confirm" required require>
+                            <span>Confirmer</span>
+                        </div>
+                    </div>
+
+                    <div class="buttons" style="padding-bottom: 4px;">
+                        <button type="submit"  class="submit_button">Modifier</button>
+                    </div>
+                   </form> 
+                   
+
+                </td>
+                
+                <td colspan="1" style="width: 100px;"> </td>
+            </tr>
+         
+
+        </tbody></table></center>
+         
+    <br/>
+    <br/>
+
+<% } else if(page==3) { %>
+
+    <div class="container" style="font-size:18px; width: 70%; text-align: center;">
+
+        <table class="navbar">
+            <tr>
+                <td ><% if(path == "/personalpage") { %><a class="active" href="/personalpage">  Espace privé </a><% } else { %><a href="/personalpage">  Espace privé </a><% } %> </td>
+                <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href="/personalpage/modifPassword">  Modifier mon password </a><% } else { %><a href="/personalpage/modifPassword"> Modifier mon password</a><% } %></td>
+                <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href="/personalpage/modifPhoto">  Modifier ma photo </a><% } else { %><a href="/personalpage/modifPhoto">Modifier ma photo</a><% } %></td>
+                <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href="/personalpage/consultNotes">  Consulter Mes Note </a><% } else { %><a href="/personalpage/consultNotes">Consulter Mes Note</a><% } %></td>
+             
+             
+            </tr>
+        </table>
+        
+    
+    
+    <br>
+        <table class="deux" style="border-spacing:14px">
+            <tr>
+                <td ><a href="/personalPage/modifierInfos" class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
+                <td><a href="/personalpage/modifPhoto" class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
+                <td><a href="/personalpage/modifPassword" class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
+    
+            </tr>
+        </table>
+    
+        <br>
+    </div>
+    
+    <center><table border="1" width="70%" align="center">
+        <p style="color: red; font-style: italic; font-size: small; font-family: consolas;">NB: la photo a charger ne doit pas depasser plus de 10Mo</p>
+        <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
+            <td colspan="5">
+                Modifier ma photo de profil
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      
+        <tr>
+            <td width="100px"  rowspan="9" align="center">
+                
+                    <img class="photo"id="show-form-changeimage" alt="<%- etudiant.dataValues.photo_profil %>" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="160" width="160" title="<%- etudiant.dataValues.photo_profil %>"><br>Ancienne Photo
+            </td>
+            <td width="200px" class="textstyle"></td>
+    
+            <td width="200px" class="textstyle"><div class="input-text">
+                <form action="/personalpage/modifPhoto" method="post" name="chargePicture" enctype="multipart/form-data">
+                    <div class="input-div">
+                        <label for="image">Photo de Profil</label>
+                        <input type="file" id="image" name="image">
+                    </div>
+                    
+                        <input type="text" id="help" name="test" hidden>
+                    
+                    <br>
+                    <div class="buttons" style="padding-bottom: 4px;">
+                        <button type="submit"  class="submit_button">Upload</button>
+                    </div>
+                </form>
+              
+            </div></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        
+    </tbody></table></center>
+         
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+<% } %>
+
+<script language="javaScript">
+    let profil = document.getElementById("image")
+    let image = document.getElementById("help")
+    function charge(){
+        if(document.forms['chargePicture']['image'].files[0]){
+            image.value = document.forms['chargePicture']['image'].files[0].name
+        } 
+    }
+    var game = setInterval(charge, 100)
+
+</script>

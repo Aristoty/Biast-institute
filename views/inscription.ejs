@@ -1,0 +1,637 @@
+<% if(!modifier){ %>
+<div class="container_insc">
+    <div class="card_insc">
+        
+        <form class="form" id="inscription" name="inscription" method="POST" action="/studentInscrip" enctype="multipart/form-data" >
+            <div class="left-side">
+                <div class="left-heading h3_i">
+                    Inscription en ligne
+                </div>
+                <div class="steps-content">
+                    
+                    Etape <span class="step-number">1</span>
+                    <p class="step-number-content active">Remplissez vos information personnel</p>
+                    <p class="step-number-content d-none">Information relatives a vos parents</p>
+                    <p class="step-number-content d-none">Information sur l'education</p>
+                </div>
+                <ul class="progress-bar">
+                    <li class="active">Personal Informations</li>
+                    <li>Phisical Informations</li>
+                    <li>Parents Informations</li>
+                    <li>Education</li>
+                </ul>
+            </div>
+            <div class="right-side">
+                <div class="main active">
+                    <small><i class="fa fa-smile-o"></i></small>
+                    <div class="text">
+                        <h2>Remplissez vos informations</h2>
+                        <% if(message) { %><p style="color:red"><%- message  %></p> <% } else {%><p>Remplisser vos information personnel</p><% } %>
+                    
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="nom">Nom <em class="red">*</em></label>
+                            <input type="text" id="nom" name="nom" require required>
+                            
+                        </div>
+                        
+                        <div class="input-div"> 
+                            <label for="prenom">Prenom</label>
+                            <input type="text" id="prenom" name="prenom" >
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="date">Date de naissance <em class="red">*</em></label>
+                            <input class="md-form md-outline input-with-post-icon datepicker" type="date" id="date" name="date" require required>
+                            
+                        </div>
+                        <div class="input-div">
+                            <label for="lieu">Lieu de naissance <em class="red">*</em></label>
+                            <input type="text" name="lieu" id="lieu" require required>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="region">Region d'origine<em class="red">*</em></label>
+                            <input type="text" name="region" id="region" require required>
+                        </div>
+                        <div class="input-div">
+                            <label for="departement">Departement d'origine<em class="red">*</em></label>
+                            <input type="text" name="departement" id="departement" require required>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="email">Email<em class="red">*</em></label>
+                            <input type="text" name="email" id="email" require required>
+                        </div>
+                        <div class="input-div">
+                            <label for="telephone">Telephone</label>
+                            <input type="text" name="telephone" id="telephone">
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="numero_cni">Numero de cni<em class="red">*</em></label>
+                            <input type="text" name="numero_cni" id="numero_cni" require required>
+                        </div>
+                        <div class="input-div">
+                            <label for="status_matrimonial">Status Matrimonial</label>
+                            <select id="status_matrimonial" name="status_matrimonial" required require>
+                                <option value="Celibataire et 0 enfant en charge">Celibataire et 0 enfant en charge</option>
+                                <option value="Marie">Marie</option>
+                                <option value="Celibataire et au moin un enfant en charge">Celibataire et au moin un enfant en charge</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                   
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="pays">Pays d'origine<em class="red">*</em></label>
+                            <select  class="form-select" name="pays" id="pays" require>
+                                
+                                    <% if(countries) { for(var i=0; i<countries.length; i++) {%>
+                                        <option value="<%- countries[i]['Country Name'] %>"><%- countries[i]['Country Name'] %></option>
+                                    <% }} %>
+                                 
+                            </select>
+                        </div>
+                        <div class="input-div">
+                            <label for="ville">Ville de residence</label>
+                            <input type="text" id="ville" name="ville" >         
+                        </div>
+                    </div>
+
+
+
+                    <div class="buttons">
+                        <button class="next_button">Next Step</button>
+                    </div>
+                </div>
+                
+                <div class="main">
+                    <small><i class="fa fa-smile-o"></i></small>
+                    <div class="text">
+                        <h2>About Yourself</h2>
+                        <p>Information abour your phisical presentation.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="sexe">Sexe<em class="red">*</em></label>
+                            <select  class="form-select" name="sexe" id="sexe" require required>
+                                
+                                 <option value="Masculin"> Masculin </option>
+                                 <option value="Feminin"> Feminin </option>
+
+                            </select>
+                        </div>
+                        <div class="input-div">
+                            <label for="language">Langue Officielle<em class="red">*</em></label>
+                            <select  class="form-select" name="language" id="language" require required>
+                                
+                                <option value="Sans emploi"> Francais </option>
+                                <option value="Employe"> Employe </option>
+
+                           </select>
+                        </div>
+                    </div>
+
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="enfant">Nombre d'enfant</label>
+                            <input type="number" name="enfant" value="0" id="enfant" />
+                        </div>
+                        <div class="input-div">
+                            <label for="Code">Code Postal<em class="red">*</em></label>
+                            <input type="text" name="code" id="Code">
+                        </div>
+                    </div>
+
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="situation">Situation d'emploi</label>
+                            <select  class="form-select" name="situation" id="situation" require required>
+                                
+                                <option value="Sans emploi"> Sans emploi </option>
+                                <option value="Employe"> Employe </option>
+
+                           </select>
+                        </div>
+                        <div class="input-div">
+                            <label for="handicape">Handicapé</label>
+                            <select  class="form-select" name="handicape" id="handicape">
+                                
+                                <option value="Oui"> Oui </option>
+                                <option value="Non"> Non </option>
+
+                           </select>
+                        </div>
+                    </div>
+                    
+                    <div class="buttons button_space">
+                        <button class="back_button">Back</button>
+                        <button class="next_button">Next Step</button>
+                    </div>
+                </div>
+               
+                <div class="main">
+                    <small><i class="fa fa-smile-o"></i></small>
+                    <div class="text">
+                        <h2>Parents Informations</h2>
+                        <p>Inform companies about your education life.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="nom_pere">Nom du pere</label>
+                            <input type="text" id="nom_pere" name="nom_pere" >
+                        </div>
+                        <div class="input-div">
+                            <label for="nom_mere">Nom de la mere</label>
+                            <input type="text" id="nom_mere" name="nom_mere" >
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="addr_pere">Adresse du pere</label>
+                            <input type="text" id="addr_pere" name="addr_pere">
+                        </div>
+                        <div class="input-div">
+                            <label for="addr_mere">Adresse de la mere</label>
+                            <input type="text" id="addr_mere" name="addr_mere" >
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="prof_pere">Profession du pere</label>
+                            <input type="text" id="prof_pere" name="prof_pere">
+                        </div>
+                        <div class="input-div">
+                            <label for="prof_pere">Profession de la mere</label>
+                            <input type="text" id="prof_mere" name="prof_mere">
+                        </div>
+                    </div>
+                    
+                    <div class="buttons button_space">
+                        <button class="back_button">Back</button>
+                        <button class="next_button">Next Step</button>
+                    </div>
+                </div>
+                <div class="main">
+                    <small><i class="fa fa-smile-o"></i></small>
+                    <div class="text">
+                        <h2>Education</h2>
+                        <p>Can you talk about your past work experience?</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="dernEtab">Dernier etablissement frequente <em class="red">*</em></label>
+                            <input type="text" required require id="dernEtab" name="dernEtab" required require>
+                            <span></span>
+                        </div>
+                        <div class="input-div"> 
+                            <label for="moyenne_bac">Moyenne obtenu au bac <em class="red">*</em></label>
+                            <input type="text" id="moyenne_bac" name="moyenne_bac" require required>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="type_form">Type de formation <em class="red">*</em></label>
+                            <input type="text" id="type_form" name="type_form" require required>
+                        </div>
+               
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="filiere">Selectionne la Filiere<em class="red">*</em></label>
+                            <select id="filiere" onchange='getSpecialities()' id="filiere" name="filiere" required require>
+                                <% if(filiere) { for(var i=0; i<filiere.length; i++) {%>
+                                    <option  value=<%- filiere[i].dataValues.id %>><%- filiere[i].dataValues.nom_filiere %></option>
+                                <% }} %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="specialite">Selectionner la Specialite<em class="red">*</em></label>
+                            <select id="specialite" id="specialite" name="specialite" required require>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="profil">Photo de Profil</label>
+                            <input type="file" id="profil" name="image">
+                        </div>
+                    </div>
+                    <div class="input-text" hidden>
+                        <div class="input-div">
+                            <label for="test">image</label>
+                            <input type="text"  id="test" name="test">
+                        </div>
+                    </div>
+
+                    <div class="buttons button_space">
+                        <button class="back_button">Back</button>
+                        <button type="submit"  class="submit_button">Submit</button>
+                    </div>
+                </div>
+                
+                </div>
+                 <div class="main">
+                     <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                         <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                     
+                    <div class="text congrats">
+                        <h2>Congratulations!</h2>
+                        <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information have been submitted successfully for the future reference we will contact you soon.</p>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+</div>
+<% } else { %>
+    <div class="container_insc">
+        <div class="card_insc">
+            
+            <form class="form" id="modification" name="modification" method="POST" action="/personalPage/modifierInfos" >
+                <div class="left-side">
+                    <div class="left-heading h3_i">
+                        modification des informations
+                    </div>
+                    <div class="steps-content">
+                        
+                        Etape <span class="step-number">1</span>
+                        <p class="step-number-content active">Modifier vos informations personnel</p>
+                        <p class="step-number-content d-none">Information relatives a vos parents</p>
+                        <p class="step-number-content d-none">Information sur l'education</p>
+                    </div>
+                    <ul class="progress-bar">
+                        <li class="active">Personal Informations</li>
+                        <li>Phisical Informations</li>
+                        <li>Parents Informations</li>
+                        <li>Education</li>
+                    </ul>
+                </div>
+                <div class="right-side">
+                    <div class="main active">
+                        <small><i class="fa fa-smile-o"></i></small>
+                        <div class="text">
+                            <h2>Remplissez vos informations</h2>
+                            <% if(message) { %><p style="color:red"><%- message  %></p> <% } else {%><p>Remplisser vos information personnel</p><% } %>
+                        
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="nom">Nom <em class="red">*</em></label>
+                                <input type="text" id="nom" name="nom" value="<%- etudiant.dataValues.nom %>" require required>
+                                
+                            </div>
+                            
+                            <div class="input-div"> 
+                                <label for="prenom">Prenom</label>
+                                <input type="text" id="prenom" value="<%- etudiant.dataValues.prenom %>" name="prenom" >
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="date">Date de naissance <em class="red">*</em></label>
+                                <input class="md-form md-outline input-with-post-icon datepicker" type="date" id="date" name="date" require required>
+                                
+                            </div>
+                            <div class="input-div">
+                                <label for="lieu">Lieu de naissance <em class="red">*</em></label>
+                                <input type="text" name="lieu" id="lieu" value="<%- etudiant.dataValues.lieu_de_naissance %>" require required>
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="region">Region d'origine<em class="red">*</em></label>
+                                <input type="text" name="region" id="region" value="<%- etudiant.dataValues.region %>" require required>
+                            </div>
+                            <div class="input-div">
+                                <label for="departement">Departement d'origine<em class="red">*</em></label>
+                                <input type="text" name="departement" id="departement" value="<%- etudiant.dataValues.departement %>" require required>
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="email">Email<em class="red">*</em></label>
+                                <input type="text" name="email" id="email" value="<%- etudiant.dataValues.email %>" require required>
+                            </div>
+                            <div class="input-div">
+                                <label for="telephone">Telephone</label>
+                                <input type="text" name="telephone" value="<%- etudiant.dataValues.telephone %>" id="telephone">
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="numero_cni">Numero de cni<em class="red">*</em></label>
+                                <input type="text" name="numero_cni" id="numero_cni" value="<%- etudiant.dataValues.numero_cni %>" require required>
+                            </div>
+                            <div class="input-div">
+                                <label for="status_matrimonial">Status Matrimonial</label>
+                                <select id="status_matrimonial" name="status_matrimonial" required require>
+                                        <% if(etudiant.dataValues.status_matrimoniale != "Celibataire et 0 enfant en charge") { %><option value="Celibataire et 0 enfant en charge">Celibataire et 0 enfant en charge</option><% } else { %> <option value="Celibataire et 0 enfant en charge" selected>Celibataire et 0 enfant en charge</option><% } %>
+                                        <% if(etudiant.dataValues.status_matrimoniale != "Marie") { %><option value="Marie">Marie</option><% } else { %> <option value="Marie" selected>Marie</option> <% } %>
+                                        <% if(etudiant.dataValues.status_matrimoniale != "Celibataire et au moin un enfant en charge") { %><option value="Celibataire et au moin un enfant en charge">Celibataire et au moin un enfant en charge</option><% } else { %><option value="Celibataire et au moin un enfant en charge" selected>Celibataire et au moin un enfant en charge</option><% } %>
+                                    </select>
+                                </select>
+                                
+                            </div>
+                        </div>
+                       
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="pays">Pays d'origine</label>
+                                <select  class="form-select" name="pays" id="pays" >
+                                    
+                                        <% if(countries) { for(var i=0; i<countries.length; i++) {%>
+                                            <% if(etudiant.dataValues.pays == countries[i]['Country Name']) { %><option value="<%- countries[i]['Country Name'] %>" selected><%- countries[i]['Country Name'] %></option><% } else { %><option value="<%- countries[i]['Country Name'] %>"><%- countries[i]['Country Name'] %></option><% } %>
+                                        <% }} %>
+                                     
+                                </select>
+                            </div>
+                            <div class="input-div">
+                                <label for="ville">Ville de residence</label>
+                                <input type="text" id="ville" value="<%- etudiant.dataValues.ville %>" name="ville" >         
+                            </div>
+                        </div>
+    
+    
+    
+                        <div class="buttons">
+                            <button class="next_button">Next Step</button>
+                        </div>
+                    </div>
+                    
+                    <div class="main">
+                        <small><i class="fa fa-smile-o"></i></small>
+                        <div class="text">
+                            <h2>About Yourself</h2>
+                            <p>Information abour your phisical presentation.</p>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="sexe">Sexe<em class="red">*</em></label>
+                                <select  class="form-select" name="sexe" id="sexe" require required>
+                                    
+                                    <% if(etudiant.dataValues.sexe == "Masculin") { %><option value="Masculin" selected> Masculin </option><% } else { %><option value="Masculin"> Masculin </option><% } %>
+                                    <% if(etudiant.dataValues.sexe == "Feminin") { %><option value="Feminin" selected> Feminin </option><% } else { %><option value="Feminin"> Masculin </option><% } %>
+                                    
+    
+                                </select>
+                            </div>
+                            <div class="input-div">
+                                <label for="language">Langue Officielle<em class="red">*</em></label>
+                                <select  class="form-select" name="language" id="language" require required>
+                                    
+                                    <% if(etudiant.dataValues.langue == "francais") { %><option value="francais" selected> francais </option><% } else { %><option value="francais"> Masculin </option><% } %>
+                                    <% if(etudiant.dataValues.langue == "anglais") { %><option value="anglais" selected> anglais </option><% } else { %><option value="anglais"> Masculin </option><% } %>
+                                    
+    
+                               </select>
+                            </div>
+                        </div>
+    
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="enfant">Nombre d'enfant</label>
+                                <input type="number" name="enfant" value="<%- etudiant.dataValues.nbr_enfant %>" id="enfant" />
+                            </div>
+                            <div class="input-div">
+                                <label for="Code">Code Postal<em class="red">*</em></label>
+                                <input type="text" name="code" value="<%- etudiant.dataValues.code_postal %>" id="Code">
+                            </div>
+                        </div>
+    
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="situation">Situation d'emploi</label>
+                                <select  class="form-select" name="situation" id="situation" require required>
+                                    <% if(etudiant.dataValues.langue == "Sans emploi") { %><option value="Sans emploi" selected> Sans emploi </option><% } else { %><option value="Sans emploi"> Sans emploi </option><% } %> 
+                                    <% if(etudiant.dataValues.langue == "Employe") { %><option value="Employe" selected> Employe </option><% } else { %><option value="Employe"> Employe </option><% } %> 
+                                    
+    
+                               </select>
+                            </div>
+                            <div class="input-div">
+                                <label for="handicape">Handicapé</label>
+                                <select  class="form-select" name="handicape" id="handicape">
+                                    
+                                    <% if(etudiant.dataValues.handicape == "Oui") { %><option value="Oui" selected> Oui </option><% } else { %><option value="Oui"> Oui </option><% } %> 
+                                    <% if(etudiant.dataValues.handicape == "Non") { %><option value="Non" selected> Non </option><% } else { %><option value="Non"> Non </option><% } %> 
+                                    
+    
+                               </select>
+                            </div>
+                        </div>
+                        
+                        <div class="buttons button_space">
+                            <button class="back_button">Back</button>
+                            <button class="next_button">Next Step</button>
+                        </div>
+                    </div>
+                   
+                    <div class="main">
+                        <small><i class="fa fa-smile-o"></i></small>
+                        <div class="text">
+                            <h2>Parents Informations</h2>
+                            <p>Inform companies about your education life.</p>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="nom_pere">Nom du pere</label>
+                                <input type="text" id="nom_pere" value="<%- etudiant.dataValues.nom_pere %>" name="nom_pere" >
+                            </div>
+                            <div class="input-div">
+                                <label for="nom_mere">Nom de la mere</label>
+                                <input type="text" id="nom_mere" value="<%- etudiant.dataValues.nom_mere %>" name="nom_mere" >
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="addr_pere">Adresse du pere</label>
+                                <input type="text" id="addr_pere" value="<%- etudiant.dataValues.addresse_pere %>" name="addr_pere">
+                            </div>
+                            <div class="input-div">
+                                <label for="addr_mere">Adresse de la mere</label>
+                                <input type="text" id="addr_mere" value="<%- etudiant.dataValues.addresse_mere %>" name="addr_mere" >
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="prof_pere">Profession du pere</label>
+                                <input type="text" id="prof_pere" value="<%- etudiant.dataValues.profession_pere %>" name="prof_pere">
+                            </div>
+                            <div class="input-div">
+                                <label for="prof_pere">Profession de la mere</label>
+                                <input type="text" id="prof_mere" value="<%- etudiant.dataValues.profession_mere %>" name="prof_mere">
+                            </div>
+                        </div>
+                        
+                        <div class="buttons button_space">
+                            <button class="back_button">Back</button>
+                            <button class="next_button">Next Step</button>
+                        </div>
+                    </div>
+                    <div class="main">
+                        <small><i class="fa fa-smile-o"></i></small>
+                        <div class="text">
+                            <h2>Education</h2>
+                            <p>Can you talk about your past work experience?</p>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="dernEtab">Dernier etablissement frequente <em class="red">*</em></label>
+                                <input type="text" id="dernEtab" value="<%- etudiant.dataValues.dernier_ecole %>" name="dernEtab" required require>
+                                <span></span>
+                            </div>
+                            <div class="input-div"> 
+                                <label for="moyenne_bac">Moyenne obtenu au bac <em class="red">*</em></label>
+                                <input type="text" id="moyenne_bac" name="moyenne_bac" value="<%- etudiant.dataValues.moyenne_bac %>" require required>
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="type_form">Type de formation <em class="red">*</em></label>
+                                <input type="text" id="type_form" value="<%- etudiant.dataValues.type_formation %>" name="type_form" require required>
+                            </div>
+                   
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="filiere">Selectionne la Filiere<em class="red">*</em></label>
+                                <select id="filiere" name="filiere" required require>
+                                    <% if(filiere) { for(var i=0; i<filiere.length; i++) {%>
+                                        <% if(etudiant.dataValues.filiereId == filiere[i].dataValues.id) { %><option  value="<%- filiere[i].dataValues.id %>" selected><%- filiere[i].dataValues.nom_filiere %></option><% } else { %><option  value="<%- filiere[i].dataValues.id %>"><%- filiere[i].dataValues.nom_filiere %></option><% } %>
+                                    <% }} %>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <label for="specialite">Selectionne la Specialité<em class="red">*</em></label>
+                                <select id="specialite" name="specialite" required require>
+                                    <% if(specialites) { for(var i=0; i<specialites.length; i++) {%>
+                                        <% if(etudiant.dataValues.specialiteId == specialites[i].dataValues.id) { %><option  value="<%- specialites[i].dataValues.id %>" selected><%- specialites[i].dataValues.nom_specialite %></option><% } else { %><option  value="<%- specialites[i].dataValues.id %>"><%- specialites[i].dataValues.nom_specialite %></option><% } %>
+                                    <% }} %>
+                                </select>
+                            </div>
+                        </div>
+                 
+                    
+    
+                        <div class="buttons button_space">
+                            <button class="back_button">Back</button>
+                            <button type="submit"  class="submit_button">Submit</button>
+                        </div>
+                    </div>
+                    
+                    </div>
+                     <div class="main">
+                         <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                             <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                        </svg>
+                         
+                        <div class="text congrats">
+                            <h2>Congratulations!</h2>
+                            <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information have been submitted successfully for the future reference we will contact you soon.</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </form>
+    </div>
+<% } %>
+
+<div id="rs-partner" class="rs-partner pt-70 pb-70">
+        
+    <div class="container">
+        <div class="abt-title mb-70 text-center">
+            <h2>OUR PARTNERS</h2>      
+            <p>Considering desire as primary motivation for the generation of narratives is a useful concept.</p>
+        </div>
+        <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/1.png" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/2.jpeg" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/3.png" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/4.png" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/5.jpeg" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/6.jpeg" alt="Partner Image"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script language="javaScript">
+    let profil = document.getElementById("profil")
+    let image = document.getElementById("test")
+    function insert(){
+        if(document.forms['inscription']['image'].files[0]){
+            image.value = document.forms['inscription']['image'].files[0].name
+        }
+        
+    }
+    var game = setInterval(insert, 100)
+
+</script>

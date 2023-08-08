@@ -1,0 +1,151 @@
+<center><table border="1" width="95%" align="center">
+    <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
+        <td colspan="5">
+            Information Personnelle
+        </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+        <td width="100px" rowspan="9" align="center">
+            <a class="icon-16-trash" href="/espaceprive/uploadpic" >
+                <img class="photo"id="show-form-changeimage" alt="<%- etudiant.dataValues.photo_profil %>" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="160" width="160" title="<%- etudiant.dataValues.photo_profil %>">           </a>
+        </td>
+        <td width="200px" class="textstyle">Matricule : <strong>CM-BIAST-23GEEL001</strong></td>
+
+        <td width="200px" class="textstyle">Nombre d'enfant : <strong><%- etudiant.dataValues.nbr_enfant %></strong></td>
+
+    </tr>
+
+    <tr>
+        <td width="200px" class="textstyle">Nom : <strong><%- etudiant.dataValues.nom %></strong></td>
+
+        <td width="200px" class="textstyle">Prénom : <strong><%- etudiant.dataValues.prenom %></strong></td>
+
+    </tr>
+
+    <tr>
+        <td width="200px" class="textstyle">Filiére : <strong><%- filiere %></strong></td>
+
+        <td width="200px" class="textstyle">Specialité  : <strong><%- specialite %></strong></td>
+
+    </tr>
+
+    <tr>
+
+        <td width="200px" class="textstyle">Sexe : <strong><%- etudiant.dataValues.sexe %></strong></td>
+        <td width="200px" class="textstyle">Date de Naissance : <strong><%- etudiant.dataValues.date_de_naissance.getDate()%>/<%- etudiant.dataValues.date_de_naissance.getMonth()%>/<%- etudiant.dataValues.date_de_naissance.getFullYear()%></strong></td>
+
+
+    </tr>
+
+    <tr>
+        <td width="200px" class="textstyle">Lieu de Naissance : <strong><%- etudiant.dataValues.lieu_de_naissance %></strong></td>
+
+        <td width="200px" class="textstyle">Nationalité : <strong><%- etudiant.dataValues.pays %></strong></td>
+
+    </tr>
+    
+    <tr>
+        <td width="200px" class="textstyle">Région d'origine : <strong><%- etudiant.dataValues.region %></strong></td>
+
+        <td width="200px" class="textstyle">Département d'origine : <strong><%- etudiant.dataValues.departement %></strong></td>
+
+    </tr>
+
+    <tr>
+
+        <td width="200px" class="textstyle">Arrondissament d'origine : <strong><%- etudiant.dataValues.lieu_de_naissance %></strong></td>
+
+        <td width="200px" class="textstyle">Situation familliale : <strong><%- etudiant.dataValues.status_matrimoniale %></strong></td>
+
+    </tr>
+    
+    <tr>
+
+        <td width="200px" class="textstyle">Nombre d'enfant : <strong><%- etudiant.dataValues.nbr_enfant %></strong></td>
+
+        <td width="200px" class="textstyle">Situation emploi : <strong><%- etudiant.dataValues.emploi %></strong></td>
+
+    </tr>
+    
+    <tr>
+
+        <td width="200px" class="textstyle">Handicapé : <strong><%- etudiant.dataValues.handicape %></strong></td>
+
+        <td width="200px" class="textstyle">Langue officielle : <strong><%- etudiant.dataValues.langue %></strong></td>
+
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+</tbody></table></center>
+
+
+ <center><table border="1" width="95%" align="center">
+    <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
+        <td colspan="5">
+            Adresse étudiants
+        </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+        <td width="100px" rowspan="3" align="center">&nbsp;</td>
+        <td width="200px" class="textstyle">Ville de résidence : <strong><%- etudiant.dataValues.ville %></strong></td>
+
+        <td width="200px" class="textstyle">Code postal : <strong><%- etudiant.dataValues.code_postal %></strong></td>
+
+    </tr>
+
+    <tr>
+        <td width="200px" class="textstyle">Téléphone : <strong><%- etudiant.dataValues.telephone %></strong></td>
+
+        <td width="200px" class="textstyle">CNI N° : <strong><%- etudiant.dataValues.numero_cni %></strong></td>
+
+    </tr>
+
+    <tr>
+        <td width="200px" class="textstyle">Dernier établissement fré quenté  : <strong><%- etudiant.dataValues.dernier_ecole %></strong></td>
+
+        <td width="200px" class="textstyle">Email : <strong><%- etudiant.dataValues.email %></strong></td>
+
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+</tbody></table></center>
+
+ <center><table border="1" width="95%" align="center" >
+    <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
+        <td colspan="5">
+            Informations Parents
+        </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    
+    <tr>
+        <td width="100px" rowspan="3" align="center">&nbsp;</td>
+        <td width="200px" class="textstyle">Nom du père : <strong><%- etudiant.dataValues.nom_pere %></strong></td>
+
+        <td width="200px" class="textstyle">Profession du père : <strong><%- etudiant.dataValues.profession_pere %></strong></td>
+
+    </tr>
+
+    <tr>
+        <td width="200px" class="textstyle">Nom de la mère : <strong><%- etudiant.dataValues.nom_mere %></strong></td>
+
+        <td width="200px" class="textstyle">Profession de la mère : <strong><%- etudiant.dataValues.profession_mere %></strong></td>
+
+    </tr>
+
+    <tr>
+        <td width="200px" class="textstyle">Autre adresse : <strong><%- etudiant.dataValues.addr_pere %></strong></td>
+
+        
+
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+</tbody></table></center>
+<br>
+
+<center><button class="btn"><i class="fa fa-download"></i> Telecharger</button></center>
+<br>
+<br>
+
+
+

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biast institute</title>
+    <meta name="description" content="">
+        <!-- responsive tag -->
+        <!-- <meta http-equiv="x-ua-compatible" content="ie=edge"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.html">
+        <link rel="shortcut icon" type="image/x-icon" href="images/fav.png">
+        <!-- bootstrap v4 css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+        <!-- font-awesome css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+        <!-- owl.carousel css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/owl.carousel.css">
+		<!-- slick css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/slick.css">
+        <!-- magnific popup css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/magnific-popup.css">
+		<!-- Offcanvas CSS -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/off-canvas.css">
+		<!-- flaticon css  -->
+        <link rel="stylesheet" type="text/css" href="/assets/fonts/flaticon.css">
+		<!-- flaticon2 css  -->
+        <link rel="stylesheet" type="text/css" href="/assets/fonts/fonts2/flaticon.css">
+        <!-- rsmenu CSS -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/rsmenu-main.css">
+        <!-- rsmenu transitions CSS -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/rsmenu-transitions.css">
+        <!-- style css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/connexion.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/inscription.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+
+        <!-- responsive css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+</head>
+<body>
+       <!--Preloader area start here-->
+    <!-- <div class="book_preload">
+        <div class="book">
+            <div class="book__page"></div>
+            <div class="book__page"></div>
+            <div class="book__page"></div>
+        </div>
+    </div>  -->
+    <!--Preloader area end here-->
+    
+    <!--Full width header Start-->
+    <% if(path != "/personalPage/ma_fiche_inscription" ) { %>
+    <div id="haut" class="full-width-header">
+
+        <!-- Toolbar Start -->
+         <div class="rs-toolbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="rs-toolbar-left">
+                            <div class="welcome-message">
+                                <i class="fa fa-bank" style="color:green;"></i><span>Bienvenu à Biast</span> 
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="rs-toolbar-right">
+                            <div class="toolbar-share-icon">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- Toolbar End -->
+        
+        <!--Header Start-->
+        <header id="rs-header" class="rs-header">
+            
+            <% if(!ifConnected) { %>
+            <div class="rs-header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12">
+                            <div class="header-contact">
+                                <div id="info-details" class="widget-text">
+                                    <i class="glyph-icon flaticon-email" style="color: green;"></i>
+                                    <div class="info-text">
+                                        <a href="mailto:info@domain.com">
+                                            <span>Nous écrire</span>
+                                            ubiast@yahoo.com
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <center><div class="logo-area rotating text-center w-25">
+                                <a href="index.html"><img src="/assets/images/logo.png" alt="logo"></a>
+                            </div></center>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="header-contact pull-right">
+                                <div id="phone-details" class="widget-text">
+                                    <i class="glyph-icon flaticon-phone-call" style="color: green;"></i>
+                                    <div class="info-text">
+                                        <a href="tel:4155551234">
+                                            <span>Nous appelé </span>
+                                            +237 695 99 87 14
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>				
+                </div>
+            </div>
+            <% } else { %>
+            <div class="rs-header-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <div class="header-contact">
+                                    <div id="info-details" class="widget-text">
+                                        <!-- <i class="glyph-icon flaticon-email" style="color: green;"></i> -->
+                                        <div class="info-text">
+                                            <a class="w-25">
+                                                <img src="/assets/images/logo.png" alt="" class="rounded-circle rotating2" width="90" height="90">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <center><div class="logo-area text-center w-25" style="display: inline-block;">
+                                    <a href="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>"><img src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" alt="" width="80" height="80"></a>
+                                    <!-- <i class="fa fa-camera" aria-hidden="true"></i> -->
+                                </div></center>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="header-contact pull-right">
+                                    <div id="phone-details" class="widget-text">
+                                        <!-- <i class="glyph-icon flaticon-phone-call" style="color: green;"></i> -->
+                                        <div class="info-text">
+                                            <a class="w-25">
+                                                <img src="/assets/images/logo.png" class="rotating" alt="" class="rounded-circle" width="90" height="90">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>				
+                    </div>
+            </div>
+            <% } %>
+            <!-- Header Top End -->
+
+            <!-- Menu Start -->
+            <div class="menu-area menu-sticky" style="background-color: black;">
+                <div class="container">
+                    <div class="main-menu">
+                        <div class="row relative">
+                            <div class="col-sm-12">
+                                <!-- <div id="logo-sticky" class="text-center">
+                                    <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                                </div> -->
+                                <a class="rs-menu-toggle"><i class="fa fa-bars" style="color:green"></i>Menu</a>
+                                <nav class="rs-menu">
+                                    <ul class="nav-menu">
+                                        <!-- Home -->
+                                        
+                                        <li  class="menu-item-has-children <% if(path == '/') { %> active <% } %>"> <a href="/" class="home">Accueille</a>
+                                        
+                                        </li>
+                                        
+                                        <!-- End Home --> 
+                                        
+                                        <!--About Menu Start-->
+                                        <li class="menu-item-has-children <% if(path == '/about') { %> active <% } %>"> <a href="/about">À propos de nous </a>
+                                        
+                                        </li>
+                                      
+                                        <li class="menu-item-has-children <% if(path == '/courses') { %> active <% } %>"> <a href="/courses">Filiéres</a>
+                                        
+                                        </li>
+                                        <!--Courses Menu End-->
+                                        
+                                        <!--Events Menu Start-->
+                                        <li class="menu-item-has-children <% if(path == '/events') { %> active <% } %>"> <a href="/events">Évènements</a>
+                                        
+                                        </li>
+                                        <!--Events Menu End-->
+                                        
+                                        <!-- Drop Down -->
+                                        <% if(ifConnected) { %><li class="menu-item-has-children <% if(path == '/deconnexion') { %> active <% } %>"> <a href="/deconnexion">Déconnexion</a></li><% } else { %><li class="menu-item-has-children <% if(path == '/connexion') { %> active <% } %>"> <a href="/connexion">Connexion</a></li><% } %>
+                                        <!--End Icons -->
+                                        
+                                        <!--blog Menu Start-->
+                                        <% if(!ifConnected) { %><li class="menu-item-has-children <% if(path == '/inscription') { %> active <% } %>"> <a href="/inscription">Inscription</a><% } else { %> <li class="menu-item-has-children <% if(path.split('/')[1] == 'personalPage' || path=='/personalpage') { %> active <% } %>"> <a href="/personalpage">Ma Session</a><% } %>
+                                
+                                        </li>
+                                        <!--blog Menu End-->
+                                        
+                                        <!--Contact Menu Start-->
+                                        <li class="menu-item-has-children <% if(path == '/contact') { %> active <% } %>"> <a href="/contact">Contacts</a></li>
+                                        <!--Contact Menu End-->
+                                    </ul>
+                                </nav>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu End -->
+        </header>
+        <!--Header End-->
+
+    </div>
+    <% } %>
+    <!--Full width header End-->
+    
+    <!-- Slider Area Start -->
+    <%  if(detail) {  %>
+    <div id="rs-slider" class="slider-overlay-2">     
+        <div id="home-slider" class="rs-carousel owl-carousel" data-loop="true" data-items="4" data-margin="0" data-autoplay="false" data-autoplay-timeout="5000" data-smart-speed="1200" data-dots="false" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="true" data-mobile-device-dots="true" data-ipad-device="1" data-ipad-device-nav="true" data-ipad-device-dots="true" data-md-device="1" data-md-device-nav="true" data-md-device-dots="false">
+            <!-- Item 1 -->
+            <div class="item active">
+                <img src="/assets/images/slider/home1/slide1.jpg" alt="Slide1" />
+                <div class="slide-content">
+                    <div class="display-table">
+                        <div class="display-table-cell">
+                            <div class="container text-center">
+                                <h1 class="slider-title" data-animation-in="fadeInLeft" data-animation-out="animate-out">BIENVENU À BIAST</h1>
+                                <p data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">INSTITUT UNIVERSITAIRE BILINGUE DES SCIENCES APPLIQUÉES ET TECHNOLOGIE<br class="hidden-sm-dow"> BILINGUAL INSTITUTE OF APPLIED SCIENCES AND TECHNOLOGY</p>  
+                                <a href="#" class="sl-readmore-btn mr-30" data-animation-in="lightSpeedIn" data-animation-out="animate-out">VOIR +</a>
+                                <a href="#" class="sl-get-started-btn" data-animation-in="lightSpeedIn" data-animation-out="animate-out">COMMENCER MAINTENANT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="item">
+                <img src="/assets/images/slider/home1/slide2.jpg" alt="Slide2" />
+                <div class="slide-content">
+                    <div class="display-table">
+                        <div class="display-table-cell">
+                            <div class="container text-center">
+                                <h1 class="slider-title" data-animation-in="fadeInUp" data-animation-out="animate-out">ÊTES PRÊT À DÉMARRER AVEC BIAST?</h1>
+                                <p data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">INSTITUT UNIVERSITAIRE BILINGUE DES SCIENCES APPLIQUÉES ET TECHNOLOGIE<br class="hidden-sm-dow"> BILINGUAL INSTITUTE OF APPLIED SCIENCES AND TECHNOLOGY</p>  
+                                <a href="#" class="sl-readmore-btn mr-30" data-animation-in="fadeInUp" data-animation-out="animate-out">VOIR +</a>
+                                <a href="#" class="sl-get-started-btn" data-animation-in="fadeInUp" data-animation-out="animate-out">COMMENCER MAINTENANT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="item">
+                <img src="/assets/images/slider/home1/slide3.jpg" alt="Slide3" />
+                <div class="slide-content">
+                    <div class="display-table">
+                        <div class="display-table-cell">
+                            <div class="container text-center">
+                                <h1 class="slider-title" data-animation-in="fadeInUp" data-animation-out="animate-out">CHOISISSEZ LE MEILLEUR, CHOISISSEZ BIAST?</h1>
+                                <p data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">INSTITUT UNIVERSITAIRE BILINGUE DES SCIENCES APPLIQUÉES ET TECHNOLOGIE<br> BILINGUAL INSTITUTE OF APPLIED SCIENCES AND TECHNOLOGY</p>  
+                                <a href="#" class="sl-readmore-btn mr-30" data-animation-in="fadeInUp" data-animation-out="animate-out">VOIR +</a>
+                                <a href="#" class="sl-get-started-btn" data-animation-in="fadeInUp" data-animation-out="animate-out">COMMENCER MAINTENANT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>         
+    </div>
+    <div class="rs-services rs-services-style1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="services-item rs-animation-hover">
+                        <div class="services-icon">
+                            <i class="fa fa-american-sign-language-interpreting rs-animation-scale-up" style="color: white;"></i>                    	        
+                        </div>
+                        <div class="services-desc">
+                            <h4 class="services-title">Tendance des cours</h4>
+                            <p>Biast propose un grand nombre de cours et de filières hautement dispensés</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="services-item rs-animation-hover">
+                        <div class="services-icon">                    	        
+                            <i class="fa fa-book rs-animation-scale-up" style="color: white;"></i>
+                        </div>
+                        <div class="services-desc">
+                            <h4 class="services-title">Livres et Bibliothèque</h4>
+                            <p>
+                                Les manuels scolaires tels que les supports de cours sont fourni gratuitement
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="services-item rs-animation-hover">
+                        <div class="services-icon">
+                            <i class="fa fa-user rs-animation-scale-up" style="color: white;"></i>
+                        </div>
+                        <div class="services-desc">
+                            <h4 class="services-title">Enseignants Qualifiés</h4>
+                            <p>Tous nos enseignants ont la maitrise de leurs domaines et sont qualifiés pour les cours qu'ils dispensent</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="services-item rs-animation-hover">
+                        <div class="services-icon">
+                            <i class="fa fa-graduation-cap rs-animation-scale-up" style="color: white;"></i>
+                        </div>
+                        <div class="services-desc">
+                            <h4 class="services-title">Certifications</h4>
+                            <p>
+                                Une certification reconnue par plusieurs pays collaborateurs, est décernée aux etudiants en fin de formation
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%  }  %>
+    <br>
+    
+
+
+    <%- body %>
+
+    <% if(path != "/personalPage/ma_fiche_inscription" ) { %>
+    <footer id="rs-footer" class="bg3 rs-footer" style="background-color: black;">
+        <div class="container">
+            <!-- Footer Address -->
+            <div>
+                <div class="row footer-contact-desc">
+                    <div class="col-md-4">
+                        <div class="contact-inner">
+                            <i class="fa fa-map-marker" style="color: green;"></i>
+                            <h4 class="contact-title">Addresse</h4>
+                            <p class="contact-desc">
+                                B.P: 1026 Bafoussam<br>
+                                Ouest Cameroun
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-inner">
+                            <i class="fa fa-phone" style="color: green;"></i>
+                            <h4 class="contact-title">Numéros de téléphone</h4>
+                            <p class="contact-desc">
+                                +237 674 784 870<br>
+                                +237 695 998 714
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-inner">
+                            <i class="fa fa-map-marker" style="color: green;"></i>
+                            <h4 class="contact-title">Addresse Email</h4>
+                            <p class="contact-desc">
+                                ubiast@yahoo.com<br>
+                                www.biast.com
+                            </p>
+                        </div>
+                    </div>
+                </div>					
+            </div>
+        </div>
+        
+        <!-- Footer Top -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12">
+                        <div class="about-widget">
+                            <i class="fa fa-bank" ></i><span>INSTITUT BIAST</span> 
+                            <p><q>Connaissez-vous la différence entre l'éducation et l'expérience ? L'éducation, c'est quand vous lisez tous les alinéas d'un contrat. L'expérience, c'est ce qui vous arrive quand vous ne le faites pas.</q></p>
+                            <p class="margin-remove">De Ludmila Oulitskaïa/ Sincèrement vôtre, Chourik</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <h5 class="footer-title">PUBLICATION RÉCENTE </h5>
+                        <div class="recent-post-widget">
+                            <div class="post-item">
+                                <div class="post-date">
+                                    <span>4</span>
+                                    <span>AOÛT</span>
+                                </div>
+                                <div class="post-desc">
+                                    <h5 class="post-title"><a href="#">Présentation de l'institut Biast </a></h5>
+                                    <span class="post-category">Professeur Talla prends la parole</span>
+                                </div>
+                            </div>
+                            <div class="post-item">
+                                <div class="post-date">
+                                    <span>28</span>
+                                    <span>JUILLET</span>
+                                </div>
+                                <div class="post-desc">
+                                    <h5 class="post-title"><a href="#">Visite du directeur de l'INSET de Nkongsamba.</a></h5>
+                                    <span class="post-category">Signature de contrats</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <h5 class="footer-title">LA CARTE DU SITE</h5>
+                        <ul class="sitemap-widget">
+                            <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>Accueille</a></li>
+                            <li ><a href="/about"><i class="fa fa-angle-right" aria-hidden="true"></i>A propos</a></li>
+                            <li><a href="/courses"><i class="fa fa-angle-right" aria-hidden="true"></i>Filiéres</a></li>
+                            <li><a href="/events"><i class="fa fa-angle-right" aria-hidden="true"></i>Évènements</a></li>
+                            <li><a href="/inscription"><i class="fa fa-angle-right" aria-hidden="true"></i>Inscription</a></li>
+                            <li><a href="/connexion"><i class="fa fa-angle-right" aria-hidden="true"></i>Connexion</a></li>
+                            <li><a href="/admin"><i class="fa fa-angle-right" aria-hidden="true"></i>Page Admin</a></li>
+                            <!-- <li><a href="teachers-single.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Teachers Details</a></li> -->
+                            <li><a href="/contact"><i class="fa fa-angle-right" aria-hidden="true"></i>Contacts</a></li>
+                            <!-- <li><a href="error-404.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Error 404</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <h5 class="footer-title">NEWSLETTER</h5>
+                        <p>Abonnez-vous à notre newsletter pour obtenir les dernières mises à jour et Prestations de service</p>
+                        <form class="news-form">
+                            <input type="text" class="form-input" placeholder="Enter Your Email">
+                            <button type="submit" class="form-button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-share">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vimeo"></i></a></li>    
+                    </ul>
+                </div>                                
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>© 2023 <a href="#">ETS BIAST</a>. Tous les droits sont réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- start scrollUp  -->
+    <div id="scrollUp">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    
+    <!-- Canvas Menu start -->
+    <nav class="right_menu_togle">
+        <div class="close-btn"><span id="nav-close" class="text-center">x</span></div>
+        <div class="canvas-logo">
+            <a href="index.html"><img src="/assets/images/logo-white.png" alt="logo"></a>
+        </div>
+        <ul class="sidebarnav_menu list-unstyled main-menu">
+            <!--Home Menu Start-->
+            <li class="current-menu-item menu-item-has-children"><a href="#">Home</a>
+                <ul class="list-unstyled">
+                    <li class="sub-nav active"><a href="index.html">Home One<span class="icon"></span></a></li>
+                    <li class="sub-nav"><a href="index2.html">Home Two<span class="icon"></span></a></li>
+                    <li class="sub-nav"><a href="index3.html">Home Three<span class="icon"></span></a></li>
+                    <li class="sub-nav"><a href="index4.html">Home Four<span class="icon"></span></a></li>
+                </ul>
+            </li>
+            <!--Home Menu End-->
+            
+            <!--About Menu Start-->
+            <li class="menu-item-has-children"><a href="#">About Us</a>
+                <ul class="list-unstyled">
+                    <li class="sub-nav active"><a href="index.html">About One<span class="icon"></span></a></li>
+                    <li class="sub-nav"><a href="index2.html">About Two<span class="icon"></span></a></li>
+                    <li class="sub-nav"><a href="index3.html">About Three<span class="icon"></span></a></li>
+                </ul>
+            </li>
+            <!--About Menu End-->
+            
+            <!--Pages Menu Start-->
+            <li class="menu-item-has-children"><a href="/connexion">Connexion</a>
+                
+            </li>
+            <!--Pages Menu End-->
+            
+            <!--Courses Menu Star-->
+            <li class="menu-item-has-children"><a href="/courses">Courses</a>
+                
+            </li>
+            <!--Courses Menu End-->
+            
+            <!--Events Menu Star-->
+            <li class="menu-item-has-children"><a href="/events">Events</a>
+               
+            </li>
+            <!--Events Menu End-->
+            
+            <!--blog Menu Star-->
+            <li class="menu-item-has-children"><a href="/inscription">Inscription</a>
+               
+            </li>
+          
+        </ul>
+        <div class="search-wrap"> 
+            <label class="screen-reader-text">Search for:</label> 
+            <input type="search" placeholder="Search..." name="s" class="search-input" value=""> 
+            <button type="submit" value="Search"><i class="fa fa-search"></i></button>
+        </div>
+    </nav>
+    <!-- Canvas Menu end -->
+    
+    <!-- Search Modal Start -->
+    <div aria-hidden="true" class="modal fade search-modal" role="dialog" tabindex="-1">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="fa fa-close"></span>
+        </button>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="search-block clearfix">
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="eg: Computer Technology" type="text">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+
+
+<!-- modernizr js -->
+<script src="/assets/js/jquery-2.0.3.min.js" ></script>
+<script src="/assets/js/toastr.js"></script>
+<!-- <script src="/assets/js/jquery.min.js"></script> -->
+<script src="/assets/js/axios.js"></script>
+<script src="/assets/js/inscription.js"></script>
+<script src="/assets/js/validation.js"></script>
+<script src="/assets/js/chargeProfile.js"></script>
+<script src="/assets/js/getSpecialities.js"></script>
+<script src="/assets/js/modernizr-2.8.3.min.js"></script>
+<!-- jquery latest version -->
+
+<!-- bootstrap js -->
+<script src="/assets/js/bootstrap.min.js"></script>
+<!-- owl.carousel js -->
+<script src="/assets/js/owl.carousel.min.js"></script>
+<!-- slick.min js -->
+<script src="/assets/js/slick.min.js"></script>
+<!-- isotope.pkgd.min js -->
+<script src="/assets/js/isotope.pkgd.min.js"></script>
+<!-- imagesloaded.pkgd.min js -->
+<script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+<!-- wow js -->
+<script src="/assets/js/wow.min.js"></script>
+<!-- counter top js -->
+<script src="/assets/js/waypoints.min.js"></script>
+<script src="/assets/js/jquery.counterup.min.js"></script>
+<!-- magnific popup -->
+<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+<!-- rsmenu js -->
+<script src="/assets/js/rsmenu-main.js"></script>
+<!-- plugins js -->
+<script src="/assets/js/plugins.js"></script>
+ <!-- main js -->
+<script src="/assets/js/main.js"></script>
+<script language="javaScript">
+    $(window).load(function(){
+       
+       $('#myModal').modal('show');
+   });
+   $('.datepicker').datepicker({
+  inline: true
+});
+
+
+
+
+</script>
+</body>
+</html>
