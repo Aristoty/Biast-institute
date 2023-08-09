@@ -5,19 +5,21 @@
         <form class="form" id="inscription" name="inscription" method="POST" action="/studentInscrip" enctype="multipart/form-data" >
             <div class="left-side">
                 <div class="left-heading h3_i">
-                    Inscription en ligne
+                    Prennez vos inscriptions en ligne 
                 </div>
                 <div class="steps-content">
                     
                     Etape <span class="step-number">1</span>
-                    <p class="step-number-content active">Remplissez vos information personnel</p>
-                    <p class="step-number-content d-none">Information relatives a vos parents</p>
-                    <p class="step-number-content d-none">Information sur l'education</p>
+                    <p class="step-number-content active">Renseignez vos informations personnelles</p>
+                    <p class="step-number-content d-none">Information sur votre physiologie</p>
+                    <p class="step-number-content d-none">Information sur vos parents</p>
+                    <p class="step-number-content d-none">Information Académiques </p>
+
                 </div>
                 <ul class="progress-bar">
-                    <li class="active">Personal Informations</li>
-                    <li>Phisical Informations</li>
-                    <li>Parents Informations</li>
+                    <li class="active">Informations Personnelles</li>
+                    <li>Informations Physiologique</li>
+                    <li>Informations sur les Parents</li>
                     <li>Education</li>
                 </ul>
             </div>
@@ -25,8 +27,8 @@
                 <div class="main active">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>Remplissez vos informations</h2>
-                        <% if(message) { %><p style="color:red"><%- message  %></p> <% } else {%><p>Remplisser vos information personnel</p><% } %>
+                        <h2>Renseignez vos informations Personnelles</h2>
+                        <% if(message) { %><p style="color:red"><%- message  %></p> <% } else {%><p>Renseigner vos informations</p><% } %>
                     
                     </div>
                     <div class="input-text">
@@ -108,15 +110,15 @@
 
 
                     <div class="buttons">
-                        <button class="next_button">Next Step</button>
+                        <button class="next_button">Suivant</button>
                     </div>
                 </div>
                 
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>About Yourself</h2>
-                        <p>Information abour your phisical presentation.</p>
+                        <h2>Information sur votre physiologie</h2>
+                        <p>Information sur  votre  présentation physiologie.</p>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
@@ -172,16 +174,16 @@
                     </div>
                     
                     <div class="buttons button_space">
-                        <button class="back_button">Back</button>
-                        <button class="next_button">Next Step</button>
+                        <button class="back_button">Précèdent</button>
+                        <button class="next_button">Suivant</button>
                     </div>
                 </div>
                
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>Parents Informations</h2>
-                        <p>Inform companies about your education life.</p>
+                        <h2>Informations sur les Parents</h2>
+                        <p>Renseigner les informations sur vos parents</p>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
@@ -215,19 +217,19 @@
                     </div>
                     
                     <div class="buttons button_space">
-                        <button class="back_button">Back</button>
-                        <button class="next_button">Next Step</button>
+                        <button class="back_button">Précèdent </button>
+                        <button class="next_button">Suivant</button>
                     </div>
                 </div>
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
                         <h2>Education</h2>
-                        <p>Can you talk about your past work experience?</p>
+                        <p>À propos de votre éducation du sécondaire</p>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="dernEtab">Dernier etablissement frequente <em class="red">*</em></label>
+                            <label for="dernEtab">Dernier etablissement frequenté <em class="red">*</em></label>
                             <input type="text" required require id="dernEtab" name="dernEtab" required require>
                             <span></span>
                         </div>
@@ -274,8 +276,8 @@
                     </div>
 
                     <div class="buttons button_space">
-                        <button class="back_button">Back</button>
-                        <button type="submit"  class="submit_button">Submit</button>
+                        <button class="back_button">Précèdent</button>
+                        <button type="submit"  class="submit_button">Valider</button>
                     </div>
                 </div>
                 
@@ -595,8 +597,8 @@
         
     <div class="container">
         <div class="abt-title mb-70 text-center">
-            <h2>OUR PARTNERS</h2>      
-            <p>Considering desire as primary motivation for the generation of narratives is a useful concept.</p>
+            <h2>NOS UNIVERSITÉS PARTENAIRES</h2>      
+                <p>Tous nos universités et entreprises partenaires partout dans le monde entier.</p>
         </div>
         <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
             <div class="partner-item">
