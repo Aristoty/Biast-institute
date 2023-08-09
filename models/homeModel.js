@@ -231,11 +231,6 @@ Student.belongsTo(Specialite, {
 });
 
 
-sequelize.sync().then(() => {
-    console.log('Migration made successfully!');
-    }).catch((error) => {
-    console.error('Unable to create table : ', error);
-});
 
 
 module.exports = {
@@ -243,7 +238,8 @@ module.exports = {
     User,
     Filiere,
     Specialite,
-    Credential
+    Credential,
+    sequelize
 }
 
 

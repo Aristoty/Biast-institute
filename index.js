@@ -8,6 +8,7 @@ const flash = require('connect-flash')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const toastr = require('express-toastr');
+const { sequelize } = require('./models/homeModel')
 // express-toastr
 const { User, Student } = require('./models/homeModel')
 // const toastr = require('express-toastr');
@@ -39,6 +40,11 @@ app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(homeRoutes.routes)
 
+sequelize.sync().then(() => {
+    console.log('Migration made successfully!');
+    }).catch((error) => {
+    console.error('Unable to create table : ', error);
+});
 
 // server d'application
 app.listen(PORT, () => {
