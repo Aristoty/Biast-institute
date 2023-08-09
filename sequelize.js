@@ -1,5 +1,5 @@
 const {Sequelize, DataTypes} = require("sequelize");
-import mysql2 from 'mysql2'; // Needed to fix sequelize issues with WebPack
+const mysql2 =  require('mysql2'); 
 
 require('dotenv').config()
 
