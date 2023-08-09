@@ -24,16 +24,24 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.use(cookieParser('secret'));
 
-app.use(session({
-   name:process.env.SESSION_NAME,
-   resave : false,
-   saveUninitialized : false,
-   secret : process.env.SESSION_SECRET,
-   cookie : {
-    maxAge : 1000 * 60 * 60 * 24 * 7,
-    secure : false
-   },
-}))
+const sess = {
+    resave : false,
+    saveUninitialized : true,
+    secret : 'keyboard cat',
+    cookie : {
+     maxAge : 1000 * 60 * 60 * 24 * 7,
+     secure : true
+    },
+ }
+
+ console.log(app.get('env'))
+
+ if (app.get('env') === 'production') {
+    app.set('trust proxy', 1) // trust first proxy
+    sess.cookie.secure = true // serve secure cookies
+}
+
+app.use(session(sess))
 
 app.use(flash());
 
