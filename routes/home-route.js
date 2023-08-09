@@ -1,5 +1,5 @@
 const express = require('express')
-// const image = require('./../public/assets/images/avatar')
+// const image = require('/assets/images/avatar')
 const {
     indexView, 
     aboutView, 
@@ -27,7 +27,6 @@ const {
     
 } = require('../controllers/homeController')
 const multer = require('multer')
-const path = require('path')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
