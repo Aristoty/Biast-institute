@@ -1,3 +1,4 @@
+const { Sequelize } = require('sequelize');
 const { sequelize, authenticate, DataTypes } = require('./../sequelize')
 
 authenticate()
@@ -230,11 +231,11 @@ Student.belongsTo(Specialite, {
 });
 
 
-// Student.sync({force: true}).then(() => {
-//     console.log('Migration made successfully!');
-//     }).catch((error) => {
-//     console.error('Unable to create table : ', error);
-// });
+sequelize.sync().then(() => {
+    console.log('Migration made successfully!');
+    }).catch((error) => {
+    console.error('Unable to create table : ', error);
+});
 
 
 module.exports = {
