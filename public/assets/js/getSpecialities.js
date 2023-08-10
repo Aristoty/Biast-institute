@@ -15,15 +15,17 @@ const getSpecialities = async () => {
     try {
       const response = await axios.get(`http://localhost:3000/specialities/`);
   
-      const data = response.data;
-      data.map((elem) => {
-        if(elem.filiereId == filiere.value){
-            var option = document.createElement("option");
-            option.value= elem.id;
-            option.innerHTML = elem.nom_specialite;
-            specialite.appendChild(option)
+      const data = Object.values(response.data);
+     
+      for(let i = 0; i<data.length; i++){
+        if(data[i].dataValues.filiereId == filiere.value){
+                var option = document.createElement("option");
+                option.value= data[i].dataValues.id;
+                option.innerHTML = data[i].dataValues.nom_specialite;
+                specialite.appendChild(option)
         }
-      })
+      }
+      
 
     } catch (errors) {
       console.error(errors);
