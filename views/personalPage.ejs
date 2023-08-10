@@ -58,10 +58,10 @@
 
     <table  class="navbar">
         <tr>
-            <td ><% if(path == "/personalpage") { %><a class="active" href="/personalpage">  Espace privé </a><% } else { %><a href="/personalpage">  Espace privé </a><% } %> </td>
-            <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href="/personalpage/modifPassword">  Modifier mon password </a><% } else { %><a href="/personalpage/modifPassword">Modifier mon password</a><% } %></td>
-            <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href="/personalpage/modifPhoto">  Modifier ma photo </a><% } else { %><a href="/personalpage/modifPhoto">Modifier ma photo</a><% } %></td>
-            <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href="/personalpage/consultNotes">  Consulter Mes Note </a><% } else { %><a href="/personalpage/consultNotes">Consulter Mes Note</a><% } %></td>
+            <td ><% if(path == "/personalpage") { %><a class="active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %> </td>
+            <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>Modifier mon password</a><% } %></td>
+            <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %></td>
+            <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %></td>
          
         </tr>
     </table>
@@ -113,7 +113,7 @@
         </div>
         <br>
 
-        <a href="/personalPage/ma_fiche_inscription" target="_blank"><img src="/assets/images/main.png" height="50" width="50"  alt="main"/> Voir ma fiche d'inscription</a>
+        <a href=<%= "/personalPage/ma_fiche_inscription?token=" + (user ? user.token : "") %> target="_blank"><img src="/assets/images/main.png" height="50" width="50"  alt="main"/> Voir ma fiche d'inscription</a>
 
 </div>
 
@@ -126,9 +126,9 @@
 
     <table class="deux" style="border-spacing:14px">
         <tr>
-            <td ><a href="/personalPage/mesInfos" class="info"><img src="/assets/images/mesinformation.png" style="border: 2px solid green;" alt="" width="100" height="100"></a></td>
-            <td><a href="/personalpage/modifPhoto" class="info"><img src="/assets/images/maphoto.png"  style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
-            <td><a href="/personalpage/modifPassword" class="info"><img src="/assets/images/modepasse.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
+            <td ><a href=<%= "/personalPage/mesInfos?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/mesinformation.png" style="border: 2px solid green;" alt="" width="100" height="100"></a></td>
+            <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/maphoto.png"  style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
+            <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/modepasse.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
             <td> <a href="#" class="info"><img src="/assets/images/suggection.png"  style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
             <td> <a href="#" class="info"><img src="/assets/images/message.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
             <td> <a href="#" class="info"><img src="/assets/images/note.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
@@ -148,10 +148,10 @@
 
     <table class="navbar">
         <tr>
-            <td ><% if(path == "/personalpage") { %><a class="active" href="/personalpage">  Espace privé </a><% } else { %><a href="/personalpage">  Espace privé </a><% } %> </td>
-            <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href="/personalpage/modifPassword">  Modifier mon password </a><% } else { %><a href="/personalpage/modifPassword"> Modifier mon password</a><% } %></td>
-            <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href="/personalpage/modifPhoto">  Modifier ma photo </a><% } else { %><a href="/personalpage/modifPhoto">Modifier ma photo</a><% } %></td>
-            <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href="/personalpage/consultNotes">  Consulter Mes Note </a><% } else { %><a href="/personalpage/consultNotes">Consulter Mes Note</a><% } %></td>
+            <td ><% if(path == "/personalpage") { %><a class="active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %> </td>
+            <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %></td>
+            <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %></td>
+            <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %></td>
          
          
         </tr>
@@ -162,9 +162,9 @@
 <br>
     <table class="deux" style="border-spacing:14px">
         <tr>
-            <td ><a href="/personalPage/modifierInfos" class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
-            <td><a href="/personalpage/modifPhoto" class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
-            <td><a href="/personalpage/modifPassword" class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
+            <td ><a href=<%= "/personalPage/modifierInfos?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
+            <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
+            <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
 
         </tr>
     </table>
@@ -321,10 +321,10 @@
 
         <table class="navbar">
             <tr>
-                <td ><% if(path == "/personalpage") { %><a class="active" href="/personalpage">  Espace privé </a><% } else { %><a href="/personalpage">  Espace privé </a><% } %> </td>
-                <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href="/personalpage/modifPassword">  Modifier mon password </a><% } else { %><a href="/personalpage/modifPassword">Modifier mon password</a><% } %></td>
-                <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href="/personalpage/modifPhoto">  Modifier ma photo </a><% } else { %><a href="/personalpage/modifPhoto">Modifier ma photo</a><% } %></td>
-                <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href="/personalpage/consultNotes">  Consulter Mes Note </a><% } else { %><a href="/personalpage/consultNotes">Consulter Mes Note</a><% } %></td>
+                <td ><% if(path == "/personalpage") { %><a class="active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %> </td>
+                <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>Modifier mon password</a><% } %></td>
+                <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %></td>
+                <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %></td>
              
              
             </tr>
@@ -335,9 +335,9 @@
     <br>
         <table class="deux" style="border-spacing:14px">
             <tr>
-                <td ><a href="/personalPage/modifierInfos" class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
-                <td><a href="/personalpage/modifPhoto" class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
-                <td><a href="/personalpage/modifPassword" class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
+                <td ><a href=<%= "/personalPage/modifierInfos?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
+                <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
+                <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
     
             </tr>
         </table>
@@ -360,7 +360,7 @@
                         <% if(message) { %><%- message %> <% } %>
                     </div>
 
-                   <form action="/personalpage/modifPassword" method="post">
+                   <form action=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> method="post">
                     <div class="input-text">
                         <div class="input-div">
                             <input type="text" name="ancien" required require id="user_name">
@@ -403,10 +403,10 @@
 
         <table class="navbar">
             <tr>
-                <td ><% if(path == "/personalpage") { %><a class="active" href="/personalpage">  Espace privé </a><% } else { %><a href="/personalpage">  Espace privé </a><% } %> </td>
-                <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href="/personalpage/modifPassword">  Modifier mon password </a><% } else { %><a href="/personalpage/modifPassword"> Modifier mon password</a><% } %></td>
-                <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href="/personalpage/modifPhoto">  Modifier ma photo </a><% } else { %><a href="/personalpage/modifPhoto">Modifier ma photo</a><% } %></td>
-                <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href="/personalpage/consultNotes">  Consulter Mes Note </a><% } else { %><a href="/personalpage/consultNotes">Consulter Mes Note</a><% } %></td>
+                <td ><% if(path == "/personalpage") { %><a class="active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %> </td>
+                <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %></td>
+                <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %></td>
+                <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %></td>
              
              
             </tr>
@@ -417,9 +417,9 @@
     <br>
         <table class="deux" style="border-spacing:14px">
             <tr>
-                <td ><a href="/personalPage/modifierInfos" class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
-                <td><a href="/personalpage/modifPhoto" class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
-                <td><a href="/personalpage/modifPassword" class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
+                <td ><a href=<%= "/personalPage/modifierInfos?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
+                <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
+                <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
     
             </tr>
         </table>
@@ -444,7 +444,7 @@
             <td width="200px" class="textstyle"></td>
     
             <td width="200px" class="textstyle"><div class="input-text">
-                <form action="/personalpage/modifPhoto" method="post" name="chargePicture" enctype="multipart/form-data">
+                <form action=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %> method="post" name="chargePicture" enctype="multipart/form-data">
                     <div class="input-div">
                         <label for="image">Photo de Profil</label>
                         <input type="file" id="image" name="image">

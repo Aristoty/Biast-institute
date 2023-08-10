@@ -3,6 +3,9 @@ const { sequelize } = require('./../sequelize')
 const { Student, User, Filiere, Specialite, Credential } = require('./../models/homeModel')
 const bcrypt = require('bcrypt')
 const countries = require('../data/countries.json')
+const jwt = require('jsonwebtoken')
+const { query } = require('express')
+
 
 
 var filiere = null
@@ -69,10 +72,10 @@ getSpecialities()
 
     
 const indexView = async (req, res, next) => {
-    if(req.session.idUser){
+    if(req.query.token){
         const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
-                where: {id : req.session.idUser}
+                where: {id : res.locals.user.idUser}
             }).then(
                 res => {
                     return res.dataValues.studentId
@@ -80,27 +83,71 @@ const indexView = async (req, res, next) => {
             )
         }
      })  
-     return res.render('home', {path:req.path,detail: true,ifConnected: req.session.idUser,etudiant:etudiant})
+     return res.render('home', {path:req.path,detail: true,user: res.locals.user,etudiant:etudiant})
     }
 
-        res.render('home', {path:req.path,detail: true,ifConnected: req.session.idUser,etudiant:null})
+        res.render('home', {path:req.path,detail: true,user:null,etudiant:null})
 }
 
-const aboutView = (req, res, next) => {
-    res.render('about', {path:req.path, detail: false,ifConnected: req.session.idUser})
+const aboutView = async(req, res, next) => {
+    if(req.query.token){
+        const etudiant =  await Student.findOne({
+            where : {id : await User.findOne({
+                where: {id : res.locals.user.idUser}
+            }).then(
+                res => {
+                    return res.dataValues.studentId
+                }
+            )
+        }
+     })  
+        return res.render('about', {etuduant:etudiant,path:req.path, detail: false,user: res.locals.user})
+    }
+    res.render('about', {path:req.path, detail: false,user: null})
 }
 
-const coursesView = (req, res, next) => {
-    res.render('courses', {path:req.path, detail: false,ifConnected: req.session.idUser})
+    
+
+const coursesView = async(req, res, next) => {
+    if(req.query.token){
+        const etudiant =  await Student.findOne({
+            where : {id : await User.findOne({
+                where: {id : res.locals.user.idUser}
+            }).then(
+                res => {
+                    return res.dataValues.studentId
+                }
+            )
+        }
+     })  
+        return res.render('courses', {etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
+    }
+    res.render('courses', {path:req.path, detail: false,user:null})
 }
 
-const eventView = (req, res, next) => {
-    res.render('events', {path:req.path, detail: false,ifConnected: req.session.idUser})
+const eventView = async(req, res, next) => {
+    if(req.query.token){
+        const etudiant =  await Student.findOne({
+            where : {id : await User.findOne({
+                where: {id : res.locals.user.idUser}
+            }).then(
+                res => {
+                    return res.dataValues.studentId
+                }
+            )
+        }
+     })  
+        return res.render('events', {etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
+    }
+    res.render('events', {path:req.path, detail: false,user:null})
 }
 
 const connexionView = (req, res, next) => {
+    if(req.query.token){
+        return res.render('connexion', {path:req.path, detail: false, message:'',user: res.locals.user})
+    }
+    res.render('connexion', {path:req.path, detail: false, message:'',user: null})
     
-    res.render('connexion', {path:req.path, detail: false, message:'',ifConnected: req.session.idUser})
     
 }
 
@@ -114,28 +161,53 @@ const loginTraitement = async (req, res, next) => {
         if(user){
             const comp = await comparePassword(password,user.dataValues.password)
             if(comp){
-                req.session.idUser = user.dataValues.id
-                res.redirect("/personalPage")
-            
+                const token = jwt.sign({
+                    idUser : user.dataValues.id,
+                    login: user.dataValues.login,
+                }, process.env.TOKEN_KEY)
+                
+                user.token = token
+                // res.locals.user = user
+
+                res.redirect(`/personalPage?token=${user.token}`)
+
+           
                 
             }else{
                 console.log("Mot de passe Incorect")
-                res.render('connexion',{path:req.path, detail: false,message:"Mot de password invalide",ifConnected: req.session.idUser})
+                return res.render('connexion',{path:req.path, detail: false,message:"Mot de password invalide",user: null})
             }  
         }else{
           
-            res.render('connexion',{path:req.path, detail: false,message:"L'utilisateur N'existe pas veillez vous inscrire",ifConnected: req.session.idUser})
+            return res.render('connexion',{path:req.path, detail: false,message:"L'utilisateur N'existe pas veillez vous inscrire",user: null})
         }          
         
     }
 }
 
 const inscrptionView = (req, res, next) => {
-    res.render('inscription', {path:req.path, detail: false,countries:Object.values(countries),filiere:filiere,ifConnected: req.session.idUser,message:'',modifier:false})
+    if(req.query.token){
+        return  res.render('inscription', {path:req.path, detail: false,countries:Object.values(countries),filiere:filiere,user:res.locals.user,message:'',modifier:false})
+   
+    }
+    res.render('inscription', {path:req.path, detail: false,countries:Object.values(countries),filiere:filiere,user:null,message:'',modifier:false})
 }
 
-const contactView = (req, res, next) => {
-    res.render('contact', {path:req.path,detail: false,ifConnected: req.session.idUser})
+const contactView = async(req, res, next) => {
+    if(req.query.token){
+        const etudiant =  await Student.findOne({
+            where : {id : await User.findOne({
+                where: {id : res.locals.user.idUser}
+            }).then(
+                res => {
+                    return res.dataValues.studentId
+                }
+            )
+        }
+     })  
+        return res.render('contact', {path:req.path,detail: false,user:res.locals.user})
+    }
+    res.render('contact', {path:req.path,detail: false,user: null})
 }
 
 const TraitementInscription = async (req, res, next) => {
@@ -154,11 +226,11 @@ const TraitementInscription = async (req, res, next) => {
     })
 
     if(student_by_cni){
-        return res.render('inscription', {path:req.path, detail: false,countries:Object.values(countries),filiere:filiere,ifConnected: req.session.idUser,message:"Ce numero de CNI a deja ete utiliser",modifier:false})  
+        return res.render('inscription', {path:req.path, detail: false,countries:Object.values(countries),filiere:filiere,user:null,message:"Ce numero de CNI a deja ete utiliser",modifier:false})  
     }
 
     if(student_by_email){
-        return res.render('inscription', {path:req.path, detail: false,countries:Object.values(countries),filiere:filiere,ifConnected: req.session.idUser,message:"Cet Email a deja ete utiliser", modifier:false})  
+        return res.render('inscription', {path:req.path, detail: false,countries:Object.values(countries),filiere:filiere,user:null,message:"Cet Email a deja ete utiliser", modifier:false})  
     }
 
     Student.sync().then(() => {
@@ -233,13 +305,13 @@ const TraitementInscription = async (req, res, next) => {
             
       
   
-    res.render('after_inscription',{credential:mycredentials, surname:responce.prenom, name:responce.nom,path:req.path, detail: false,ifConnected: req.session.idUser})
+    res.render('after_inscription',{credential:mycredentials, surname:responce.prenom, name:responce.nom,path:req.path, detail: false,user:null})
 }
 
 const mesInfos = async (req, res, next) => {
     const etudiant =  await Student.findOne({
         where : {id : await User.findOne({
-            where: {id : req.session.idUser}
+            where: {id : res.locals.user.idUser}
         }).then(
             res => {
                 return res.dataValues.studentId
@@ -263,7 +335,7 @@ const mesInfos = async (req, res, next) => {
          return res.dataValues.nom_specialite
      }
   )
-    res.render("personalPage", {specialite:specialite,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,ifConnected: req.session.idUser,page:1,message:''})
+    res.render("personalPage", {specialite:specialite,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:1,message:''})
 
 }
 
@@ -271,7 +343,7 @@ const mesInfos = async (req, res, next) => {
 const ficheInscription = async (req, res, next) => {
     const etudiant =  await Student.findOne({
         where : {id : await User.findOne({
-            where: {id : req.session.idUser}
+            where: {id : res.locals.user.idUser}
         }).then(
             res => {
                 return res.dataValues.studentId
@@ -295,28 +367,24 @@ const ficheInscription = async (req, res, next) => {
       }
    )
 
-    res.render("fiche",{filiere:filiere,specialite:specialite,etudiant : etudiant,detail: false,path:req.path,ifConnected: req.session.idUser,page:0,message:''})
+    res.render("fiche",{filiere:filiere,specialite:specialite,etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0,message:''})
 }
 
 
 const coursesDetailView = (req, res, next) => {
-    res.render('coursesDetails', {
-        title: 'name',
-        detail: false,
-        path:req.path,
-        ifConnected: req.session.idUser
-    })
+    if(req.query.token){
+        return res.render('coursesDetails', {title: 'name',detail: false,path:req.path,user:res.locals.user})
+    }
+    res.render('coursesDetails', {title: 'name',detail: false,path:req.path,user:null})
 }
 
-const eventsDetailView = (req, res, next) => {
-    let name = req.params.name
-    console.log(name)
-    res.render('eventsDetails', {
-        title: 'name',
-        detail: false,
-        path:req.path,
-        ifConnected: req.session.idUser
-    })
+const eventsDetailView = async (req, res, next) => {
+    if(req.query.token){
+       
+        return res.render('eventsDetails', {title: 'name',detail: false,path:req.path,user:res.locals.user})
+    }
+    
+    res.render('eventsDetails', {title: 'name',detail: false,path:req.path,user:null})
 }
 
 
@@ -325,27 +393,28 @@ const getSpecialityByFK = (req, res, next) => {
 }
 
 const protectionRoute = (req, res, next) => {
-    if(!req.session.idUser){
-        res.redirect('/connexion')
+    const token = req.query.token
+    if(token){
+        jwt.verify(token, process.env.TOKEN_KEY,(err, user) => {
+            if(err){
+                return res.redirect('/connexion')
+            }
+            next()
+        })
     }else{
-        next()
+        return res.redirect('/connexion')
     }
 }
 
 const deconnexion = (req, res, next) => {
-    req.session.destroy((err) => {
-        if(err){
-            return res.render("connexion")
-        }
-        res.clearCookie(process.env.SESSION_NAME)
-        return res.redirect("/connexion")
-    })
+   res.locals.user = undefined
+   return res.redirect('/connexion')
 }
 
 const personalPage = async (req, res, next) => {
      const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
-                where: {id : req.session.idUser}
+                where: {id : res.locals.user.idUser}
             }).then(
                 res => {
                     return res.dataValues.studentId
@@ -354,13 +423,13 @@ const personalPage = async (req, res, next) => {
         }
      })  
 
-    res.render("personalPage", {etudiant : etudiant,detail: false,path:req.path,ifConnected: req.session.idUser,page:0,message:''})
+    res.render("personalPage", {etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0,message:''})
 }
 
 const modifierInfos = async (req, res, next) => {
     const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
-                where: {id : req.session.idUser}
+                where: {id : res.locals.user.idUser}
             }).then(
                 res => {
                     return res.dataValues.studentId
@@ -368,7 +437,7 @@ const modifierInfos = async (req, res, next) => {
             )
         }
     })
-    return res.render('inscription', {path:req.path, detail: false,etudiant:etudiant,countries:Object.values(countries),specialites:specialites,filiere:filiere,ifConnected: req.session.idUser,message:'', modifier:true})  
+    return res.render('inscription', {path:req.path, detail: false,etudiant:etudiant,countries:Object.values(countries),specialites:specialites,filiere:filiere,user:res.locals.user,message:'', modifier:true})  
 
 
 }
@@ -409,7 +478,7 @@ const updateInscription = async (req, res, next) => {
         },
         {
           where: {id : await User.findOne({
-            where: {id : req.session.idUser}
+            where: {id : res.locals.user.idUser}
                 }).then(
                     res => {
                         return res.dataValues.studentId
@@ -424,7 +493,7 @@ const updateInscription = async (req, res, next) => {
 const modifPassword = async (req, res, next) => {
     const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
-                where: {id : req.session.idUser}
+                where: {id : res.locals.user.idUser}
             }).then(
                 res => {
                     return res.dataValues.studentId
@@ -433,11 +502,7 @@ const modifPassword = async (req, res, next) => {
         }
     })
 
-
-
-
-
-    res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,ifConnected: req.session.idUser,page:2,message:''})
+    res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:2,message:''})
 
 }
 
@@ -445,7 +510,7 @@ const modifPhoto = async (req, res, next) => {
    
     const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
-                where: {id : req.session.idUser}
+                where: {id : res.locals.user.idUser}
             }).then(
                 res => {
                     return res.dataValues.studentId
@@ -454,14 +519,14 @@ const modifPhoto = async (req, res, next) => {
         }
     })
 
-    res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,ifConnected: req.session.idUser,page:3,message:''})
+    res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:3,message:''})
 
 }
 
 const modifPhotoTraitement = async (req, res, next) => {
     const etudiant =  await Student.findOne({
         where : {id : await User.findOne({
-                where: {id : req.session.idUser}
+                where: {id : res.locals.user.idUser}
             }).then(
                 res => {
                     return res.dataValues.studentId
@@ -484,14 +549,14 @@ const modifPhotoTraitement = async (req, res, next) => {
         )
     }
 
-    return res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,ifConnected: req.session.idUser,page:0, message:""})
+    return res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0, message:""})
 
 }
 
 const modifPasswordTraitement = async (req, res, next) => {
     const etudiant =  await Student.findOne({
         where : {id : await User.findOne({
-            where: {id : req.session.idUser}
+            where: {id : res.locals.user.idUser}
         }).then(
             res => {
                 return res.dataValues.studentId
@@ -503,16 +568,16 @@ const modifPasswordTraitement = async (req, res, next) => {
     const {ancien, nouveau, confirm} = req.body
     if(ancien && nouveau && confirm){
         if(nouveau != confirm){
-            return res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,ifConnected: req.session.idUser,page:2, message:"Le mot nouveau de passe doit etre similaire a la confirmation"})
+            return res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,user: res.locals.user,page:2, message:"Le mot nouveau de passe doit etre similaire a la confirmation"})
         }
 
         const user = await User.findOne({
-            where : {id : req.session.idUser}
+            where : {id : res.locals.user.idUser}
         })
 
         const comp = await comparePassword(ancien,user.dataValues.password)
         if(!comp){
-            return res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,ifConnected: req.session.idUser,page:2, message:"Cet ancien mot de passe est incorrect"})
+            return res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,user: res.locals.user,page:2, message:"Cet ancien mot de passe est incorrect"})
         }
            
         await User.update(
@@ -521,13 +586,13 @@ const modifPasswordTraitement = async (req, res, next) => {
             },
             {
                 where : {
-                    id: req.session.idUser
+                    id: res.locals.user.idUser
                 }
             }
 
         )
 
-        return res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,ifConnected: req.session.idUser,page:0, message:""})
+        return res.render("personalPage", {specialite:null,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,user: res.locals.user,page:0, message:""})
 
     }
 

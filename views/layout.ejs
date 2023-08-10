@@ -91,7 +91,7 @@
         <!--Header Start-->
         <header id="rs-header" class="rs-header">
             
-            <% if(!ifConnected) { %>
+            <% if(!user) { %>
             <div class="rs-header-top">
                 <div class="container">
                     <div class="row">
@@ -183,40 +183,40 @@
                                     <ul class="nav-menu">
                                         <!-- Home -->
                                         
-                                        <li  class="menu-item-has-children <% if(path == '/') { %> active <% } %>"> <a href="/" class="home">Accueille</a>
+                                        <li  class="menu-item-has-children <% if(path == '/') { %> active <% } %>"> <a href=<%= "/?token=" + (user ? user.token : '') %> class="home">Accueille</a>
                                         
                                         </li>
                                         
                                         <!-- End Home --> 
                                         
                                         <!--About Menu Start-->
-                                        <li class="menu-item-has-children <% if(path == '/about') { %> active <% } %>"> <a href="/about">À propos de nous </a>
+                                        <li class="menu-item-has-children <% if(path == '/about') { %> active <% } %>"> <a href=<%= "/about?token=" + (user ? user.token : '') %>>À propos de nous </a>
                                         
                                         </li>
                                       
-                                        <li class="menu-item-has-children <% if(path == '/courses') { %> active <% } %>"> <a href="/courses">Filiéres</a>
+                                        <li class="menu-item-has-children <% if(path == '/courses') { %> active <% } %>"> <a href=<%= "/courses?token=" + (user ? user.token : '') %>>Filiéres</a>
                                         
                                         </li>
                                         <!--Courses Menu End-->
                                         
                                         <!--Events Menu Start-->
-                                        <li class="menu-item-has-children <% if(path == '/events') { %> active <% } %>"> <a href="/events">Évènements</a>
+                                        <li class="menu-item-has-children <% if(path == '/events') { %> active <% } %>"> <a href=<%= "/events?token=" + (user ? user.token : '') %>>Évènements</a>
                                         
                                         </li>
                                         <!--Events Menu End-->
                                         
                                         <!-- Drop Down -->
-                                        <% if(ifConnected) { %><li class="menu-item-has-children <% if(path == '/deconnexion') { %> active <% } %>"> <a href="/deconnexion">Déconnexion</a></li><% } else { %><li class="menu-item-has-children <% if(path == '/connexion') { %> active <% } %>"> <a href="/connexion">Connexion</a></li><% } %>
+                                        <% if(user) { %><li class="menu-item-has-children <% if(path == '/deconnexion') { %> active <% } %>"> <a href="/deconnexion">Déconnexion</a></li><% } else { %><li class="menu-item-has-children <% if(path == '/connexion') { %> active <% } %>"> <a href=<%= "/connexion?token=" + (user ? user.token : '') %>>Connexion</a></li><% } %>
                                         <!--End Icons -->
                                         
                                         <!--blog Menu Start-->
-                                        <% if(!ifConnected) { %><li class="menu-item-has-children <% if(path == '/inscription') { %> active <% } %>"> <a href="/inscription">Inscription</a><% } else { %> <li class="menu-item-has-children <% if(path.split('/')[1] == 'personalPage' || path=='/personalpage') { %> active <% } %>"> <a href="/personalpage">Ma Session</a><% } %>
+                                        <% if(!user) { %><li class="menu-item-has-children <% if(path == '/inscription') { %> active <% } %>"> <a href="/inscription">Inscription</a><% } else { %> <li class="menu-item-has-children <% if(path.split('/')[1] == 'personalPage' || path=='/personalpage') { %> active <% } %>"> <a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>Ma Session</a><% } %>
                                 
                                         </li>
                                         <!--blog Menu End-->
                                         
                                         <!--Contact Menu Start-->
-                                        <li class="menu-item-has-children <% if(path == '/contact') { %> active <% } %>"> <a href="/contact">Contacts</a></li>
+                                        <li class="menu-item-has-children <% if(path == '/contact') { %> active <% } %>"> <a href=<%= "/contact?token=" + (user ? user.token : "") %>>Contacts</a></li>
                                         <!--Contact Menu End-->
                                     </ul>
                                 </nav>
@@ -353,7 +353,7 @@
     <%- body %>
 
     <% if(path != "/personalPage/ma_fiche_inscription" ) { %>
-    <footer id="rs-footer" class="bg3 rs-footer" style="background-color: black;">
+    <footer id="rs-footer" class="bg3 rs-footer sec-spacer" style="background-color: black;">
         <div class="container">
             <!-- Footer Address -->
             <div>
