@@ -47,24 +47,24 @@ const data = [
   
   ]
 
-const getSpecialities = () => {
-    var deleted = []
-    let filiere = document.querySelector('#filiere')
-    let specialites_content = document.querySelector('#specialite')
-    let my_specialites = document.querySelector('#specialite').children 
-    console.log(my_specialites)
-    for(let i = 0; i<data.length;i++){
-      if(my_specialites[i].getAttribute('value') != filiere.value){
-        my_specialites[i].style.display="none"
-      }else{
-        my_specialites[i].style.display="block"
-        my_specialites[i].setAttribute('selected',true)
-      }
-    }
+// const getSpecialities = () => {
+//     var deleted = []
+//     let filiere = document.querySelector('#filiere')
+//     let specialites_content = document.querySelector('#specialite')
+//     let my_specialites = document.querySelector('#specialite').children 
+//     console.log(my_specialites)
+//     for(let i = 0; i<data.length;i++){
+//       if(my_specialites[i].getAttribute('value') != filiere.value){
+//         my_specialites[i].style.display="none"
+//       }else{
+//         my_specialites[i].style.display="block"
+//         my_specialites[i].setAttribute('selected',true)
+//       }
+//     }
 
-}
+// }
 
-    var jeu = setInterval(getSpecialities, 100)
+    // var jeu = setInterval(getSpecialities, 100)
       
 //     // try {
 //     //   const response = await axios.get(`http://localhost:3000/specialities/`).then((res) => {

@@ -259,9 +259,14 @@
                         <div class="input-div">
                             <label for="specialite">Selectionner la Specialite<em class="red">*</em></label>
                             <select id="specialite" id="specialite" name="specialite" required require>
-                                <% if(specialites) { for(var i=0; i<specialites.length; i++) {%>
-                                    <option   value=<%- specialites[i].dataValues.filiereId %>><%- specialites[i].dataValues.nom_specialite %></option>
-                                <% }} %>
+                             <% if(filiere) { for(var i=0; i<filiere.length; i++) {%>
+                                <optgroup label="<%= filiere[i].dataValues.nom_filiere %>">
+                                    <% if(specialites) { for(var j=0; j<specialites.length; j++) {%>
+                                        <% if(filiere[i].dataValues.id == specialites[j].dataValues.filiereId) { %>
+                                        <option   value=<%- specialites[j].dataValues.filiereId %>><%- specialites[j].dataValues.nom_specialite %></option>
+                                    <% }}}}} %>
+                                </optgroup>
+                    
                             </select>
                         </div>
                     </div>
