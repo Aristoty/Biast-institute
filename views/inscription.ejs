@@ -248,7 +248,7 @@
                     <div class="input-text">
                         <div class="input-div">
                             <label for="filiere">Selectionne la Filiere<em class="red">*</em></label>
-                            <select id="filiere" onchange='getSpecialities()' id="filiere" name="filiere" required require>
+                            <select id="filiere"  id="filiere" name="filiere" required require>
                                 <% if(filiere) { for(var i=0; i<filiere.length; i++) {%>
                                     <option  value=<%- filiere[i].dataValues.id %>><%- filiere[i].dataValues.nom_filiere %></option>
                                 <% }} %>
@@ -259,6 +259,9 @@
                         <div class="input-div">
                             <label for="specialite">Selectionner la Specialite<em class="red">*</em></label>
                             <select id="specialite" id="specialite" name="specialite" required require>
+                                <% if(specialites) { for(var i=0; i<specialites.length; i++) {%>
+                                    <option   value=<%- specialites[i].dataValues.filiereId %>><%- specialites[i].dataValues.nom_specialite %></option>
+                                <% }} %>
                             </select>
                         </div>
                     </div>
