@@ -278,11 +278,11 @@ const TraitementInscription = async (req, res, next) => {
     })
 
     if(student_by_cni){
-        return res.render('inscription', {path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Ce numero de CNI a deja ete utiliser",modifier:false})  
+        return res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Ce numero de CNI a deja ete utiliser",modifier:false})  
     }
 
     if(student_by_email){
-        return res.render('inscription', {path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Cet Email a deja ete utiliser", modifier:false})  
+        return res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Cet Email a deja ete utiliser", modifier:false})  
     }
 
     Student.sync().then(() => {
@@ -357,7 +357,7 @@ const TraitementInscription = async (req, res, next) => {
             
       
   
-    res.render('after_inscription',{credential:mycredentials, surname:responce.prenom, name:responce.nom,path:req.path, detail: false,user:null})
+    res.render('after_inscription',{specialites:my_specialites,credential:mycredentials, surname:responce.prenom, name:responce.nom,path:req.path, detail: false,user:null})
 }
 
 const mesInfos = async (req, res, next) => {
