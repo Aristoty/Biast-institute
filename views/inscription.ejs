@@ -264,9 +264,9 @@
                                     <% if(specialites) { for(var j=0; j<specialites.length; j++) {%>
                                         <% if(filiere[i].dataValues.id == specialites[j].dataValues.filiereId) { %>
                                         <option   value=<%- specialites[j].dataValues.filiereId %>><%- specialites[j].dataValues.nom_specialite %></option>
-                                    <% }}}}} %>
+                                    
                                 </optgroup>
-                    
+                            <% }}}}} %>
                             </select>
                         </div>
                     </div>
