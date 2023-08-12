@@ -1,0 +1,12 @@
+[
+    {"dataValues" : {"id":1, "nom_filiere":"Géni Electrique","description": "Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue."}},
+    {"dataValues" : {"id":2, "nom_filiere":"Géni Civil", "description":"Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue."}},
+    {"dataValues" : {"id":3, "nom_filiere":"Géni Mécanique et Productique", "description":"Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue."}},
+    {"dataValues" : {"id":4, "nom_filiere":"Réseaux et télécommuications", "description":"Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue."}},
+    {"dataValues" : {"id":5, "nom_filiere":"Géni Informatique", "description":"Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue."}},
+    {"dataValues" : {"id":6, "nom_filiere":"Commerce et Vente", "description":"Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue."}},
+    {"dataValues" : {"id":7, "nom_filiere":"Gestion", "description":"Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue."}},
+    {"dataValues" : {"id":8, "nom_filiere":"Agriculture et Elevage", "description":"Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue."}},
+    {"dataValues" : {"id":9, "nom_filiere":"Etude Medico-Sanitaire", "description":"Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue."}},
+    {"dataValues" : {"id":10,"nom_filiere":"Science et Techniques Biomedicale", "description":"Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue."}}
+]

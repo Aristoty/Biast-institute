@@ -1,62 +1,14 @@
 const axios = require('axios')
 const { sequelize } = require('./../sequelize')
-const { Student, User, Filiere, Specialite, Credential } = require('./../models/homeModel')
+const { Event, Student, User, Filiere, Specialite, Credential } = require('./../models/homeModel')
 const bcrypt = require('bcrypt')
 const countries = require('../data/countries.json')
 const jwt = require('jsonwebtoken')
+const my_filieres = require('../data/filieres.json')
+const my_specialites = require('../data/specialites.json')
 
-const my_filieres = [
-    {dataValues : {id:1, nom_filiere:'Géni Electrique',description: 'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.'}},
-    {dataValues : {id:2, nom_filiere:'Géni Civil', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.'}},
-    {dataValues : {id:3, nom_filiere:'Géni Mécanique et Productique', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.'}},
-    {dataValues : {id:4, nom_filiere:'Réseaux et télécommuications', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.'}},
-    {dataValues : {id:5, nom_filiere:'Géni Informatique', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.'}},
-    {dataValues : {id:6, nom_filiere:'Commerce et Vente', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.'}},
-    {dataValues : {id:7, nom_filiere:'Gestion', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.'}},
-    {dataValues : {id:8, nom_filiere:'Agriculture et Elevage', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.'}},
-    {dataValues : {id:9, nom_filiere:'Etude Medico-Sanitaire', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.'}},
-    {dataValues : {id:10,nom_filiere:'Science et Techniques Biomedicale', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.'}}
-]
 
-const my_specialites = [
-{dataValues :{id:1, nom_specialite:'Electrotechnique', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:1}},
-{dataValues :{id:2, nom_specialite:'Maintenance des Appareils Biomedicaux', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.',filiereId: 1}},
-{dataValues :{id:3, nom_specialite:'Energies Renouvelables', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:1}},
-{dataValues :{id:4, nom_specialite:'Instrumentation et regulation', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:1}},
-{dataValues :{id:5, nom_specialite:'Batiment', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:2}},
-{dataValues :{id:6, nom_specialite:'Traveaux publics', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.',filiereId: 2}},
-{dataValues :{id:7, nom_specialite:'Geometre Topographe', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.',filiereId: 2}},
-{dataValues :{id:8, nom_specialite:'Geotechnique et Geologie Appliquee',description: 'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.',filiereId: 2}},
-{dataValues :{id:9, nom_specialite:'Mecatronique', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:3}},
-{dataValues :{id:10, nom_specialite:'Fabrication Mecanique', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:3}},
-{dataValues :{id:11, nom_specialite:'Construction Mecanique', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:3}},
-{dataValues :{id:12, nom_specialite:'Chaudrerie et Soudure', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:3}},
-{dataValues :{id:13, nom_specialite:'Maintenance des Systemes Industriels', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.',filiereId: 3}},
-{dataValues :{id:14, nom_specialite:'Telecommunication', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:4}},
-{dataValues :{id:15, nom_specialite:'Reseaux et Securite', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:4}},
-{dataValues :{id:16, nom_specialite:'Genie Logiciel', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:5}},
-{dataValues :{id:17, nom_specialite:'Infographie et Web Design', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.',filiereId: 5}},
-{dataValues :{id:18, nom_specialite:'Maintenance des Systemes Informatiques', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.',filiereId: 5}},
-{dataValues :{id:19, nom_specialite:'Informatique Industrielle et Automatisme', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:5}},
-{dataValues :{id:20, nom_specialite:'Commerce Internationnal',description: 'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:6}},
-{dataValues :{id:21, nom_specialite:'Marqueting-Commerce-Vente', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.',filiereId: 6}},
-{dataValues :{id:22, nom_specialite:'Assurance', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:7}},
-{dataValues :{id:23, nom_specialite:'Assistant Manager', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:7}},
-{dataValues :{id:24, nom_specialite:'Banque et Finances', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:7}},
-{dataValues :{id:25, nom_specialite:'Comptabilite et Gestion des Entreprises', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:7}},
-{dataValues :{id:26, nom_specialite:'Gestion des Ressources Humaines',description: 'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:7}},
-{dataValues :{id:27, nom_specialite:'Gestion Logistique et Transport', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:7}},
-{dataValues :{id:28, nom_specialite:'Gestion des Collectivite Territorialles', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:7}},
-{dataValues :{id:29, nom_specialite:'Production Vegetale', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:8}},
-{dataValues :{id:30, nom_specialite:'Production Animale', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:8}},
-{dataValues :{id:31, nom_specialite:'Entreprenariat Agropastoral', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:8}},
-{dataValues :{id:32, nom_specialite:'Conseiller Agropastoral', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:8}},
-{dataValues :{id:33, nom_specialite:'Sage-Femmes', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:9}},
-{dataValues :{id:34, nom_specialite:'Sciences Infirmiere', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:9}},
-{dataValues :{id:35, nom_specialite:'Technique de Laboratoire et d\'analyse medicales', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:10}},
-{dataValues :{id:36, nom_specialite:'Techniques Pharmaceutiques', description:'Cras ultricies lacus consectetur, consectetur scelerisque arcu.Curabitur Aenean egestas a Nullam augue augue.', filiereId:10}}
 
-]
 
 
 
@@ -124,6 +76,13 @@ getSpecialities()
 
     
 const indexView = async (req, res, next) => {
+
+    const events = await Event.findAll().then(res => {
+        return res
+    }).catch((error) => {
+        console.error('Failed to retrieve data : ', error);
+    })
+
     if(req.query.token){
         const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
@@ -135,10 +94,10 @@ const indexView = async (req, res, next) => {
             )
         }
      })  
-     return res.render('home', {path:req.path,detail: true,user: res.locals.user,etudiant:etudiant})
+     return res.render('home', {events:events,filiere:filiere,path:req.path,detail: true,user: res.locals.user,etudiant:etudiant})
     }
 
-        res.render('home', {path:req.path,detail: true,user:null,etudiant:null})
+        res.render('home', {events:events,filiere:filiere,path:req.path,detail: true,user:null,etudiant:null})
 }
 
 const aboutView = async(req, res, next) => {
@@ -161,6 +120,7 @@ const aboutView = async(req, res, next) => {
     
 
 const coursesView = async(req, res, next) => {
+
     if(req.query.token){
         const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
@@ -172,12 +132,18 @@ const coursesView = async(req, res, next) => {
             )
         }
      })  
-        return res.render('courses', {etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
+        return res.render('courses', {filiere:filiere,etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
     }
-    res.render('courses', {path:req.path, detail: false,user:null})
+    res.render('courses', {filiere:filiere,path:req.path, detail: false,user:null})
 }
 
 const eventView = async(req, res, next) => {
+    const events = await Event.findAll().then(res => {
+        return res
+    }).catch((error) => {
+        console.error('Failed to retrieve data : ', error);
+    })
+
     if(req.query.token){
         const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
@@ -189,9 +155,9 @@ const eventView = async(req, res, next) => {
             )
         }
      })  
-        return res.render('events', {etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
+        return res.render('events', {events:events,etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
     }
-    res.render('events', {path:req.path, detail: false,user:null})
+    res.render('events', {events:events,path:req.path, detail: false,user:null})
 }
 
 const connexionView = (req, res, next) => {
@@ -285,8 +251,8 @@ const TraitementInscription = async (req, res, next) => {
         return res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Cet Email a deja ete utiliser", modifier:false})  
     }
 
-    Student.sync().then(() => {
-        Student.create(
+    // Student.sync().then(() => {
+        await Student.create(
             {
                 nom:responce.nom,
                 prenom: responce.prenom,
@@ -325,35 +291,67 @@ const TraitementInscription = async (req, res, next) => {
             }).catch((error) => {
                 console.error('Failed to create a new record : ', error);
             });
-     })
+    //  })
 
 
     let mycredentials = generationAleatoireLoginPass()
-        Credential.create({
+        await Credential.create({
             login : mycredentials.Login,
             password : await hashPassword(mycredentials.Password),
             numero_cni : responce.numero_cni,
             email : responce.email,
             nom : responce.nom
         })
-        User.create(
-            {
-                login:mycredentials.Login,
-                password: await hashPassword(mycredentials.Password),  
-                studentId: await Student.findOne({
-                    where : {nom:responce.nom, email:responce.email}
-                }).then(res => {
-                    return res.dataValues.id
+
+        const studentid = await Student.findOne({
+            where : {nom:responce.nom, email:responce.email}
+        }).then(res => {
+            return res.dataValues.id
+        }).catch((error) => {
+            console.error('Failed to retrieve data : ', error);
+        })
+
+        if(studentid){
+           await User.create(
+                {
+                    login:mycredentials.Login,
+                    password: await hashPassword(mycredentials.Password),  
+                    studentId: studentid
+                },
+            
+                ).then(res => {
+                    console.log(res)
                 }).catch((error) => {
-                    console.error('Failed to retrieve data : ', error);
+                    console.error('Failed to create a new record : ', error);
+                });
+
+
+                let nbr_inscrits = await Filiere.findOne({
+                    where : {
+                        id: responce.filiere
+                    }
+                }).then((res) => {
+                    return res.dataValues.nbr_inscrits
                 })
-            },
+
+                nbr_inscrits = nbr_inscrits + 1
+                await Filiere.update({
+                    nbr_inscrits: nbr_inscrits
+                },
+                {
+                    where : {
+                        id: responce.filiere
+                    }
+                })
+
+
+
+        }else{
+        return res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Oups, quelque chose c'est mal passe",modifier:false})  
         
-            ).then(res => {
-                console.log(res)
-            }).catch((error) => {
-                console.error('Failed to create a new record : ', error);
-            });
+        }
+
+       
             
       
   
@@ -387,7 +385,7 @@ const mesInfos = async (req, res, next) => {
          return res.dataValues.nom_specialite
      }
   )
-    res.render("personalPage", {specialite:specialite,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:1,message:''})
+    res.render("personalPage", {specialite:specialite,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:1,message:''})
 
 }
 
@@ -419,24 +417,47 @@ const ficheInscription = async (req, res, next) => {
       }
    )
 
-    res.render("fiche",{filiere:my_filieres,specialite:specialite,etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0,message:''})
+    res.render("fiche",{filiere:filiere,specialite:specialite,etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0,message:''})
 }
 
 
-const coursesDetailView = (req, res, next) => {
+const coursesDetailView = async(req, res, next) => {
+    const id = req.params.id
+    const specialite = await Specialite.findAll({
+        where : { filiereId: id}
+    })
+
+    const cours = await Filiere.findOne({
+        where : {id : id}
+    })
+
+    const student = await Student.findAll({
+        where : {filiereId : id}
+    })
+
+   
+    
     if(req.query.token){
         return res.render('coursesDetails', {title: 'name',detail: false,path:req.path,user:res.locals.user})
     }
-    res.render('coursesDetails', {title: 'name',detail: false,path:req.path,user:null})
+    res.render('coursesDetails', {student:student,cours:cours,specialite:specialite,title: 'name',detail: false,path:req.path,user:null})
 }
 
 const eventsDetailView = async (req, res, next) => {
+    const id = req.params.id
+
+    const events = await Event.findOne({
+        where : {
+            id : id
+        }
+    })
+
     if(req.query.token){
        
         return res.render('eventsDetails', {title: 'name',detail: false,path:req.path,user:res.locals.user})
     }
     
-    res.render('eventsDetails', {title: 'name',detail: false,path:req.path,user:null})
+    res.render('eventsDetails', {events:events,title: 'name',detail: false,path:req.path,user:null})
 }
 
 
@@ -489,7 +510,7 @@ const modifierInfos = async (req, res, next) => {
             )
         }
     })
-    return res.render('inscription', {path:req.path, detail: false,etudiant:etudiant,countries:Object.values(countries),specialites:specialites,filiere:my_filieres,user:res.locals.user,message:'', modifier:true})  
+    return res.render('inscription', {path:req.path, detail: false,etudiant:etudiant,countries:Object.values(countries),specialites:my_specialites,filiere:my_filieres,user:res.locals.user,message:'', modifier:true})  
 
 
 }

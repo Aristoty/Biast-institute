@@ -170,7 +170,19 @@ const Filiere = sequelize.define('filieres', {
     description: {
         type: DataTypes.TEXT,
         allowNull: true,
-}
+    },
+    image_desc: {
+        type:DataTypes.STRING(255),
+        allowNull:true
+    },
+    nbr_specialite: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+    nbr_inscrits:{
+        type:DataTypes.INTEGER,
+        defaultValue: 0
+    }
 })
 
 const Specialite = sequelize.define('specialites', {
@@ -211,6 +223,45 @@ const Credential = sequelize.define('credentials', {
     }
 })
 
+const Event = sequelize.define('events', {
+    id: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        autoIncrement: true,
+        primaryKey: true,
+        unique: true,
+    },
+    title: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+    },
+    date: {
+        type: DataTypes.DATEONLY,
+        allowNull: true,
+    },
+    temps_debut: {
+        type: DataTypes.TIME,
+        allowNull: true,
+    },
+    temps_fin: {
+        type: DataTypes.TIME,
+        allowNull: true,
+    },
+    lieu: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+    },
+    image_dsc:{
+        type: DataTypes.STRING(255),
+        allowNull: true,
+    }
+})
+
+// sequelize.sync().then(() => {
+//     console.log('Migration made successfully!');
+//     }).catch((error) => {
+//     console.error('Unable to create table : ', error);
+// });
+
 
 Filiere.hasMany(Specialite, { as: "specialites" });
 Specialite.belongsTo(Filiere, {
@@ -231,14 +282,13 @@ Student.belongsTo(Specialite, {
 });
 
 
-
-
 module.exports = {
     Student,
     User,
     Filiere,
     Specialite,
     Credential,
+    Event,
     sequelize
 }
 

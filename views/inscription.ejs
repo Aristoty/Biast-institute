@@ -262,7 +262,7 @@
                              <% if(filiere) { for(var i=0; i<filiere.length; i++) {%>
                                     <% if(specialites) { for(var j=0; j<specialites.length; j++) {%>
                                         <% if(filiere[i].dataValues.id == specialites[j].dataValues.filiereId) { %>
-                                        <option   value=<%- specialites[j].dataValues.filiereId %>><%= filiere[i].dataValues.nom_filiere %>==><%- specialites[j].dataValues.nom_specialite %></option>
+                                        <option   value=<%- specialites[j].dataValues.filiereId %>><%- filiere[i].dataValues.nom_filiere %>==><%- specialites[j].dataValues.nom_specialite %></option>
                                     
                                 
                             <% }}}}} %>

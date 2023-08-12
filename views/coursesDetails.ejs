@@ -1,16 +1,21 @@
-<div class="rs-courses-details sec-spacer pb-70">
+
+<div class="abt-title text-center">
+    <h2>Detail de la filière  : <%= cours.dataValues.nom_filiere %> </h2>
+</div><br>
+
+<div class="rs-courses-details  pb-70">
 <div class="container">
-    <div class="row mb-30">
-        <div class="col-lg-8 col-md-12">
-            <div class="detail-img">
-                <img src="/assets/images/courses/courses-details.jpg" alt="Courses Images" />
+    <!-- <div class="row"> -->
+        <!-- <div class="col-lg-8 col-md-12"> -->
+            <!-- <div class="detail-img">
+                <img src="/assets/images/courses/<%-cours.dataValues.image_desc %>" alt="Courses Images" />
                 <div class="course-seats">
                     170 <span>SEATS</span>
                 </div>
-            </div>
+            </div> -->
            
             <div class="course-desc">
-                <h3 class="desc-title">Course Description</h3>
+                <h3 class="desc-title">Description du cours</h3>
                 <div class="desc-text">
                     <p>
                         There are many variations of passages of Lorem Ipsum available, but the majority have suffered altera tion in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum
@@ -23,69 +28,32 @@
                     </p>
                 </div>
                 <div class="course-syllabus">
-                    <h3 class="desc-title">Course Branches</h3>
+                    <h3 class="desc-title">Les différentes Branches</h3>
                     <div id="accordion" class="rs-accordion-style1">
+                    
+                    <% if(specialite){for(var i = 0; i<specialite.length; i++){ %>
                         <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <h3 class="acdn-title" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <strong>Branche  1: </strong>
-                                    <span>Genie logiciel</span>
+                            <div class="card-header" id="heading<%- specialite[i].dataValues.id %>">
+                                <h3 class="acdn-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapse<%- specialite[i].dataValues.id %>" aria-expanded="true" aria-controls="collapse<%- specialite[i].dataValues.id %>">
+                                    <strong>Branche <%- i+1 %>: </strong>
+                                    <span><%- specialite[i].dataValues.nom_specialite %></span>
                                 </h3>
                             </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
+                            <div id="collapse<%- specialite[i].dataValues.id %>" class="collapse" aria-labelledby="heading<%- specialite[i].dataValues.id %>" data-bs-parent="#accordion">
                                 <div class="card-body">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
+                                    <%- specialite[i].dataValues.description %>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h3 class="acdn-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <strong>Branche  2: </strong><span>Infographie et web Design</span>
-                                </h3>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
-                                <div class="card-body">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <h3 class="acdn-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <strong>Branche  3: </strong>
-                                    <span>Maintenance des systeme informatique</span>
-                                </h3>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
-                                <div class="card-body">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card">
-                            <div class="card-header" id="headingFour">
-                                <h3 class="acdn-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                <strong>Branche  4: </strong><span>Informatique industrielle et automatisme</span>
-                                </h3>
-                            </div>
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#accordion">
-                                <div class="card-body">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                </div>
-                            </div>
-                        </div>
-                        
+                    <% } } %>
+          
                         
                     </div>
                 </div>
                 
             </div>
-        </div>
-        <div class="col-lg-4 col-md-12">
+        <!-- </div> -->
+        <!-- <div class="col-lg-4 col-md-12">
             <div class="sidebar-area">
                 
                 <div class="cate-box">
@@ -177,88 +145,31 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
 </div>
 <div id="rs-testimonial" class="rs-testimonial pt-100 pb-45 sec-color">
     <div class="container">
         <div class="sec-title-2 mb-50">
-            <h2>Student Reviews</h2>      
-            <p>Considering primary motivation for the generation of narratives is a useful concept</p>
+            <h2>Les Etudiants inscrits</h2>      
+            <p>Tous les étudiants inscrits à la filière Gestion <%= cours.dataValues.nom_filiere %></p>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div  class="rs-carousel owl-carousel" data-loop="true" data-items="2" data-margin="30" data-autoplay="true" data-autoplay-timeout="8000" data-smart-speed="1200" data-dots="false" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="true" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="true" data-ipad-device-dots="false" data-md-device="2" data-md-device-nav="true" data-md-device-dots="false">
+                <div  class="rs-carousel owl-carousel" data-loop="true" data-items="1" data-margin="30" data-autoplay="true" data-autoplay-timeout="8000" data-smart-speed="1200" data-dots="false" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="true" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="true" data-ipad-device-dots="false" data-md-device="2" data-md-device-nav="true" data-md-device-dots="false">
+                   <% if(student){ for(let i = 0; i<student.length; i++) { %>
                     <div class="testimonial-item">
                         <div class="testi-img">
-                            <img src="/assets/images/testimonial/1.jpg" alt="Jhon Smith"/>
+                            <img src="/assets/images/avatar/<%= student[i].dataValues.photo_profil %>" alt="<%= student[i].dataValues.nom %>"/>
                         </div>
                         <div class="testi-desc">
-                            <h4 class="testi-name">Luise Henrikes</h4>
-                            <div class="cl-client-rating">
-                                <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> 
-                            </div>
+                            <h4 class="testi-name"><%= student[i].dataValues.nom %> <%= student[i].dataValues.prenom %></h4>
                             <p>
-                                Etiam non elit nec augue tempor gravida et sed velit. Aliquam tempus eget lorem ut malesuada. Phasellus dictum est sed libero posuere dignissim.
+                                Inscrit dans la specialité numéro  <%= student[i].dataValues.specialiteId  %>.
                             </p>
                         </div>
                     </div>
-                    <div class="testimonial-item">
-                        <div class="testi-img">
-                            <img src="/assets/images/testimonial/2.jpg" alt="Jhon Smith"/>
-                        </div>
-                        <div class="testi-desc">
-                            <h4 class="testi-name">Aliana D’suza</h4>
-                            <div class="cl-client-rating">
-                                <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> 
-                            </div>
-                            <p>
-                                Tempor non elit nec augue nec gravida et sed velit. Aliquam tempus eget lorem ut malesuada. Phasellus dictum est sed libero posuere dignissim.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testi-img">
-                            <img src="/assets/images/testimonial/3.jpg" alt="Jhon Smith"/>
-                        </div>
-                        <div class="testi-desc">
-                            <h4 class="testi-name">Aliana D’suza</h4>
-                            <div class="cl-client-rating">
-                                <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> 
-                            </div>
-                            <p>
-                                Tempor non elit nec augue nec gravida et sed velit. Aliquam tempus eget lorem ut malesuada. Phasellus dictum est sed libero posuere dignissim.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testi-img">
-                            <img src="/assets/images/testimonial/4.jpg" alt="Jhon Smith"/>
-                        </div>
-                        <div class="testi-desc">
-                            <h4 class="testi-name">Aliana D’suza</h4>
-                            <div class="cl-client-rating">
-                                <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> 
-                            </div>
-                            <p>
-                                Tempor non elit nec augue nec gravida et sed velit. Aliquam tempus eget lorem ut malesuada. Phasellus dictum est sed libero posuere dignissim.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testi-img">
-                            <img src="/assets/images/testimonial/5.jpg" alt="Jhon Smith"/>
-                        </div>
-                        <div class="testi-desc">
-                            <h4 class="testi-name">Aliana D’suza</h4>
-                            <div class="cl-client-rating">
-                                <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> 
-                            </div>
-                            <p>
-                                Tempor non elit nec augue nec gravida et sed velit. Aliquam tempus eget lorem ut malesuada. Phasellus dictum est sed libero posuere dignissim.
-                            </p>
-                        </div>
-                    </div>
+                    <% }} %>
                 </div>
             </div>
         </div>
@@ -271,8 +182,8 @@
         
     <div class="container">
         <div class="abt-title mb-70 text-center">
-            <h2>OUR PARTNERS</h2>      
-            <p>Considering desire as primary motivation for the generation of narratives is a useful concept.</p>
+            <h2>NOS UNIVERSITÉS PARTENAIRES</h2>      
+            <p>Tous nos universités et entreprises partenaires partout dans le monde entier.</p>
         </div>
         <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
             <div class="partner-item">

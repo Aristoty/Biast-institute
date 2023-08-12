@@ -72,407 +72,32 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="false" data-autoplay-timeout="5000" data-smart-speed="1200" data-dots="true" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="true" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="true" data-ipad-device-dots="true" data-md-device="3" data-md-device-nav="true" data-md-device-dots="true">
+                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="1200" data-dots="true" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="true" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="true" data-ipad-device-dots="true" data-md-device="3" data-md-device-nav="true" data-md-device-dots="true">
+                      <% if(filiere) {for(var j=0; j<filiere.length; j++) { %>
                         <div class="cource-item">
                             <div class="cource-img">
-                                <img src="/assets/images/courses/1.jpg" alt="" />
-                                <a class="image-link" href="/courses/ElectricalIngineering" title="University Tour 2018">
+                                <img src=<%= "/assets/images/courses/" + filiere[j].dataValues.image_desc %> alt="" />
+                                <a class="image-link" href="/courses/<%= filiere[j].dataValues.id %>" title="<%= filiere[j].dataValues.nom_filiere %>">
                                     <i class="fa fa-link"></i>
                                 </a>
-                                <!-- <span class="course-value">$450</span> -->
                             </div>
                             <div class="course-body">
-                                <!-- <a href="#" class="course-category">Science</a> -->
-                                <h4 class="course-title"><a href="courses-details.html">Génie Électrique</a></h4>
+                                <h4 class="course-title"><a href="/courses/<%= filiere[j].dataValues.id %>"><%= filiere[j].dataValues.nom_filiere %></a></h4>
                                 <div class="review-wrap">
-                                  
-                                    <!-- <span class="review">25 Reviews</span> -->
                                 </div>
                                 <div class="course-desc">
                                     <p>
-                                        Quatre Specialités
+                                        <%= filiere[j].dataValues.nbr_specialite %> Specialités
                                     </p>
                                 </div>
                             </div>
                             <div class="course-footer">
-                                Nombre d’étudiants inscrit : 0
-                                <!-- <div class="course-time">
-                                    <span class="label">Course Time</span>
-                                    <span class="desc">3 Year</span>
-                                </div>
-                                <div class="course-student">
-                                    <span class="label">Course Student</span>
-                                    <span class="desc">95</span>
-                                </div> -->
-                                <!-- <div class="class-duration">
-                                    <span class="label">Class Duration</span>
-                                    <span class="desc">8:30-4:00</span>
-                                </div> -->
+                                Nombre d’étudiants inscrit : <%= filiere[j].dataValues.nbr_inscrits %>
+                            
                             </div>
                         </div>
-                        <div class="cource-item">
-                            <div class="cource-img">
-                                <img src="assets/images/courses/2.jpg" alt="" />
-                                <a class="image-link" href="courses-details.html" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- <span class="course-value">$450</span> -->
-                            </div>
-                            <div class="course-body">
-                                <!-- <a href="#" class="course-category">Science</a> -->
-                                <h4 class="course-title"><a href="courses-details.html">Génie Informatique</a></h4>
-                                <div class="review-wrap">
-                                    
-                                    <!-- <span class="review">39 Reviews</span> -->
-                                </div>
-                                <div class="course-desc">
-                                    <p>
-                                        Quatre Specialités
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                Nombre d’étudiants inscrit : 0
-                                <!-- <div class="course-time">
-                                    <span class="label">Course Time</span>
-                                    <span class="desc">4 Years</span>
-                                </div>
-                                <div class="course-student">
-                                    <span class="label">Course Student</span>
-                                    <span class="desc">99</span>
-                                </div>
-                                <div class="class-duration">
-                                    <span class="label">Class Duration</span>
-                                    <span class="desc">8:30-4:00</span>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="cource-item">
-                            <div class="cource-img">
-                                <img src="/assets/images/courses/3.jpg" alt="" />
-                                <a class="image-link" href="courses-details.html" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- <span class="course-value">$450</span> -->
-                            </div>
-                            <div class="course-body">
-                                <!-- <a href="#" class="course-category">Science</a> -->
-                                <h4 class="course-title"><a href="courses-details.html">Génie Civil</a></h4>
-                                <div class="review-wrap">
-                                    
-                                    <!-- <span class="review">22 Reviews</span> -->
-                                </div>
-                                <div class="course-desc">
-                                    <p>
-                                        Quatre Specialités
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                Nombre d’étudiants inscrit : 0
-                                <!-- <div class="course-time">
-                                    <span class="label">Course Time</span>
-                                    <span class="desc">3.5 Years</span>
-                                </div>
-                                <div class="course-student">
-                                    <span class="label">Course Student</span>
-                                    <span class="desc">80</span>
-                                </div>
-                                <div class="class-duration">
-                                    <span class="label">Class Duration</span>
-                                    <span class="desc">8:30-4:00</span>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="cource-item">
-                            <div class="cource-img">
-                                <img src="/assets/images/courses/manscience.jpg" alt="" />
-                                <a class="image-link" href="courses-details.html" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- <span class="course-value">$450</span> -->
-                            </div>
-                            <div class="course-body">
-                                <!-- <a href="#" class="course-category">Science</a> -->
-                                <h4 class="course-title"><a href="courses-details.html">Gestion</a></h4>
-                                <div class="review-wrap">
-                                   
-                                    <!-- <span class="review">22 Reviews</span> -->
-                                </div>
-                                <div class="course-desc">
-                                    <p>
-                                        Sept Specialités
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                Nombre d’étudiants inscrit : 0
-                                <!-- <div class="course-time">
-                                    <span class="label">Course Time</span>
-                                    <span class="desc">3.5 Years</span>
-                                </div>
-                                <div class="course-student">
-                                    <span class="label">Course Student</span>
-                                    <span class="desc">80</span>
-                                </div>
-                                <div class="class-duration">
-                                    <span class="label">Class Duration</span>
-                                    <span class="desc">8:30-4:00</span>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="cource-item">
-                            <div class="cource-img">
-                                <img src="/assets/images/courses/mecanic.jpg" alt="" />
-                                <a class="image-link" href="courses-details.html" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- <span class="course-value">$450</span> -->
-                            </div>
-                            <div class="course-body">
-                                <!-- <a href="#" class="course-category">Science</a> -->
-                                <h4 class="course-title"><a href="courses-details.html">Génie Mécanique</a></h4>
-                                <div class="review-wrap">
-                                   
-                                    <!-- <span class="review">22 Reviews</span> -->
-                                </div>
-                                <div class="course-desc">
-                                    <p>
-                                        Cinq Specialités
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                Nombre d’étudiants inscrit : 0
-                                <!-- <div class="course-time">
-                                    <span class="label">Course Time</span>
-                                    <span class="desc">3.5 Years</span>
-                                </div>
-                                <div class="course-student">
-                                    <span class="label">Course Student</span>
-                                    <span class="desc">80</span>
-                                </div>
-                                <div class="class-duration">
-                                    <span class="label">Class Duration</span>
-                                    <span class="desc">8:30-4:00</span>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="cource-item">
-                            <div class="cource-img">
-                                <img src="/assets/images/courses/sale.jpeg" alt="" />
-                                <a class="image-link" href="courses-details.html" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- <span class="course-value">$450</span> -->
-                            </div>
-                            <div class="course-body">
-                                <!-- <a href="#" class="course-category">Science</a> -->
-                                <h4 class="course-title"><a href="courses-details.html">Commerce et vente</a></h4>
-                                <div class="review-wrap">
-                                    <!-- <ul class="rating">
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star-half-empty"></li>
-                                    </ul> -->
-                                    <!-- <span class="review">22 Reviews</span> -->
-                                </div>
-                                <div class="course-desc">
-                                    <p>
-                                        Deux Specialités
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                Nombre d’étudiants inscrit : 0
-                                <!-- <div class="course-time">
-                                    <span class="label">Course Time</span>
-                                    <span class="desc">3.5 Years</span>
-                                </div>
-                                <div class="course-student">
-                                    <span class="label">Course Student</span>
-                                    <span class="desc">80</span>
-                                </div>
-                                <div class="class-duration">
-                                    <span class="label">Class Duration</span>
-                                    <span class="desc">8:30-4:00</span>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="cource-item">
-                            <div class="cource-img">
-                                <img src="/assets/images/courses/medical.jpg" alt="" />
-                                <a class="image-link" href="courses-details.html" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- <span class="course-value">$450</span> -->
-                            </div>
-                            <div class="course-body">
-                                <!-- <a href="#" class="course-category">Science</a> -->
-                                <h4 class="course-title"><a href="courses-details.html">Étude Medico-Sanitaire</a></h4>
-                                <div class="review-wrap">
-                                    <!-- <ul class="rating">
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star-half-empty"></li>
-                                    </ul> -->
-                                    <!-- <span class="review">22 Reviews</span> -->
-                                </div>
-                                <div class="course-desc">
-                                    <p>
-                                        Deux Specialités
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                Nombre d’étudiants inscrit : 0
-                                <!-- <div class="course-time">
-                                    <span class="label">Course Time</span>
-                                    <span class="desc">3.5 Years</span>
-                                </div>
-                                <div class="course-student">
-                                    <span class="label">Course Student</span>
-                                    <span class="desc">80</span>
-                                </div>
-                                <div class="class-duration">
-                                    <span class="label">Class Duration</span>
-                                    <span class="desc">8:30-4:00</span>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="cource-item">
-                            <div class="cource-img">
-                                <img src="/assets/images/courses/telecom.jpg" alt="" />
-                                <a class="image-link" href="courses-details.html" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- <span class="course-value">$450</span> -->
-                            </div>
-                            <div class="course-body">
-                                <!-- <a href="#" class="course-category">Science</a> -->
-                                <h4 class="course-title"><a href="courses-details.html">Génie réseaux et télécom</a></h4>
-                                <div class="review-wrap">
-                                    <!-- <ul class="rating">
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star-half-empty"></li>
-                                    </ul> -->
-                                    <!-- <span class="review">22 Reviews</span> -->
-                                </div>
-                                <div class="course-desc">
-                                    <p>
-                                        Deux Specialités
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                Nombre d’étudiants inscrit : 0
-                                <!-- <div class="course-time">
-                                    <span class="label">Course Time</span>
-                                    <span class="desc">3.5 Years</span>
-                                </div>
-                                <div class="course-student">
-                                    <span class="label">Course Student</span>
-                                    <span class="desc">80</span>
-                                </div>
-                                <div class="class-duration">
-                                    <span class="label">Class Duration</span>
-                                    <span class="desc">8:30-4:00</span>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="cource-item">
-                            <div class="cource-img">
-                                <img src="/assets/images/courses/biomedical.jpg" alt="" />
-                                <a class="image-link" href="courses-details.html" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- <span class="course-value">$450</span> -->
-                            </div>
-                            <div class="course-body">
-                                <!-- <a href="#" class="course-category">Science</a> -->
-                                <h4 class="course-title"><a href="courses-details.html">Science Biomedicale  and Technologie</a></h4>
-                                <div class="review-wrap">
-                                    <!-- <ul class="rating">
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star-half-empty"></li>
-                                    </ul> -->
-                                    <!-- <span class="review">22 Reviews</span> -->
-                                </div>
-                                <div class="course-desc">
-                                    <p>
-                                        Deux Specialités
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                Nombre d’étudiants inscrit : 0
-                                <!-- <div class="course-time">
-                                    <span class="label">Course Time</span>
-                                    <span class="desc">3.5 Years</span>
-                                </div>
-                                <div class="course-student">
-                                    <span class="label">Course Student</span>
-                                    <span class="desc">80</span>
-                                </div>
-                                <div class="class-duration">
-                                    <span class="label">Class Duration</span>
-                                    <span class="desc">8:30-4:00</span>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="cource-item">
-                            <div class="cource-img">
-                                <img src="/assets/images/courses/agricult.jpg" alt="" />
-                                <a class="image-link" href="courses-details.html" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- <span class="course-value">$450</span> -->
-                            </div>
-                            <div class="course-body">
-                                <!-- <a href="#" class="course-category">Science</a> -->
-                                <h4 class="course-title"><a href="courses-details.html">Agriculture et Élevage</a></h4>
-                                <div class="review-wrap">
-                                    <!-- <ul class="rating">
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star"></li>
-                                        <li class="fa fa-star-half-empty"></li>
-                                    </ul> -->
-                                    <!-- <span class="review">22 Reviews</span> -->
-                                </div>
-                                <div class="course-desc">
-                                    <p>
-                                        Quatre Specialités
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="course-footer">
-                                Nombre d’étudiants inscrit : 0
-                                <!-- <div class="course-time">
-                                    <span class="label">Course Time</span>
-                                    <span class="desc">3.5 Years</span>
-                                </div>
-                                <div class="course-student">
-                                    <span class="label">Course Student</span>
-                                    <span class="desc">80</span>
-                                </div>
-                                <div class="class-duration">
-                                    <span class="label">Class Duration</span>
-                                    <span class="desc">8:30-4:00</span>
-                                </div> -->
-                            </div>
-                        </div>
+                      <% }} %>
+                        
                     </div>
                 </div>
             </div>
@@ -491,7 +116,7 @@
                             <p>Biast, pour année antérieure est entrain de totaliser les effectifs suivants</p>
                         </div>
                         <div class="counter-img rs-image-effect-shine">
-                            <img src="/assets/images/counter/1.jpg" alt="Counter Discussion">
+                            <img src="/assets/images/counter/achieve.jpg" alt="Counter Discussion">
                         </div>
                     </div>
                 </div>
@@ -539,119 +164,37 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="false" data-autoplay-timeout="5000" data-smart-speed="1200" data-dots="true" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="true" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="true" data-ipad-device-dots="true" data-md-device="3" data-md-device-nav="true" data-md-device-dots="true">
+                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="1200" data-dots="true" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="true" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="true" data-ipad-device-dots="true" data-md-device="3" data-md-device-nav="true" data-md-device-dots="true">
+                      <% if(events){for(let i = 0; i<events.length; i++) { %>
                         <div class="event-item">
                             <div class="event-img">
-                                <img src="/assets/images/events/1.jpg" alt="" />
-                                <a class="image-link" href="/events" title="University Tour 2018">
+                                <img src="/assets/images/events/<%= events[i].dataValues.image_dsc %>" alt="<%= events[i].dataValues.image_desc %>" />
+                                <a class="image-link" href="/events/<%= events[i].dataValues.id %>" title="University Tour 2018">
                                     <i class="fa fa-link"></i>
                                 </a>
                             </div>
                             <div class="events-details sec-color">
                                 <div class="event-date">
                                     <i class="fa fa-calendar"></i>
-                                    <span>28 June 2017</span>
+                                    <span><%= events[i].dataValues.date %></span>
                                 </div>
-                                <h4 class="event-title"><a href="events-details.html">PRACTICE WORKSHOP 2018</a></h4>
+                                <h4 class="event-title"><a href="/events/<%= events[i].dataValues.id %>"><%= events[i].dataValues.title %> </a></h4>
                                 <div class="event-meta">
                                     <div class="event-time">
                                         <i class="fa fa-clock-o"></i>
-                                        <span>12.30AM-05.30PM</span>
+                                        <span>De <%= events[i].dataValues.temps_debut %>  à <%= events[i].dataValues.temps_fin %></span>
                                     </div>
                                     <div class="event-location">
                                         <i class="fa fa-map-marker"></i>
-                                        <span>Venue A, Main Campus</span>
+                                        <span><%= events[i].dataValues.lieu %> </span>
                                     </div>
                                 </div>
                                 <div class="event-btn">
-                                    <a href="#">Join Event <i class="fa fa-angle-double-right"></i></a>
+                                    <a href="#">Voir l'Évènement  <i class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="event-item">
-                            <div class="event-img">
-                                <img src="/assets/images/events/1.jpg" alt="" />
-                                <a class="image-link" href="/events/visite" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                            </div>
-                            <div class="events-details sec-color">
-                                <div class="event-date">
-                                    <i class="fa fa-calendar"></i>
-                                    <span>28 June 2017</span>
-                                </div>
-                                <h4 class="event-title"><a href="/events/visite">VISITE DE NANCY UNIVERSITY</a></h4>
-                                <div class="event-meta">
-                                    <div class="event-time">
-                                        <i class="fa fa-clock-o"></i>
-                                        <span>12.30AM-05.30PM</span>
-                                    </div>
-                                    <div class="event-location">
-                                        <i class="fa fa-map-marker"></i>
-                                        <span>Venue A, Main Campus</span>
-                                    </div>
-                                </div>
-                                <div class="event-btn">
-                                    <a href="#">Join Event <i class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event-item">
-                            <div class="event-img">
-                                <img src="/assets/images/events/2.jpg" alt="" />
-                                <a class="image-link" href="/events/campus" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                            </div>
-                            <div class="events-details sec-color">
-                                <div class="event-date">
-                                    <i class="fa fa-calendar"></i>
-                                    <span>28 April 2017</span>
-                                </div>
-                                <h4 class="event-title"><a href="/events/campus">CAMPUS EXAMINATION ROOM</a></h4>
-                                <div class="event-meta">
-                                    <div class="event-time">
-                                        <i class="fa fa-clock-o"></i>
-                                        <span>10.30AM-03.30PM</span>
-                                    </div>
-                                    <div class="event-location">
-                                        <i class="fa fa-map-marker"></i>
-                                        <span>Venue A, Main Campus</span>
-                                    </div>
-                                </div>
-                                <div class="event-btn">
-                                    <a href="#">Join Event <i class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event-item">
-                            <div class="event-img">
-                                <img src="/assets/images/events/3.jpg" alt="" />
-                                <a class="image-link" href="/events/graduation" title="University Tour 2018">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                            </div>
-                            <div class="events-details sec-color">
-                                <div class="event-date">
-                                    <i class="fa fa-calendar"></i>
-                                    <span>28 June 2017</span>
-                                </div>
-                                <h4 class="event-title"><a href="/events/graduation">BEST GRADUATION CEREMONY</a></h4>
-                                <div class="event-meta">
-                                    <div class="event-time">
-                                        <i class="fa fa-clock-o"></i>
-                                        <span>10.30AM-03.30PM</span>
-                                    </div>
-                                    <div class="event-location">
-                                        <i class="fa fa-map-marker"></i>
-                                        <span>Venue A, Main Campus</span>
-                                    </div>
-                                </div>
-                                <div class="event-btn">
-                                    <a href="#">Join Event <i class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                      <% }} %>
                     </div>
                 </div>
             </div>
@@ -664,24 +207,26 @@
         <div class="container">
             <div class="sec-title mb-50 text-center">
                 <h2>NOTRE PERSONNEL EXPÉRIMENTÉ</h2>      
-                <p>Considering desire as primary motivation for the generation of narratives is a useful concept.</p>
+                <p>Les experts de BIAST sont là pour tous vos préoccupations et vous encourage dans vos diffèrent choix de filières
+
+                </p>
             </div>
             <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="false" data-autoplay-timeout="5000" data-smart-speed="1200" data-dots="true" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="true" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="true" data-ipad-device-dots="true" data-md-device="3" data-md-device-nav="true" data-md-device-dots="true">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="/assets/images/about/about.jpg" alt="img02"/>
+                        <img src="/assets/images/team/mahout.jpg" alt="img02"/>
                         <div class="normal-text">
-                            <h3 class="team-name">ABD Rashid Khan</h3>
-                            <span class="subtitle">Vice Chancellor</span>
+                            <h3 class="team-name">Mme Mahout</h3>
+                            <span class="subtitle">Secrétaire </span>
                         </div>
                     </div>
                     <div class="team-content">
                         <div class="overly-border"></div>
                         <div class="display-table">
                             <div class="display-table-cell">
-                                <h3 class="team-name"><a href="teachers-single.html">ABD Rashid Khan</a></h3>
-                                <span class="team-title">Vice Chancellor</span>
-                                <p class="team-desc">Entrusted with planning, implementation and evaluation.</p>
+                                <h3 class="team-name"><a href="teachers-single.html">Mme Mahout</a></h3>
+                                <span class="team-title">Secrétaire</span>
+                                <p class="team-desc">Gère les inscriptions des étudiants et organise les réunions de coordination</p>
                                 <div class="team-social">
                                     <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
                                     <a href="#" class="social-icon"><i class="fa fa-google-plus"></i></a>
@@ -695,19 +240,19 @@
                 
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="/assets/images/about/about.jpg" alt="img02"/>
+                        <img src="/assets/images/team/mahout1.jpg" alt="img02"/>
                         <div class="normal-text">
-                            <h3 class="team-name">Luyes Figery</h3>
-                            <span class="subtitle">A. Professor</span>
+                            <h3 class="team-name">Mme Mahout</h3>
+                            <span class="subtitle">Secrétaire </span>
                         </div>
                     </div>
                     <div class="team-content">
                         <div class="overly-border"></div>
                         <div class="display-table">
                             <div class="display-table-cell">
-                                <h3 class="team-name"><a href="teachers-single.html">Luyes Figery</a></h3>
-                                <span class="team-title">A. Professor</span>
-                                <p class="team-desc">Entrusted with planning, implementation and evaluation.</p>
+                                <h3 class="team-name"><a href="teachers-single.html">Mme Mahout</a></h3>
+                                <span class="team-title">Secrétaire</span>
+                                <p class="team-desc">Gère les inscriptions des étudiants et organise les réunions de coordination</p>
                                 <div class="team-social">
                                     <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
                                     <a href="#" class="social-icon"><i class="fa fa-google-plus"></i></a>
@@ -720,19 +265,19 @@
                 </div>
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="/assets/images/about/about.jpg" alt="img02"/>
+                        <img src="/assets/images/team/diane.jpg" alt="img02"/>
                         <div class="normal-text">
-                            <h3 class="team-name">Mr. Mahabub Alam</h3>
-                            <span class="subtitle">Assistant Professor</span>
+                            <h3 class="team-name">Mme Donfack Diane</h3>
+                            <span class="subtitle">Assistant Secrétaire</span>
                         </div>
                     </div>
                     <div class="team-content">
                         <div class="overly-border"></div>
                         <div class="display-table">
                             <div class="display-table-cell">
-                                <h3 class="team-name"><a href="teachers-single.html">Mr. Mahabub Alam</a></h3>
-                                <span class="team-title">Assistant Professor</span>
-                                <p class="team-desc">Entrusted with planning, implementation and evaluation.</p>
+                                <h3 class="team-name"><a href="teachers-single.html">Mme Donfack Diane</a></h3>
+                                <span class="team-title">Assistant Secrétaire</span>
+                                <p class="team-desc">Établir les plannings des réunions, fixe des rendez-vous.</p>
                                 <div class="team-social">
                                     <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
                                     <a href="#" class="social-icon"><i class="fa fa-google-plus"></i></a>
@@ -759,21 +304,21 @@
                     <div class="news-normal-block">
                         <div class="news-img">
                             <a href="#">
-                                <img src="/assets/images/blog/1.jpg" alt="" />
+                                <img src="/assets/images/blog/try.jpg" alt="" />
                             </a>
                         </div>
                         <div class="news-date">
                             <i class="fa fa-calendar-check-o"></i>
-                            <span>June  28,  2017</span>
+                            <span>Aout  6,  2023</span>
                         </div>
-                        <h4 class="news-title"><a href="blog-details.html">Those Other College Expenses You Aren't Thinking About</a></h4>
+                        <h4 class="news-title"><a href="blog-details.html">Visite du directeur de l'INSET de yaounde</a></h4>
                         <div class="news-desc">
                             <p>
-                                Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste rhoncus sem the purus eu sapien curabitur.Lorem Ipsum is therefore always free from repetitionetc.
+                                Les échanges marquants entre le directeur de l'INSET et le créateur de Biast, Professeur Talla Pierre Kisito.
                             </p>
                         </div>
                         <div class="news-btn">
-                            <a href="#">Read More</a>
+                            <a href="#">Voir plus</a>
                         </div>
                     </div>
                 </div>
@@ -782,19 +327,22 @@
                         <div class="news-list-item">
                             <div class="news-img">
                                 <a href="#">
-                                    <img src="/assets/images/blog/2.jpg" alt="" />
+                                    <img src="/assets/images/blog/presence.jpg" alt="" />
                                 </a>
                             </div>			        			
                             <div class="news-content">
-                                <h5 class="news-title"><a href="blog-details.html">While the lovely valley team work</a></h5>
+                                <h5 class="news-title"><a href="blog-details.html">Travail d'équipe des étudiants de la spécialité aide-soignante
+
+                                </a></h5>
                                 <div class="news-date">
                                     <i class="fa fa-calendar-check-o"></i>
-                                    <span>June  28,  2017</span>
+                                    <span>Avril  20,  2021</span>
                                 </div>
                                 <div class="news-desc">
                                     <p>
-                                        Excepteur sint occaecat cupidatat non proident,
-                                        sunt in culpa qui officia deserunt.
+                                        Le travail d'équipe est l'une des clés du succès car le partage d'idée et de connaissance permet de faire avancer l'acquisition de compétences
+
+
                                     </p>
                                 </div>
                             </div>			        			
@@ -802,19 +350,18 @@
                         <div class="news-list-item">
                             <div class="news-img">
                                 <a href="#">
-                                    <img src="/assets/images/blog/3.jpg" alt="" />
+                                    <img src="/assets/images/blog/soutenance.jpg" alt="" />
                                 </a>
                             </div>			        			
                             <div class="news-content">
-                                <h5 class="news-title"><a href="blog-details.html">I must explain to you how all this idea</a></h5>
+                                <h5 class="news-title"><a href="blog-details.html">Soutenance des étudiants en fin de formation en étude Medico-sanitaire</a></h5>
                                 <div class="news-date">
                                     <i class="fa fa-calendar-check-o"></i>
-                                    <span>June  28,  2017</span>
+                                    <span>Juillet  18,  2021</span>
                                 </div>
                                 <div class="news-desc">
                                     <p>
-                                        Excepteur sint occaecat cupidatat non proident,
-                                        sunt in culpa qui officia deserunt.
+                                        Sous le Thème de l'analyse des voies et moyens pour prévenir les maladies cardio-vasculaires, les étudiants obtiennent mention très bien
                                     </p>
                                 </div>
                             </div>			        			
@@ -822,19 +369,22 @@
                         <div class="news-list-item">
                             <div class="news-img">
                                 <a href="#">
-                                    <img src="/assets/images/blog/4.jpg" alt="" />
+                                    <img src="/assets/images/blog/present.jpg" alt="" />
                                 </a>
                             </div>			        			
                             <div class="news-content">
-                                <h5 class="news-title"><a href="blog-details.html">I should be incapable of drawing a stroke</a></h5>
+                                <h5 class="news-title"><a href="blog-details.html">Discourt du Professeur Talla sur la présentation des opportunités de Biast aux nouveaux bacheliers
+
+                                </a></h5>
                                 <div class="news-date">
                                     <i class="fa fa-calendar-check-o"></i>
-                                    <span>June  28,  2017</span>
+                                    <span>Juillet  28,  2023</span>
                                 </div>
                                 <div class="news-desc">
                                     <p>
-                                        Excepteur sint occaecat cupidatat non proident,
-                                        sunt in culpa qui officia deserunt.
+                                        Les membres de l'institut biast on faire la présentation de l'institut au niveau bacheliers présents
+
+
                                     </p>
                                 </div>
                             </div>			        			

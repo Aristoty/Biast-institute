@@ -1,28 +1,29 @@
-<!-- Breadcrumbs End -->
-
+<div class="abt-title text-center">
+    <h2>Détail de l'Évènement </h2>
+</div>
 <!-- Event Details Start -->
-<div class="rs-event-details pt-100 pb-70">
+<div class="rs-event-details pt-70 pb-70">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-12">
+            <!-- <div class="col-lg-8 col-md-12"> -->
                 <div class="event-details-content">
-                    <h3 class="event-title"><a href="events-details.html">Freshers Day reception ceremony 2017</a></h3>
+                    <h3 class="event-title"><a href="events-details.html"><%= events.dataValues.title  %></a></h3>
                     <div class="event-meta">
                         <div class="event-date">
                             <i class="fa fa-calendar"></i>
-                            <span>28 June 2017</span>
+                            <span><%= events.dataValues.date  %></span>
                         </div>
                         <div class="event-time">
                             <i class="fa fa-clock-o"></i>
-                            <span>12.30AM-05.30PM</span>
+                            <span><%= events.dataValues.temps_debut  %> - <%= events.dataValues.temps_fin  %></span>
                         </div>
                         <div class="event-location">
                             <i class="fa fa-map-marker"></i>
-                            <span>Venue A, Main Campus</span>
+                            <span><%= events.dataValues.lieu  %></span>
                         </div>
                     </div>
                     <div class="event-img">
-                        <img src="/assets/images/events/event-details.jpg" alt="Event Details Images" />
+                        <img src="/assets/images/events/<%= events.dataValues.image_dsc  %>" alt="<%= events.dataValues.image_dsc  %>" />
                     </div>
                     <div class="event-desc">
                         <p>
@@ -35,70 +36,37 @@
                     
                     
                 </div>
+            <!-- </div> -->
+            
+        </div>
+    </div>
+</div>
+
+<div id="rs-partner" class="rs-partner pt-30 pb-70">
+        
+    <div class="container">
+        <div class="abt-title mb-70 text-center">
+            <h2>NOS UNIVERSITÉS PARTENAIRES</h2>      
+            <p>Tous nos universités et entreprises partenaires partout dans le monde entier.</p>
+        </div>
+        <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/1.png" alt="Partner Image"></a>
             </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="sidebar-area">
-                    <div class="cate-box">
-                        <h3 class="title">Categories</h3>
-                        <ul>
-                            <li>
-                                <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="#">Analysis & Features <span>(05)</span></a>
-                            </li>
-                            <li>
-                                <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="#">Video Reviews <span>(07)</span></a>
-                            </li>
-                            <li>
-                                <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="#">Engineering Tech <span>(09)</span></a>
-                            </li>
-                            <li>
-                                <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="#"> Righteous Indignation <span>(08)</span></a>
-                            </li>
-                            <li>
-                                <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="#">General Education <span>(04)</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="latest-courses">
-                        <h3 class="title">Latest Courses</h3>
-                        <div class="post-item">
-                            <div class="post-img">
-                                <a href="blog-details.html"><img src="/assets/images/blog-details/sm1.jpg" alt="" title="News image"></a>
-                            </div>
-                            <div class="post-desc">
-                                <h4><a href="blog-details.html">Raken develops reporting The software</a></h4>
-                                <span class="duration"> 
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i> 4 Years
-                                </span> 
-                                <span class="price">Price: <span>$350</span></span>
-                            </div>
-                        </div>
-                        <div class="post-item">
-                            <div class="post-img">
-                                <a href="blog-details.html"><img src="/assets/images/blog-details/sm2.jpg" alt="" title="News image"></a>
-                            </div>
-                            <div class="post-desc">
-                                <h4><a href="blog-details.html">Raken develops reporting The software</a></h4>
-                                <span class="duration"> 
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i> 4 Years
-                                </span> 
-                                <span class="price">Price: <span>$350</span></span>
-                            </div>
-                        </div>
-                        <div class="post-item">
-                            <div class="post-img">
-                                <a href="blog-details.html"><img src="/assets/images/blog-details/sm3.jpg" alt="" title="News image"></a>
-                            </div>
-                            <div class="post-desc">
-                                <h4><a href="blog-details.html">Raken develops reporting The software</a></h4>
-                                <span class="duration"> 
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i> 4 Years
-                                </span> 
-                                <span class="price">Price: <span>$350</span></span>
-                            </div>
-                        </div>
-                    </div>
-                   
-                </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/2.jpeg" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/3.png" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/4.png" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/5.jpeg" alt="Partner Image"></a>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="/assets/images/partner/6.jpeg" alt="Partner Image"></a>
             </div>
         </div>
     </div>
