@@ -6,7 +6,7 @@
 				</div>
              
 				<div class="row grid">
-				  <% for(let i = 0; i<filiere.length; i++) { %>
+				  <% if(filiere){for(let i = 0; i<filiere.length; i++) { %>
 					<div class="col-lg-4 col-md-6 grid-item filter1">
 		                <div class="course-item">
 		                    <div class="course-img">
@@ -36,7 +36,7 @@
 		                    </div>
 		                </div>						
 					</div>
-				  <% } %>
+				  <% }} %>
 			    </div>
 			    <!-- <nav aria-label="Page navigation example">
 					<ul class="pagination">

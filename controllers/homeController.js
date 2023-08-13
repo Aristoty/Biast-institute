@@ -83,6 +83,12 @@ const indexView = async (req, res, next) => {
         console.error('Failed to retrieve data : ', error);
     })
 
+    const courses = await Filiere.findAll().then(res => {
+        return res
+    }).catch((error) => {
+        console.error('Failed to retrieve data : ', error);
+    })
+
     if(req.query.token){
         const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
@@ -94,10 +100,10 @@ const indexView = async (req, res, next) => {
             )
         }
      })  
-     return res.render('home', {events:events,filiere:filiere,path:req.path,detail: true,user: res.locals.user,etudiant:etudiant})
+     return res.render('home', {events:events,filiere:courses,path:req.path,detail: true,user: res.locals.user,etudiant:etudiant})
     }
 
-        res.render('home', {events:events,filiere:filiere,path:req.path,detail: true,user:null,etudiant:null})
+        res.render('home', {events:events,filiere:courses,path:req.path,detail: true,user:null,etudiant:null})
 }
 
 const aboutView = async(req, res, next) => {
@@ -121,6 +127,12 @@ const aboutView = async(req, res, next) => {
 
 const coursesView = async(req, res, next) => {
 
+    const coures = await Filiere.findAll().then(res => {
+        return res
+    }).catch((error) => {
+        console.error('Failed to retrieve data : ', error);
+    })
+
     if(req.query.token){
         const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
@@ -132,9 +144,9 @@ const coursesView = async(req, res, next) => {
             )
         }
      })  
-        return res.render('courses', {filiere:filiere,etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
+        return res.render('courses', {filiere:coures,etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
     }
-    res.render('courses', {filiere:filiere,path:req.path, detail: false,user:null})
+    res.render('courses', {filiere:coures,path:req.path, detail: false,user:null})
 }
 
 const eventView = async(req, res, next) => {
