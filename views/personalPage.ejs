@@ -35,10 +35,6 @@
         color:red;
     }
 
-    .navbar{
-        background-color: rgba(40,90,45,0.03);
-    }
-
     .active{
         color: red;
     }
@@ -52,25 +48,45 @@
 </style>
 
 <% if(page == 0) { %>
+    
 <center>
  <h1 style="color:green"> Bienvenue dans votre espace privé </h1>
-<div id="toto" class="container" style="font-size:18px; width: 70%; text-align: center;">
+<div id="toto" class="container" style="font-size:15px; width: 70%; text-align: center;">
 
-    <table  class="navbar">
-        <tr>
-            <td ><% if(path == "/personalpage") { %><a class="active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %> </td>
-            <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>Modifier mon password</a><% } %></td>
-            <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %></td>
-            <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %></td>
-         
-        </tr>
-    </table>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand"><img src="/assets/images/main.png" height="50" width="50"  alt="main"/> </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %>
+                    </li>
+                   <li class="nav-item">
+                    <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %>
+                   </li>
+                   <li class="nav-item">
+                    
+                       <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %>
+                   </li>
+                   <li class="nav-item">
+                       
+                       <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %>
+                   </li>
+               </ul>
+           </div>
+        </div>
+    </nav>
 
 </div>
 <br>
 
 
- <div style="font-size:18px;border: 20px solid green; width: 70%;">
+
+
+ <div style="font-size:18px;border: 8px solid green; width: 70%;">
 <div class="container" >
     
     <div>
@@ -78,38 +94,36 @@
             <span>Informations personnelles</span>
         </div>
     <br>
-        
-        <table class="presentation">
-            <tr>
-                <th>Nom :</th>
-                <td><strong><%- etudiant.dataValues.nom %> <%- etudiant.dataValues.prenom %></strong></td>
-            </tr>
-            <tr>
-                <th>Lieu de Naissance :</th>
-                <td><strong><%- etudiant.dataValues.lieu_de_naissance %></strong></td>
-            </tr>
-            <tr>
-                <th>Email :</th>
-                <td><strong><%- etudiant.dataValues.email %></strong></td>
-            </tr>
-            <tr>
-                <th>Numero de CNI :</th>
-                <td><strong><%- etudiant.dataValues.numero_cni %></strong></td>
-            </tr>
-            <tr>
-                <th>Pays de residence :</th>
-                <td><strong><%- etudiant.dataValues.pays %></strong></td>
-            </tr>
-            <tr>
-                <th>Region d'origine :</th>
-                <td><strong><%- etudiant.dataValues.region %></strong></td>
-            </tr>
-            <tr>
-                <th>Ville de residence :</th>
-                <td><strong><%- etudiant.dataValues.ville %></strong></td>
-            </tr>
-        </table>
+   
+      
+     
+            
+   
+     
+
+                Nom :<br>
+                <strong><%- etudiant.dataValues.nom %> <%- etudiant.dataValues.prenom %></strong><br>
           
+                Lieu de Naissance :<br>
+                <strong><%- etudiant.dataValues.lieu_de_naissance %></strong><br>
+            
+            
+                Email :<br>
+                <strong><%- etudiant.dataValues.email %></strong><br>
+            
+                Numero de CNI :<br>
+                <strong><%- etudiant.dataValues.numero_cni %></strong><br>
+            
+                Pays de residence :<br>
+                <strong><%- etudiant.dataValues.pays %></strong><br>
+            
+                Region d'origine :<br>
+                <strong><%- etudiant.dataValues.region %></strong><br>
+
+                Ville de residence :<br>
+                <strong><%- etudiant.dataValues.ville %></strong><br>
+        
+        
         </div>
         <br>
 
@@ -119,8 +133,8 @@
 
 <br/>
 <br>
-<br/>
-<br>
+
+
 <!-- <div class="container text-align-center" style="border: 1px solid red;"> -->
 
 
@@ -140,22 +154,41 @@
 
 </div>
 </center>
-<br/>
-<br/>
+<div id="rs-partner" class="rs-partner pt-50 pb-70">
+        
+</div>
+
+
 <% } else if(page == 1)  {%>
 
    <div class="container" style="font-size:18px; width: 70%; text-align: center;">
 
-    <table class="navbar">
-        <tr>
-            <td ><% if(path == "/personalpage") { %><a class="active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %> </td>
-            <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %></td>
-            <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %></td>
-            <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %></td>
-         
-         
-        </tr>
-    </table>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand"><img src="/assets/images/main.png" height="50" width="50"  alt="main"/> </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %>
+                    </li>
+                   <li class="nav-item">
+                    <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %>
+                   </li>
+                   <li class="nav-item">
+                    
+                       <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %>
+                   </li>
+                   <li class="nav-item">
+                       
+                       <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %>
+                   </li>
+               </ul>
+           </div>
+        </div>
+    </nav>
     
 
 
@@ -312,23 +345,41 @@
         </tr>
         <tr><td>&nbsp;</td></tr>
     </tbody></table></center>
-<br/>
-<br/>
+
+    <div id="rs-partner" class="rs-partner pt-50 pb-70">
+        
+    </div>
 
 <% } else if(page == 2) { %>
 
     <div class="container" style="font-size:18px; width: 70%; text-align: center;">
 
-        <table class="navbar">
-            <tr>
-                <td ><% if(path == "/personalpage") { %><a class="active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %> </td>
-                <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>Modifier mon password</a><% } %></td>
-                <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %></td>
-                <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %></td>
-             
-             
-            </tr>
-        </table>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand"><img src="/assets/images/main.png" height="50" width="50"  alt="main"/> </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %>
+                        </li>
+                       <li class="nav-item">
+                        <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %>
+                       </li>
+                       <li class="nav-item">
+                        
+                           <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %>
+                       </li>
+                       <li class="nav-item">
+                           
+                           <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %>
+                       </li>
+                   </ul>
+               </div>
+            </div>
+        </nav>
         
     
     
@@ -363,20 +414,22 @@
                    <form action=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> method="post">
                     <div class="input-text">
                         <div class="input-div">
-                            <input type="text" name="ancien" required require id="user_name">
-                            <span>Ancien password</span>
+                            <label for="ancien">Ancien Password </label>
+                            <input type="text" id="ancien" name="ancien" required require id="user_name">
+                            
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
+                            <label for="ancien">Nouveau password </label>
                             <input type="password" name="nouveau" required require>
-                            <span>Nouveau password</span>
+                            
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
+                            <label for="ancien">Confirmer </label>
                             <input type="password" name="confirm" required require>
-                            <span>Confirmer</span>
                         </div>
                     </div>
 
@@ -394,23 +447,40 @@
 
         </tbody></table></center>
          
-    <br/>
-    <br/>
+        <div id="rs-partner" class="rs-partner pt-50 pb-70">
+        
+        </div>
 
 <% } else if(page==3) { %>
 
     <div class="container" style="font-size:18px; width: 70%; text-align: center;">
 
-        <table class="navbar">
-            <tr>
-                <td ><% if(path == "/personalpage") { %><a class="active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %> </td>
-                <td ><% if(path == "/personalpage/modifPassword") { %><a class="active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %></td>
-                <td><% if(path == "/personalpage/modifPhoto") { %><a class="active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %></td>
-                <td><% if(path == "/personalpage/consultNotes") { %><a class="active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %></td>
-             
-             
-            </tr>
-        </table>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand"><img src="/assets/images/main.png" height="50" width="50"  alt="main"/> </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %>
+                        </li>
+                       <li class="nav-item">
+                        <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %>
+                       </li>
+                       <li class="nav-item">
+                        
+                           <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %>
+                       </li>
+                       <li class="nav-item">
+                           
+                           <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %>
+                       </li>
+                   </ul>
+               </div>
+            </div>
+        </nav>
         
     
     
@@ -464,10 +534,9 @@
         
     </tbody></table></center>
          
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <div id="rs-partner" class="rs-partner pt-50 pb-70">
+        
+    </div>
 <% } %>
 
 <script language="javaScript">

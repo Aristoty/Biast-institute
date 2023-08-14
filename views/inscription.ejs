@@ -326,275 +326,278 @@
                         <li>Parents Informations</li>
                         <li>Education</li>
                     </ul>
-                </div>
-                <div class="right-side">
-                    <div class="main active">
-                        <small><i class="fa fa-smile-o"></i></small>
-                        <div class="text">
-                            <h2>Remplissez vos informations</h2>
-                            <% if(message) { %><p style="color:red"><%- message  %></p> <% } else {%><p>Remplisser vos information personnel</p><% } %>
-                        
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="nom">Nom <em class="red">*</em></label>
-                                <input type="text" id="nom" name="nom" value="<%- etudiant.dataValues.nom %>" require required>
+                    </div>
+                    <div class="right-side">
+                        <div class="main active">
+                            <small><i class="fa fa-smile-o"></i></small>
+                            <div class="text">
+                                <h2>Remplissez vos informations</h2>
+                                <div class="alert alert-danger">
+                                    <% if(message) { %><p style="color:red"><%- message  %></p> <% } else {%><p>Remplisser vos information personnel</p><% } %>
+
+                                </div>
+                            
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="nom">Nom <em class="red">*</em></label>
+                                    <input type="text" id="nom" name="nom" value="<%- etudiant.dataValues.nom %>" require required>
+                                    
+                                </div>
                                 
+                                <div class="input-div"> 
+                                    <label for="prenom">Prenom</label>
+                                    <input type="text" id="prenom" value="<%- etudiant.dataValues.prenom %>" name="prenom" >
+                                </div>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="date">Date de naissance <em class="red">*</em></label>
+                                    <input class="md-form md-outline input-with-post-icon datepicker" type="date" id="date" name="date" require required>
+                                    
+                                </div>
+                                <div class="input-div">
+                                    <label for="lieu">Lieu de naissance <em class="red">*</em></label>
+                                    <input type="text" name="lieu" id="lieu" value="<%- etudiant.dataValues.lieu_de_naissance %>" require required>
+                                </div>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="region">Region d'origine<em class="red">*</em></label>
+                                    <input type="text" name="region" id="region" value="<%- etudiant.dataValues.region %>" require required>
+                                </div>
+                                <div class="input-div">
+                                    <label for="departement">Departement d'origine<em class="red">*</em></label>
+                                    <input type="text" name="departement" id="departement" value="<%- etudiant.dataValues.departement %>" require required>
+                                </div>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="email">Email<em class="red">*</em></label>
+                                    <input type="text" name="email" id="email" value="<%- etudiant.dataValues.email %>" require required>
+                                </div>
+                                <div class="input-div">
+                                    <label for="telephone">Telephone</label>
+                                    <input type="text" name="telephone" value="<%- etudiant.dataValues.telephone %>" id="telephone">
+                                </div>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="numero_cni">Numero de cni<em class="red">*</em></label>
+                                    <input type="text" name="numero_cni" id="numero_cni" value="<%- etudiant.dataValues.numero_cni %>" require required>
+                                </div>
+                                <div class="input-div">
+                                    <label for="status_matrimonial">Status Matrimonial</label>
+                                    <select id="status_matrimonial" name="status_matrimonial" required require>
+                                            <% if(etudiant.dataValues.status_matrimoniale != "Celibataire et 0 enfant en charge") { %><option value="Celibataire et 0 enfant en charge">Celibataire et 0 enfant en charge</option><% } else { %> <option value="Celibataire et 0 enfant en charge" selected>Celibataire et 0 enfant en charge</option><% } %>
+                                            <% if(etudiant.dataValues.status_matrimoniale != "Marie") { %><option value="Marie">Marie</option><% } else { %> <option value="Marie" selected>Marie</option> <% } %>
+                                            <% if(etudiant.dataValues.status_matrimoniale != "Celibataire et au moin un enfant en charge") { %><option value="Celibataire et au moin un enfant en charge">Celibataire et au moin un enfant en charge</option><% } else { %><option value="Celibataire et au moin un enfant en charge" selected>Celibataire et au moin un enfant en charge</option><% } %>
+                                        </select>
+                                    </select>
+                                    
+                                </div>
+                            </div>
+                        
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="pays">Pays d'origine</label>
+                                    <select  class="form-select" name="pays" id="pays" >
+                                        
+                                            <% if(countries) { for(var i=0; i<countries.length; i++) {%>
+                                                <% if(etudiant.dataValues.pays == countries[i]['Country Name']) { %><option value="<%- countries[i]['Country Name'] %>" selected><%- countries[i]['Country Name'] %></option><% } else { %><option value="<%- countries[i]['Country Name'] %>"><%- countries[i]['Country Name'] %></option><% } %>
+                                            <% }} %>
+                                        
+                                    </select>
+                                </div>
+                                <div class="input-div">
+                                    <label for="ville">Ville de residence</label>
+                                    <input type="text" id="ville" value="<%- etudiant.dataValues.ville %>" name="ville" >         
+                                </div>
+                            </div>
+        
+        
+        
+                            <div class="buttons">
+                                <button class="next_button">Next Step</button>
+                            </div>
+                        </div>
+                        
+                        <div class="main">
+                            <small><i class="fa fa-smile-o"></i></small>
+                            <div class="text">
+                                <h2>About Yourself</h2>
+                                <p>Information abour your phisical presentation.</p>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="sexe">Sexe<em class="red">*</em></label>
+                                    <select  class="form-select" name="sexe" id="sexe" require required>
+                                        
+                                        <% if(etudiant.dataValues.sexe == "Masculin") { %><option value="Masculin" selected> Masculin </option><% } else { %><option value="Masculin"> Masculin </option><% } %>
+                                        <% if(etudiant.dataValues.sexe == "Feminin") { %><option value="Feminin" selected> Feminin </option><% } else { %><option value="Feminin"> Masculin </option><% } %>
+                                        
+        
+                                    </select>
+                                </div>
+                                <div class="input-div">
+                                    <label for="language">Langue Officielle<em class="red">*</em></label>
+                                    <select  class="form-select" name="language" id="language" require required>
+                                        
+                                        <% if(etudiant.dataValues.langue == "francais") { %><option value="francais" selected> francais </option><% } else { %><option value="francais"> Masculin </option><% } %>
+                                        <% if(etudiant.dataValues.langue == "anglais") { %><option value="anglais" selected> anglais </option><% } else { %><option value="anglais"> Masculin </option><% } %>
+                                        
+        
+                                </select>
+                                </div>
+                            </div>
+        
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="enfant">Nombre d'enfant</label>
+                                    <input type="number" name="enfant" value="<%- etudiant.dataValues.nbr_enfant %>" id="enfant" />
+                                </div>
+                                <div class="input-div">
+                                    <label for="Code">Code Postal<em class="red">*</em></label>
+                                    <input type="text" name="code" value="<%- etudiant.dataValues.code_postal %>" id="Code">
+                                </div>
+                            </div>
+        
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="situation">Situation d'emploi</label>
+                                    <select  class="form-select" name="situation" id="situation" require required>
+                                        <% if(etudiant.dataValues.langue == "Sans emploi") { %><option value="Sans emploi" selected> Sans emploi </option><% } else { %><option value="Sans emploi"> Sans emploi </option><% } %> 
+                                        <% if(etudiant.dataValues.langue == "Employe") { %><option value="Employe" selected> Employe </option><% } else { %><option value="Employe"> Employe </option><% } %> 
+                                        
+        
+                                </select>
+                                </div>
+                                <div class="input-div">
+                                    <label for="handicape">Handicapé</label>
+                                    <select  class="form-select" name="handicape" id="handicape">
+                                        
+                                        <% if(etudiant.dataValues.handicape == "Oui") { %><option value="Oui" selected> Oui </option><% } else { %><option value="Oui"> Oui </option><% } %> 
+                                        <% if(etudiant.dataValues.handicape == "Non") { %><option value="Non" selected> Non </option><% } else { %><option value="Non"> Non </option><% } %> 
+                                        
+        
+                                </select>
+                                </div>
                             </div>
                             
-                            <div class="input-div"> 
-                                <label for="prenom">Prenom</label>
-                                <input type="text" id="prenom" value="<%- etudiant.dataValues.prenom %>" name="prenom" >
+                            <div class="buttons button_space">
+                                <button class="back_button">Back</button>
+                                <button class="next_button">Next Step</button>
                             </div>
                         </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="date">Date de naissance <em class="red">*</em></label>
-                                <input class="md-form md-outline input-with-post-icon datepicker" type="date" id="date" name="date" require required>
-                                
+                    
+                        <div class="main">
+                            <small><i class="fa fa-smile-o"></i></small>
+                            <div class="text">
+                                <h2>Parents Informations</h2>
+                                <p>Inform companies about your education life.</p>
                             </div>
-                            <div class="input-div">
-                                <label for="lieu">Lieu de naissance <em class="red">*</em></label>
-                                <input type="text" name="lieu" id="lieu" value="<%- etudiant.dataValues.lieu_de_naissance %>" require required>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="nom_pere">Nom du pere</label>
+                                    <input type="text" id="nom_pere" value="<%- etudiant.dataValues.nom_pere %>" name="nom_pere" >
+                                </div>
+                                <div class="input-div">
+                                    <label for="nom_mere">Nom de la mere</label>
+                                    <input type="text" id="nom_mere" value="<%- etudiant.dataValues.nom_mere %>" name="nom_mere" >
+                                </div>
                             </div>
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="region">Region d'origine<em class="red">*</em></label>
-                                <input type="text" name="region" id="region" value="<%- etudiant.dataValues.region %>" require required>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="addr_pere">Adresse du pere</label>
+                                    <input type="text" id="addr_pere" value="<%- etudiant.dataValues.addresse_pere %>" name="addr_pere">
+                                </div>
+                                <div class="input-div">
+                                    <label for="addr_mere">Adresse de la mere</label>
+                                    <input type="text" id="addr_mere" value="<%- etudiant.dataValues.addresse_mere %>" name="addr_mere" >
+                                </div>
                             </div>
-                            <div class="input-div">
-                                <label for="departement">Departement d'origine<em class="red">*</em></label>
-                                <input type="text" name="departement" id="departement" value="<%- etudiant.dataValues.departement %>" require required>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="prof_pere">Profession du pere</label>
+                                    <input type="text" id="prof_pere" value="<%- etudiant.dataValues.profession_pere %>" name="prof_pere">
+                                </div>
+                                <div class="input-div">
+                                    <label for="prof_pere">Profession de la mere</label>
+                                    <input type="text" id="prof_mere" value="<%- etudiant.dataValues.profession_mere %>" name="prof_mere">
+                                </div>
                             </div>
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="email">Email<em class="red">*</em></label>
-                                <input type="text" name="email" id="email" value="<%- etudiant.dataValues.email %>" require required>
-                            </div>
-                            <div class="input-div">
-                                <label for="telephone">Telephone</label>
-                                <input type="text" name="telephone" value="<%- etudiant.dataValues.telephone %>" id="telephone">
-                            </div>
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="numero_cni">Numero de cni<em class="red">*</em></label>
-                                <input type="text" name="numero_cni" id="numero_cni" value="<%- etudiant.dataValues.numero_cni %>" require required>
-                            </div>
-                            <div class="input-div">
-                                <label for="status_matrimonial">Status Matrimonial</label>
-                                <select id="status_matrimonial" name="status_matrimonial" required require>
-                                        <% if(etudiant.dataValues.status_matrimoniale != "Celibataire et 0 enfant en charge") { %><option value="Celibataire et 0 enfant en charge">Celibataire et 0 enfant en charge</option><% } else { %> <option value="Celibataire et 0 enfant en charge" selected>Celibataire et 0 enfant en charge</option><% } %>
-                                        <% if(etudiant.dataValues.status_matrimoniale != "Marie") { %><option value="Marie">Marie</option><% } else { %> <option value="Marie" selected>Marie</option> <% } %>
-                                        <% if(etudiant.dataValues.status_matrimoniale != "Celibataire et au moin un enfant en charge") { %><option value="Celibataire et au moin un enfant en charge">Celibataire et au moin un enfant en charge</option><% } else { %><option value="Celibataire et au moin un enfant en charge" selected>Celibataire et au moin un enfant en charge</option><% } %>
-                                    </select>
-                                </select>
-                                
+                            
+                            <div class="buttons button_space">
+                                <button class="back_button">Back</button>
+                                <button class="next_button">Next Step</button>
                             </div>
                         </div>
-                       
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="pays">Pays d'origine</label>
-                                <select  class="form-select" name="pays" id="pays" >
-                                    
-                                        <% if(countries) { for(var i=0; i<countries.length; i++) {%>
-                                            <% if(etudiant.dataValues.pays == countries[i]['Country Name']) { %><option value="<%- countries[i]['Country Name'] %>" selected><%- countries[i]['Country Name'] %></option><% } else { %><option value="<%- countries[i]['Country Name'] %>"><%- countries[i]['Country Name'] %></option><% } %>
+                        <div class="main">
+                            <small><i class="fa fa-smile-o"></i></small>
+                            <div class="text">
+                                <h2>Education</h2>
+                                <p>Can you talk about your past work experience?</p>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="dernEtab">Dernier etablissement frequente <em class="red">*</em></label>
+                                    <input type="text" id="dernEtab" value="<%- etudiant.dataValues.dernier_ecole %>" name="dernEtab" required require>
+                                    <span></span>
+                                </div>
+                                <div class="input-div"> 
+                                    <label for="moyenne_bac">Moyenne obtenu au bac <em class="red">*</em></label>
+                                    <input type="text" id="moyenne_bac" name="moyenne_bac" value="<%- etudiant.dataValues.moyenne_bac %>" require required>
+                                </div>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="type_form">Type de formation <em class="red">*</em></label>
+                                    <input type="text" id="type_form" value="<%- etudiant.dataValues.type_formation %>" name="type_form" require required>
+                                </div>
+                    
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="filiere">Selectionne la Filiere<em class="red">*</em></label>
+                                    <select id="filiere" name="filiere" required require>
+                                        <% if(filiere) { for(var i=0; i<filiere.length; i++) {%>
+                                            <% if(etudiant.dataValues.filiereId == filiere[i].dataValues.id) { %><option  value="<%- filiere[i].dataValues.id %>" selected><%- filiere[i].dataValues.nom_filiere %></option><% } else { %><option  value="<%- filiere[i].dataValues.id %>"><%- filiere[i].dataValues.nom_filiere %></option><% } %>
                                         <% }} %>
-                                     
-                                </select>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="input-div">
-                                <label for="ville">Ville de residence</label>
-                                <input type="text" id="ville" value="<%- etudiant.dataValues.ville %>" name="ville" >         
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <label for="specialite">Selectionne la Specialité<em class="red">*</em></label>
+                                    <select id="specialite" name="specialite" required require>
+                                        <% if(specialites) { for(var i=0; i<specialites.length; i++) {%>
+                                            <% if(etudiant.dataValues.specialiteId == specialites[i].dataValues.id) { %><option  value="<%- specialites[i].dataValues.id %>" selected><%- specialites[i].dataValues.nom_specialite %></option><% } else { %><option  value="<%- specialites[i].dataValues.id %>"><%- specialites[i].dataValues.nom_specialite %></option><% } %>
+                                        <% }} %>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-    
-    
-    
-                        <div class="buttons">
-                            <button class="next_button">Next Step</button>
-                        </div>
-                    </div>
                     
-                    <div class="main">
-                        <small><i class="fa fa-smile-o"></i></small>
-                        <div class="text">
-                            <h2>About Yourself</h2>
-                            <p>Information abour your phisical presentation.</p>
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="sexe">Sexe<em class="red">*</em></label>
-                                <select  class="form-select" name="sexe" id="sexe" require required>
-                                    
-                                    <% if(etudiant.dataValues.sexe == "Masculin") { %><option value="Masculin" selected> Masculin </option><% } else { %><option value="Masculin"> Masculin </option><% } %>
-                                    <% if(etudiant.dataValues.sexe == "Feminin") { %><option value="Feminin" selected> Feminin </option><% } else { %><option value="Feminin"> Masculin </option><% } %>
-                                    
-    
-                                </select>
-                            </div>
-                            <div class="input-div">
-                                <label for="language">Langue Officielle<em class="red">*</em></label>
-                                <select  class="form-select" name="language" id="language" require required>
-                                    
-                                    <% if(etudiant.dataValues.langue == "francais") { %><option value="francais" selected> francais </option><% } else { %><option value="francais"> Masculin </option><% } %>
-                                    <% if(etudiant.dataValues.langue == "anglais") { %><option value="anglais" selected> anglais </option><% } else { %><option value="anglais"> Masculin </option><% } %>
-                                    
-    
-                               </select>
-                            </div>
-                        </div>
-    
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="enfant">Nombre d'enfant</label>
-                                <input type="number" name="enfant" value="<%- etudiant.dataValues.nbr_enfant %>" id="enfant" />
-                            </div>
-                            <div class="input-div">
-                                <label for="Code">Code Postal<em class="red">*</em></label>
-                                <input type="text" name="code" value="<%- etudiant.dataValues.code_postal %>" id="Code">
-                            </div>
-                        </div>
-    
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="situation">Situation d'emploi</label>
-                                <select  class="form-select" name="situation" id="situation" require required>
-                                    <% if(etudiant.dataValues.langue == "Sans emploi") { %><option value="Sans emploi" selected> Sans emploi </option><% } else { %><option value="Sans emploi"> Sans emploi </option><% } %> 
-                                    <% if(etudiant.dataValues.langue == "Employe") { %><option value="Employe" selected> Employe </option><% } else { %><option value="Employe"> Employe </option><% } %> 
-                                    
-    
-                               </select>
-                            </div>
-                            <div class="input-div">
-                                <label for="handicape">Handicapé</label>
-                                <select  class="form-select" name="handicape" id="handicape">
-                                    
-                                    <% if(etudiant.dataValues.handicape == "Oui") { %><option value="Oui" selected> Oui </option><% } else { %><option value="Oui"> Oui </option><% } %> 
-                                    <% if(etudiant.dataValues.handicape == "Non") { %><option value="Non" selected> Non </option><% } else { %><option value="Non"> Non </option><% } %> 
-                                    
-    
-                               </select>
+                        
+        
+                            <div class="buttons button_space">
+                                <button class="back_button">Back</button>
+                                <button type="submit"  class="submit_button">Submit</button>
                             </div>
                         </div>
                         
-                        <div class="buttons button_space">
-                            <button class="back_button">Back</button>
-                            <button class="next_button">Next Step</button>
                         </div>
-                    </div>
-                   
-                    <div class="main">
-                        <small><i class="fa fa-smile-o"></i></small>
-                        <div class="text">
-                            <h2>Parents Informations</h2>
-                            <p>Inform companies about your education life.</p>
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="nom_pere">Nom du pere</label>
-                                <input type="text" id="nom_pere" value="<%- etudiant.dataValues.nom_pere %>" name="nom_pere" >
-                            </div>
-                            <div class="input-div">
-                                <label for="nom_mere">Nom de la mere</label>
-                                <input type="text" id="nom_mere" value="<%- etudiant.dataValues.nom_mere %>" name="nom_mere" >
+                        <div class="main">
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                            </svg>
+                            
+                            <div class="text congrats">
+                                <h2>Congratulations!</h2>
+                                <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information have been submitted successfully for the future reference we will contact you soon.</p>
                             </div>
                         </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="addr_pere">Adresse du pere</label>
-                                <input type="text" id="addr_pere" value="<%- etudiant.dataValues.addresse_pere %>" name="addr_pere">
-                            </div>
-                            <div class="input-div">
-                                <label for="addr_mere">Adresse de la mere</label>
-                                <input type="text" id="addr_mere" value="<%- etudiant.dataValues.addresse_mere %>" name="addr_mere" >
-                            </div>
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="prof_pere">Profession du pere</label>
-                                <input type="text" id="prof_pere" value="<%- etudiant.dataValues.profession_pere %>" name="prof_pere">
-                            </div>
-                            <div class="input-div">
-                                <label for="prof_pere">Profession de la mere</label>
-                                <input type="text" id="prof_mere" value="<%- etudiant.dataValues.profession_mere %>" name="prof_mere">
-                            </div>
-                        </div>
-                        
-                        <div class="buttons button_space">
-                            <button class="back_button">Back</button>
-                            <button class="next_button">Next Step</button>
-                        </div>
-                    </div>
-                    <div class="main">
-                        <small><i class="fa fa-smile-o"></i></small>
-                        <div class="text">
-                            <h2>Education</h2>
-                            <p>Can you talk about your past work experience?</p>
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="dernEtab">Dernier etablissement frequente <em class="red">*</em></label>
-                                <input type="text" id="dernEtab" value="<%- etudiant.dataValues.dernier_ecole %>" name="dernEtab" required require>
-                                <span></span>
-                            </div>
-                            <div class="input-div"> 
-                                <label for="moyenne_bac">Moyenne obtenu au bac <em class="red">*</em></label>
-                                <input type="text" id="moyenne_bac" name="moyenne_bac" value="<%- etudiant.dataValues.moyenne_bac %>" require required>
-                            </div>
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="type_form">Type de formation <em class="red">*</em></label>
-                                <input type="text" id="type_form" value="<%- etudiant.dataValues.type_formation %>" name="type_form" require required>
-                            </div>
-                   
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="filiere">Selectionne la Filiere<em class="red">*</em></label>
-                                <select id="filiere" name="filiere" required require>
-                                    <% if(filiere) { for(var i=0; i<filiere.length; i++) {%>
-                                        <% if(etudiant.dataValues.filiereId == filiere[i].dataValues.id) { %><option  value="<%- filiere[i].dataValues.id %>" selected><%- filiere[i].dataValues.nom_filiere %></option><% } else { %><option  value="<%- filiere[i].dataValues.id %>"><%- filiere[i].dataValues.nom_filiere %></option><% } %>
-                                    <% }} %>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="input-text">
-                            <div class="input-div">
-                                <label for="specialite">Selectionne la Specialité<em class="red">*</em></label>
-                                <select id="specialite" name="specialite" required require>
-                                    <% if(specialites) { for(var i=0; i<specialites.length; i++) {%>
-                                        <% if(etudiant.dataValues.specialiteId == specialites[i].dataValues.id) { %><option  value="<%- specialites[i].dataValues.id %>" selected><%- specialites[i].dataValues.nom_specialite %></option><% } else { %><option  value="<%- specialites[i].dataValues.id %>"><%- specialites[i].dataValues.nom_specialite %></option><% } %>
-                                    <% }} %>
-                                </select>
-                            </div>
-                        </div>
-                 
-                    
-    
-                        <div class="buttons button_space">
-                            <button class="back_button">Back</button>
-                            <button type="submit"  class="submit_button">Submit</button>
-                        </div>
-                    </div>
-                    
-                    </div>
-                     <div class="main">
-                         <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                             <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                        </svg>
-                         
-                        <div class="text congrats">
-                            <h2>Congratulations!</h2>
-                            <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information have been submitted successfully for the future reference we will contact you soon.</p>
-                        </div>
-                    </div>
-    
+        
                 </div>
             </form>
     </div>

@@ -1,3 +1,4 @@
+
 <div class="container_con">
     <div class="card_con">
         <form class="form" method="post" onsubmit="toastify()" action="/connexion">
@@ -13,7 +14,7 @@
                     <div class="text">
                         <h2>Renseignez vos paramettres de connexions</h2>
                         <p>Veillez renseigner votre Login et votre Mot de passe</p>
-                        <% if(message) {%><span style="color: red;"> <%- message %></span><% } %>
+                        <% if(message) {%><div class="alert alert-danger"><%- message %></div><% } %>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
