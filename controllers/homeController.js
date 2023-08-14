@@ -217,10 +217,10 @@ const loginTraitement = async (req, res, next) => {
 
 const inscrptionView = (req, res, next) => {
     if(req.query.token){
-        return  res.render('inscription', {specialites:specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:res.locals.user,message:'',modifier:false})
+        return  res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:res.locals.user,message:'',modifier:false})
    
     }
-    res.render('inscription', {specialites:specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:'',modifier:false})
+    res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:'',modifier:false})
 }
 
 const contactView = async(req, res, next) => {
