@@ -32,7 +32,7 @@ const path = require('path')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, './../tmp'))
+        cb(null, path.join(__dirname, '../public/assets/images/avatar'))
     },
 
     filename : (req, file, cb) => {
