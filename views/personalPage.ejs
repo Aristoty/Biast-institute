@@ -513,22 +513,24 @@
             </td>
             <td width="200px" class="textstyle"></td>
     
-            <td width="200px" class="textstyle"><div class="input-text">
-                <form action=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %> method="post" name="chargePicture" enctype="multipart/form-data">
-                    <div class="input-div">
-                        <label for="image">Photo de Profil</label>
-                        <input type="file" id="image" name="image">
-                    </div>
-                    
-                        <input type="text" id="help" name="test" hidden>
-                    
-                    <br>
-                    <div class="buttons" style="padding-bottom: 4px;">
-                        <button type="submit"  class="submit_button">Upload</button>
-                    </div>
-                </form>
-              
-            </div></td>
+            <td width="200px" class="textstyle">
+                <div class="input-text">
+                    <form action="/personalpage/modifPhoto?token=<%- (user ? user.token : '') %>" method="post" name="chargePicture" enctype="multipart/form-data">
+                        <div class="input-div">
+                            <label for="image">Photo de Profil</label>
+                            <input type="file" id="image" name="image">
+                        </div>
+                        
+                            <input type="text" id="help" name="test" hidden>
+                        
+                        <br>
+                        <div class="buttons" style="padding-bottom: 4px;">
+                            <button type="submit"  class="submit_button">Upload</button>
+                        </div>
+                    </form>
+                
+                </div>
+            </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
         

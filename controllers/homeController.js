@@ -524,7 +524,6 @@ const modifierInfos = async (req, res, next) => {
     })
     return res.render('inscription', {path:req.path, detail: false,etudiant:etudiant,countries:Object.values(countries),specialites:my_specialites,filiere:my_filieres,user:res.locals.user,message:'', modifier:true})  
 
-
 }
 
 const updateInscription = async (req, res, next) => {

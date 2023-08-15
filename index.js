@@ -11,6 +11,9 @@ const { sequelize, Filiere } = require('./models/homeModel')
 const jwt = require('jsonwebtoken')
 const { Event, User, Student } = require('./models/homeModel')
 
+
+
+
 const PORT = process.env.SERVER_PORT || 3000
 
 app.use(express.urlencoded({extended: true})); 
@@ -21,6 +24,7 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
 app.use(flash());
+
 
 
 app.use((req, res, next) => {

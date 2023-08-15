@@ -332,10 +332,10 @@
                             <small><i class="fa fa-smile-o"></i></small>
                             <div class="text">
                                 <h2>Remplissez vos informations</h2>
-                                <div class="alert alert-danger">
+                                <!-- <div class="alert alert-danger"> -->
                                     <% if(message) { %><p style="color:red"><%- message  %></p> <% } else {%><p>Remplisser vos information personnel</p><% } %>
 
-                                </div>
+                                <!-- </div> -->
                             
                             </div>
                             <div class="input-text">
@@ -541,7 +541,7 @@
                             <div class="input-text">
                                 <div class="input-div">
                                     <label for="dernEtab">Dernier etablissement frequente <em class="red">*</em></label>
-                                    <input type="text" id="dernEtab" value="<%- etudiant.dataValues.dernier_ecole %>" name="dernEtab" required require>
+                                    <input type="text" id="dernEtab"  name="dernEtab" required require>
                                     <span></span>
                                 </div>
                                 <div class="input-div"> 
@@ -569,11 +569,15 @@
                             <div class="input-text">
                                 <div class="input-div">
                                     <label for="specialite">Selectionne la Specialité<em class="red">*</em></label>
-                                    <select id="specialite" name="specialite" required require>
-                                        <% if(specialites) { for(var i=0; i<specialites.length; i++) {%>
-                                            <% if(etudiant.dataValues.specialiteId == specialites[i].dataValues.id) { %><option  value="<%- specialites[i].dataValues.id %>" selected><%- specialites[i].dataValues.nom_specialite %></option><% } else { %><option  value="<%- specialites[i].dataValues.id %>"><%- specialites[i].dataValues.nom_specialite %></option><% } %>
-                                        <% }} %>
-                                    </select>
+                                    <select id="specialite" id="specialite" name="specialite" required require>
+                                        <% if(filiere) { for(var i=0; i<filiere.length; i++) {%>
+                                               <% if(specialites) { for(var j=0; j<specialites.length; j++) {%>
+                                                   <% if(filiere[i].dataValues.id == specialites[j].dataValues.filiereId) { %>
+                                                   <option   value=<%- specialites[j].dataValues.filiereId %>><%- filiere[i].dataValues.nom_filiere %>==><%- specialites[j].dataValues.nom_specialite %></option>
+                                               
+                                           
+                                       <% }}}}} %>
+                                       </select>
                                 </div>
                             </div>
                     

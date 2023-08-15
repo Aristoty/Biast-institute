@@ -1,4 +1,6 @@
 const express = require('express')
+
+
 const {
     indexView, 
     aboutView, 
@@ -30,7 +32,7 @@ const path = require('path')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../public/assets/images/avatar'))
+        cb(null, path.join(__dirname, './../tmp'))
     },
 
     filename : (req, file, cb) => {
