@@ -19,7 +19,7 @@ const Student = sequelize.define('students', {
       allowNull: true
     },
     date_de_naissance: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
     lieu_de_naissance: {
