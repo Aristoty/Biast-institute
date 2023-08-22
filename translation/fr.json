@@ -1,0 +1,91 @@
+{
+	"bienvenu": "Bienvenu à Biast",
+	"nav": {
+		"home": "ACCUEILLE",
+		"about": "À PROPOS DE NOUS",
+		"cours": "FILIÉRES",
+		"event": "ÉVÈNEMENTS",
+		"contact": "CONTACTS"
+	},
+	"ecrire": "Nous écrire",
+	"call": "Nous appelé",
+	"slider": {
+		"slider1": "BIENVENU À BIAST",
+		"slider2": "ÊTES VOUS PRÊT À DÉMARRER AVEC BIAST",
+		"slider3": "CHOISISSEZ LE MEILLEUR, CHOISISSEZ BIAST"
+	},
+	"title": "INSTITUT UNIVERSITAIRE BILINGUE DES SCIENCES APPLIQUÉES ET TECHNOLOGIE",
+	"read": "VOIR +",
+	"start": "COMMENCEZ MAINTENANT",
+	"tendance": {
+		"title": "Tendance des cours",
+		"content": " Biast propose un grand nombre de cours et de filières hautement dispensés"
+	},
+	"book": {
+		"title": "Livres et Bibliothèque",
+		"content": "Les manuels scolaires tels que les supports de cours sont fourni gratuitement"
+	},
+	"teacher": {
+		"title": "Enseignants Qualifiés",
+		"content": "Tous nos enseignants ont la maitrise de leurs domaines et sont qualifiés"
+	},
+	"certify": {
+		"title": "Certifications",
+		"content": "Une certification reconnue, est décernée aux etudiants en fin de formation"
+	},
+	"subtitle": {
+		"content1": {
+			"title": "À PROPOS DE NOUS",
+			"resume": "Biast est un institut créé en 2020 par le Professeur Tala Pierre Kisito, Chef de département de physique à l'université de Dschang"
+		},
+		"content2": {
+			"title": "NOS SUJETS LES PLUS POPULAIRES",
+			"resume": "Les filières les plus fréquemment solliciter par les étudiants qui s'inscrivent à Biast"
+		},
+		"content3": {
+			"title": "LAUREATS ET STATISTIQUES",
+			"resume": "Biast, pour année antérieure est entrain de totaliser les effectifs suivants"
+		},
+		"content4": {
+			"title": "NOS DIFFÉRENTS ÉVÈNEMENTS",
+			"resume": "Les différents événements au cours de ces trois dernières années, réunions, organisations, visites d'une personnalité ou d'une entreprise"
+		},
+		"content5": {
+			"title": "NOTRE PERSONNEL EXPÉRIMENTÉ",
+			"resume": "Les experts de BIAST sont là pour tous vos préoccupations et vous encourage dans vos diffèrent choix de filières"
+		},
+		"content6": {
+			"title": "NOS PUBLICATIONS LES PLUS RÉCENTES",
+			"resume": "Les Informations quelques peu inportantes pour les étudiants inscrit à Biast."
+		},
+		"content7": {
+			"title": "NOS UNIVERSITÉS PARTENAIRES",
+			"resume": "Tous nos universités et entreprises partenaires partout dans le monde entier."
+		}
+	},
+	"description": {
+		"title": "BIENVENU CHEZ BIAST",
+		"intro": "Avec Biast, votre formation est garantie et votre avenir n’est plus une préoccupation majeure. Tous nos filières sont reconnues pas des pays étrangers tels que : la France, l’Allemagne, l’Autriche etc...",
+		"hystory": {
+			"title": "NOTRE HISTORE",
+			"content": "La brillante pensée du professeur Talla Pierre Kisito à faire naitre les étincelles de l’institut Biast en 2020. C’est grâce a ces nombreux voyages de part le monde en générale, et les différente coopération avec les grand chef d’entreprise en particulier, qui a donnée vie a cette institut.."
+		},
+		"mission": {
+			"title": "NOTRE MISSION",
+			"content": "Assurer l’avenir des enfants est une problématique des plus fréquents dans une famille. La mission de Biast est de former les enfants et de les garantir un avenir meilleur dans des grands écoles de grand pays.."
+		},
+		"vision": {
+			"title": "NOTRE VISION",
+			"content": "Biast vise à établir une connexion solide entre le Cameroun et les pays étrangers afin que tous les étudiants qui se forme, puisse bénéficier de l’aide des mains extérieurs plus expérimenter pour ainsi faire avancer sa connaissance et faire avancer la technique et l’éducation dans notre pays."
+		}
+	},
+	"enseignant": "Enseignants",
+	"filiere": "FILIÈRES",
+	"etudiant": "ÉTUDIANTS",
+	"reusite": "reussite en %",
+	"reussite": "reussite",
+    "voir" : "Voir l'evenement",
+    "from" : "De",
+    "to" : "à"
+
+}

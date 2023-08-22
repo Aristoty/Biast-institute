@@ -5,6 +5,7 @@
         </div>
        <% for(let i = 0; i< events.length; i=i+2) { %> 
             <div class="row space-bt30">
+              <% if(events[i]) { %>
                 <div class="col-lg-6 col-md-12 md-mb-30">
                     <div class="event-item">
                         <div class="row rs-vertical-middle">
@@ -42,6 +43,8 @@
                         </div>                    		
                     </div>
                 </div>
+              <% } %>
+              <% if(events[i+1]) { %>
                 <div class="col-lg-6 col-md-12">
                     <div class="event-item">
                         <div class="row rs-vertical-middle">
@@ -79,6 +82,7 @@
                         </div>                    		
                     </div>
                 </div>
+              <% } %>
             </div>
         <% } %>
        

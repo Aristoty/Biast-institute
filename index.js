@@ -10,14 +10,45 @@ const toastr = require('express-toastr');
 const { sequelize, Filiere } = require('./models/homeModel')
 const jwt = require('jsonwebtoken')
 const { Event, User, Student } = require('./models/homeModel')
+const i18n = require('i18n')
+
+// const i18n = new I18n({
+//     locales: ["fr", "en"],
+//     directory : path.join(__dirname, 'translation'),
+//     defaultLocale : "fr"
+// })
+
+// app.use(i18n.init)
+
+// app.use((req, res, next) => {
+
+//         if(req.query.lang){
+//             i18n.setLocale(req, req.headers['abcd'])
+//         }
+//         // if(req.query.lang == "en"){
+//         //     i18n.setLocale(req, req.headers['abcd'])
+//         // }
+
+//     next()
+// })
 
 
+i18n.configure({
+    locales: ['en', 'fr'], // set the languages here
+    defaultLocale: 'fr',
+    queryParameter: 'lang', // query parameter to switch locale (ie. /home?lang=ch) - defaults to NULL
+    directory: path.join(__dirname , 'translation')
+  });
 
+
+  app.use(cookieParser());
+
+  app.use(i18n.init);
 
 const PORT = process.env.SERVER_PORT || 3000
 
 app.use(express.urlencoded({extended: true})); 
-// moteur de template ejs 
+
 app.use(expressLayouts)
 
 app.set('view engine', 'ejs')
@@ -62,6 +93,8 @@ Event.sync().then(() => {
     }).catch((error) => {
     console.error('Unable to create table : ', error);
 });
+
+
 
 // server d'application
 app.listen(PORT, () => {

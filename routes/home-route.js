@@ -67,6 +67,11 @@ router.get('/personalpage/modifPassword', protectionRoute, modifPassword)
 router.get('/personalpage/modifPhoto',protectionRoute, modifPhoto )
 router.post('/personalpage/modifPassword', protectionRoute, modifPasswordTraitement)
 router.post('/personalpage/modifPhoto', protectionRoute,upload.single("image"), modifPhotoTraitement)
+
+router.get('/test', async (req, res) => {
+    res.send({name:res.__('MESSAGE')})
+})
+
 module.exports = {
     routes:router
 }

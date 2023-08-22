@@ -1154,12 +1154,12 @@ ul {
 }
 .rs-toolbar .rs-toolbar-right .toolbar-share-icon ul li a {
   font-size: 14px;
-  color: #888888;
+  color: white;
 }
 .rs-toolbar .rs-toolbar-right .toolbar-share-icon ul li a:hover,
 .rs-toolbar .rs-toolbar-right .toolbar-share-icon ul li a:active,
 .rs-toolbar .rs-toolbar-right .toolbar-share-icon ul li a:focus {
-  color: #ffffff;
+  color: green;
 }
 .rs-toolbar .rs-toolbar-right .apply-btn {
   font-weight: 500;

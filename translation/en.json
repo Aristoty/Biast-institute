@@ -1,0 +1,89 @@
+{
+	"bienvenu": "Welcome to Biast",
+	"nav": {
+		"home": "HOME",
+		"about": "ABOUT US",
+		"cours": "COURSES",
+		"event": "EVENTS",
+		"contact": "CONTACTS"
+	},
+	"ecrire": "Mail Us",
+	"call": "Call Us",
+	"slider": {
+		"slider1": "WELCOME TO BIAST",
+		"slider2": "ARE YOU READY TO START WITH BIAST?",
+		"slider3": "CHOOSE THE BEST, CHOOSE THE BIAST"
+	},
+	"title": "BILINGUAL INSTITUTE OF APPLIED SCIENCES AND TECHNOLOGY",
+	"read": "READ MORE",
+	"start": "GET STARTED",
+	"tendance": {
+		"title": "Price trend",
+		"content": "Biast offers a large number of highly taught courses and streams"
+	},
+	"book": {
+		"title": "Books & Library",
+		"content": "Textbooks such as course materials are provided free of charge"
+	},
+	"teacher": {
+		"title": "Qualified Teachers",
+		"content": "All our teachers have mastery of their fields and are qualified  to teach"
+	},
+	"certify": {
+		"title": "Certificates",
+		"content": "A recognized certification is awarded to students at the end of their training"
+	},
+	"subtitle": {
+		"content1": {
+			"title": "ABOUT US",
+			"resume": "Biast is an institute created in 2020 by Professor Tala Pierre Kisito, Head of the Physics Department at the University of Dschang"
+		},
+		"content2": {
+			"title": "OUR MOST POPULAR COURSES",
+			"resume": "The courses most frequently requested by students who enroll at Biast"
+		},
+		"content3": {
+			"title": "ACHIEVEMENT AND STATISTICS",
+			"resume": "Biast, for the previous year is in the process of totaling the following numbers"
+		},
+		"content4": {
+			"title": "OUR VARIOUS EVENTS",
+			"resume": "The various events over the past three years, meetings, organizations, visits by a personality or a company"
+		},
+		"content5": {
+			"title": "OUR EXPERIENCED STAFF",
+			"resume": "BIAST experts are there for all your concerns and encourage you in your different choices of courses"
+		},
+		"content6": {
+			"title": "OUR MOST RECENT PUBLICATIONS",
+			"resume": "Information of some importance for students enrolled at Biast."
+		},
+		"content7": {
+			"title": "OUR PARTNER UNIVERSITIES",
+			"resume": "All our partner universities and companies all over the world."
+		}
+	},
+	"description": {
+		"title": "WELCOME TO BIAST",
+		"intro": "With Biast, your training is guaranteed and your future is no longer a major concern. All our courses are recognized by foreign countries such as: France, Germany, Austria etc...",
+		"hystory": {
+			"title": "OUR HISTORY",
+			"content": "The brilliant thought of Professor Talla Pierre Kisito to give birth to the sparks of the Biast Institute in 2020. It is thanks to these many trips around the world in general, and the different cooperation with the great business leaders in particular, who gave life to this institute.."
+		},
+		"mission": {
+			"title": "OUR MISSION",
+			"content": "Ensuring the future of children is one of the most frequent problems in a family. Biast's mission is to train children and guarantee them a better future in large schools in large countries."
+		},
+		"vision": {
+			"title": "OUR VISION",
+			"content": "Biast aims to establish a solid connection between Cameroon and foreign countries so that all students who are trained can benefit from the help of outside hands more to experiment in order to advance their knowledge and advance technique and education in our country."
+		}
+	},
+	"enseignant": "Teachers",
+	"filiere": "Courses",
+	"etudiant": "Students",
+	"reussite": "success rate",
+	"voir" : "Read more",
+	"from": "from",
+	"to" : "to"
+}

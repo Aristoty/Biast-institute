@@ -101,4 +101,36 @@ const data = [
   // const response = await axios.get(`http://localhost:3000/specialities/`);
          
   
-   
+   // let url = window.location.href;    
+// if (url.indexOf('?') > -1){
+//    url += '&param=1'
+// } else {
+//    url += '?param=1'
+// }
+// window.location.href = url;
+
+const language = document.querySelector('#language')
+
+
+language.addEventListener("change", (e) => {
+    let url = window.location.href; 
+    url = url.replace("&lang=en", "")
+    url = url.replace("&lang=fr", "")
+    url = url.replace("?lang=en", "")
+    url = url.replace("?lang=fr", "")
+    if(url.indexOf('?') > -1)  {
+      window.location.href = `${url}&lang=${e.target.value}`;
+    }else{
+      window.location.href = `${url}?lang=${e.target.value}`;
+    }
+    
+})
+
+const verify = (table, item) => {
+  for(let i = 0; i<table.length; i++){
+    if(table[i] == item){
+      return true
+    }
+  }
+  return false
+}

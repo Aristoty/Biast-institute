@@ -2,8 +2,8 @@
     <div id="rs-about" class="rs-about">
         <div class="container">
             <div class="sec-title mb-50 text-center">
-                <h2>À PROPOS DE NOUS</h2>     
-                <p>Biast est un institut créé en 2020 par le Professeur Tala Pierre Kisito, Chef de département de physique à l'université de Dschang</p>
+                <h2><%= translate('subtitle').content1.title %></h2>     
+                <p><%= translate('subtitle').content1.resume %></p>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-12">
@@ -16,43 +16,43 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="about-desc">
-                        <h3>BIENVENUE CHEZ BIAST</h3>      
-                        <p>Avec Biast, votre formation est garantie et votre avenir n’est plus une préoccupation majeure. Tous nos filières sont reconnues pas des pays étrangers tels que : la France, l’Allemagne, l’Autriche etc...</p>
+                        <h3><%= translate('description').title  %></h3>      
+                        <p><%= translate('description').intro  %></p>
                     </div>
                     <div id="accordion" class="rs-accordion-style1">
                         <div class="card">
                             <div class="card-header" id="headingOne">
                                 <h3 class="acdn-title" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                      Notre Histoire
+                                    <%= translate('description').hystory.title  %>
                                 </h3>
                             </div>
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
                                 <div class="card-body">
-                                    La brillante pensée du professeur Talla Pierre Kisito à faire naitre les étincelles de l’institut Biast en 2020. C’est grâce a ces nombreux voyages de part le monde en générale, et les différente coopération avec les grand chef d’entreprise en particulier, qui a donnée vie a cette institut..
+                                    <%= translate('description').hystory.content  %>
                                 </div>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-header" id="headingTwo">
                                 <h3 class="acdn-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                      Notre Mission
+                                    <%= translate('description').mission.title  %>
                                 </h3>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
                                 <div class="card-body">
-                                    Assurer l’avenir des enfants est une problématique des plus fréquents dans une famille. La mission de Biast est de former les enfants et de les garantir un avenir meilleur dans des grands écoles de grand pays..
+                                    <%= translate('description').mission.content  %>
                                 </div>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-header mb-0" id="headingThree">
                                 <h3 class="acdn-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                     Notre Vision
+                                    <%= translate('description').vision.title  %>
                                 </h3>
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
                                 <div class="card-body">
-                                    Biast vise à établir une connexion solide entre le Cameroun et les pays étrangers afin que tous les étudiants qui se forme, puisse bénéficier de l’aide des mains extérieurs plus expérimenter pour ainsi faire avancer sa connaissance et faire avancer la technique et l’éducation dans notre pays.
+                                    <%= translate('description').vision.content  %>
                                 </div>
                             </div>
                         </div>
@@ -67,8 +67,8 @@
     <div id="rs-courses" class="rs-courses sec-spacer sec-color">
         <div class="container">
             <div class="sec-title mb-50 text-center">
-                <h2>NOS SUJETS LES PLUS POPULAIRES</h2>      
-                <p>Les filières les plus fréquemment solliciter par les étudiants qui s'inscrivent à Biast</p>
+                <h2><%= translate('subtitle').content2.title %></h2>     
+                <p><%= translate('subtitle').content2.resume %></p>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -76,7 +76,7 @@
                       <% if(filiere) {for(var j=0; j<filiere.length; j++) { %>
                         <div class="cource-item">
                             <div class="cource-img">
-                                <img src=<%= "/assets/images/courses/" + filiere[j].dataValues.image_desc %> alt="" />
+                                <a href="/courses/<%= filiere[j].dataValues.id %>" title="<%= filiere[j].dataValues.nom_filiere %>"> <img src=<%= "/assets/images/courses/" + filiere[j].dataValues.image_desc %> alt="" /></a>
                                 <a class="image-link" href="/courses/<%= filiere[j].dataValues.id %>" title="<%= filiere[j].dataValues.nom_filiere %>">
                                     <i class="fa fa-link"></i>
                                 </a>
@@ -108,9 +108,9 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="counter-content">
-                        <h2 class="counter-title">LAUREATS ET STATISTIQUES</h2>
+                        <h2 class="counter-title"><%= translate('subtitle').content3.title %></h2>
                         <div class="counter-text">
-                            <p>Biast, pour année antérieure est entrain de totaliser les effectifs suivants</p>
+                            <p><%= translate('subtitle').content3.resume %></p>
                         </div>
                         <div class="counter-img rs-image-effect-shine">
                             <img src="/assets/images/counter/achieve.jpg" alt="Counter Discussion">
@@ -122,13 +122,13 @@
                         <div class="col-md-6">
                             <div class="rs-counter-list">
                                 <h2 class="counter-number plus">10</h2>                  
-                                <h4 class="counter-desc">ENSEIGNANTS</h4>
+                                <h4 class="counter-desc"><%= translate('enseignant') %></h4>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="rs-counter-list">
                                 <h2 class="counter-number plus">14</h2>
-                                <h4 class="counter-desc">FILIÈRES </h4>
+                                <h4 class="counter-desc"><%= translate('filiere') %> </h4>
                             </div>
                         </div>
                     </div>
@@ -136,13 +136,13 @@
                         <div class="col-md-6">
                             <div class="rs-counter-list">
                                 <h2 class="counter-number plus">100</h2>                  
-                                <h4 class="counter-desc">ÉTUDIANTS </h4>
+                                <h4 class="counter-desc"><%= translate('etudiant') %> </h4>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="rs-counter-list">
                                 <h2 class="counter-number plus">78</h2>
-                                <h4 class="counter-desc">REUSSITE</h4>
+                                <h4 class="counter-desc"><%= translate('reussite') %></h4>
                             </div>
                         </div>
                     </div>
@@ -156,8 +156,8 @@
     <div id="rs-events" class="rs-events sec-spacer">
         <div class="container">
             <div class="sec-title mb-50 text-center">
-                <h2>NOS DIFFÉRENTS ÉVÈNEMENTS</h2>      
-                <p>Les différents événements au cours de ces trois dernières années, réunions, organisations, visites d'une personnalité ou d'une entreprise</p>
+                <h2><%= translate('subtitle').content4.title %></h2>     
+                <p><%= translate('subtitle').content4.resume %></p>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -179,7 +179,7 @@
                                 <div class="event-meta">
                                     <div class="event-time">
                                         <i class="fa fa-clock-o"></i>
-                                        <span>De <%= events[i].dataValues.temps_debut %>  à <%= events[i].dataValues.temps_fin %></span>
+                                        <span><%= translate('from') %> <%= events[i].dataValues.temps_debut %> <%= translate('to') %>  <%= events[i].dataValues.temps_fin %></span>
                                     </div>
                                     <div class="event-location">
                                         <i class="fa fa-map-marker"></i>
@@ -187,7 +187,7 @@
                                     </div>
                                 </div>
                                 <div class="event-btn">
-                                    <a href="#">Voir l'Évènement  <i class="fa fa-angle-double-right"></i></a>
+                                    <a href="#"><%= translate('voir') %>  <i class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -203,10 +203,9 @@
     <div id="rs-team" class="rs-team">
         <div class="container">
             <div class="sec-title mb-50 text-center">
-                <h2>NOTRE PERSONNEL EXPÉRIMENTÉ</h2>      
-                <p>Les experts de BIAST sont là pour tous vos préoccupations et vous encourage dans vos diffèrent choix de filières
+                <h2><%= translate('subtitle').content5.title %></h2>     
+                <p><%= translate('subtitle').content5.resume %></p>
 
-                </p>
             </div>
             <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="false" data-autoplay-timeout="5000" data-smart-speed="1200" data-dots="true" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="true" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="true" data-ipad-device-dots="true" data-md-device="3" data-md-device-nav="true" data-md-device-dots="true">
                 <div class="team-item">
@@ -293,8 +292,8 @@
     <div id="rs-latest-news" class="rs-latest-news sec-spacer">
         <div class="container">
             <div class="sec-title mb-50 text-center">
-                <h2>NOS PUBLICATIONS LES PLUS RÉCENTES  </h2>      
-                <p>Les Informations quelques peu inportantes pour les étudiants inscrit à Biast.</p>
+                <h2><%= translate('subtitle').content6.title %></h2>     
+                <p><%= translate('subtitle').content6.resume %></p>
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -395,8 +394,8 @@
     <div id="rs-partner" class="rs-partner pt-60 pb-70 ">
         <div class="container">
             <div class="sec-title mb-50 text-center">
-                <h2>NOS UNIVERSITÉS PARTENAIRES</h2>      
-                <p>Tous nos universités et entreprises partenaires partout dans le monde entier.</p>
+                <h2><%= translate('subtitle').content7.title %></h2>     
+                <p><%= translate('subtitle').content7.resume %></p>
             </div>
             <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
                 <div class="partner-item">

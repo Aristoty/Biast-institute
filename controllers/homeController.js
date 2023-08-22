@@ -6,12 +6,6 @@ const countries = require('../data/countries.json')
 const jwt = require('jsonwebtoken')
 const my_filieres = require('../data/filieres.json')
 const my_specialites = require('../data/specialites.json')
-
-
-
-
-
-
 var filiere = null
 var specialites = null
 var credential = null
@@ -76,7 +70,7 @@ getSpecialities()
 
     
 const indexView = async (req, res, next) => {
-
+    // i18n.setLocale(req, req.headers['en'])
     const events = await Event.findAll().then(res => {
         return res
     }).catch((error) => {
@@ -103,10 +97,11 @@ const indexView = async (req, res, next) => {
      return res.render('home', {events:events,filiere:courses,path:req.path,detail: true,user: res.locals.user,etudiant:etudiant})
     }
 
-        res.render('home', {events:events,filiere:courses,path:req.path,detail: true,user:null,etudiant:null})
+        res.render('home', {translate:res.__,events:events,filiere:courses,path:req.path,detail: true,user:null,etudiant:null})
 }
 
 const aboutView = async(req, res, next) => {
+    
     if(req.query.token){
         const etudiant =  await Student.findOne({
             where : {id : await User.findOne({
@@ -120,7 +115,7 @@ const aboutView = async(req, res, next) => {
      })  
         return res.render('about', {etuduant:etudiant,path:req.path, detail: false,user: res.locals.user})
     }
-    res.render('about', {path:req.path, detail: false,user: null})
+    res.render('about', {translate:res.__,path:req.path, detail: false,user: null})
 }
 
     
@@ -220,7 +215,7 @@ const inscrptionView = (req, res, next) => {
         return  res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:res.locals.user,message:'',modifier:false})
    
     }
-    res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:'',modifier:false})
+    res.render('inscription', {translate:res.__,specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:'',modifier:false})
 }
 
 const contactView = async(req, res, next) => {
