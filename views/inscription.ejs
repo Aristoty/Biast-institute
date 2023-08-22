@@ -5,82 +5,82 @@
         <form class="form" id="inscription" name="inscription" method="POST" action="/studentInscrip" enctype="multipart/form-data" >
             <div class="left-side">
                 <div class="left-heading h3_i">
-                    Prennez vos inscriptions en ligne 
+                    <%= translate('inscription').leftside.title %>
                 </div>
                 <div class="steps-content">
                     
-                    Etape <span class="step-number">1</span>
-                    <p class="step-number-content active">Renseignez vos informations personnelles</p>
+                    <%= translate('etape') %> <span class="step-number">1</span>
+                    <p class="step-number-content active"><%= translate('inscription').leftside.infor %></p>
                     <p class="step-number-content d-none">Information sur votre physiologie</p>
                     <p class="step-number-content d-none">Information sur vos parents</p>
                     <p class="step-number-content d-none">Information Académiques </p>
 
                 </div>
                 <ul class="progress-bar">
-                    <li class="active">Informations Personnelles</li>
-                    <li>Informations Physiologique</li>
-                    <li>Informations sur les Parents</li>
-                    <li>Education</li>
+                    <li class="active"><%= translate('inscription').leftside.stepper[0] %></li>
+                    <li><%= translate('inscription').leftside.stepper[1] %></li>
+                    <li><%= translate('inscription').leftside.stepper[2] %></li>
+                    <li><%= translate('inscription').leftside.stepper[3] %></li>
                 </ul>
             </div>
             <div class="right-side">
                 <div class="main active">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>Renseignez vos informations Personnelles</h2>
-                        <% if(message) { %><p style="color:red"><%- message  %></p> <% } else {%><p>Renseigner vos informations</p><% } %>
+                        <h2><%= translate('inscription').rightside.title[0] %></h2>
+                        <% if(message) { %><p style="color:red"><%- message  %></p> <% } else {%><p><%= translate('inscription').rightside.subtitle[0] %></p><% } %>
                     
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="nom">Nom <em class="red">*</em></label>
+                            <label for="nom"><%= translate('inscription').rightside.labels.nom %> <em class="red">*</em></label>
                             <input type="text" id="nom" name="nom" require required>
                             
                         </div>
                         
                         <div class="input-div"> 
-                            <label for="prenom">Prenom</label>
+                            <label for="prenom"><%= translate('inscription').rightside.labels.prenom %> </label>
                             <input type="text" id="prenom" name="prenom" >
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="date">Date de naissance <em class="red">*</em></label>
+                            <label for="date"><%= translate('inscription').rightside.labels.date_de_naissance %> <em class="red">*</em></label>
                             <input class="md-form md-outline input-with-post-icon datepicker" type="date" id="date" name="date" require required>
                             
                         </div>
                         <div class="input-div">
-                            <label for="lieu">Lieu de naissance <em class="red">*</em></label>
+                            <label for="lieu"><%= translate('inscription').rightside.labels.lieu_de_naissance %> <em class="red">*</em></label>
                             <input type="text" name="lieu" id="lieu" require required>
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="region">Region d'origine<em class="red">*</em></label>
+                            <label for="region"><%= translate('inscription').rightside.labels.region_origine %><em class="red">*</em></label>
                             <input type="text" name="region" id="region" require required>
                         </div>
                         <div class="input-div">
-                            <label for="departement">Departement d'origine<em class="red">*</em></label>
+                            <label for="departement"><%= translate('inscription').rightside.labels.departement_origine %><em class="red">*</em></label>
                             <input type="text" name="departement" id="departement" require required>
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="email">Email<em class="red">*</em></label>
+                            <label for="email"><%= translate('inscription').rightside.labels.email %><em class="red">*</em></label>
                             <input type="text" name="email" id="email" require required>
                         </div>
                         <div class="input-div">
-                            <label for="telephone">Telephone</label>
+                            <label for="telephone"><%= translate('inscription').rightside.labels.telephone %></label>
                             <input type="text" name="telephone" id="telephone">
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="numero_cni">Numero de cni<em class="red">*</em></label>
+                            <label for="numero_cni"><%= translate('inscription').rightside.labels.numero_cni %><em class="red">*</em></label>
                             <input type="text" name="numero_cni" id="numero_cni" require required>
                         </div>
                         <div class="input-div">
-                            <label for="status_matrimonial">Status Matrimonial</label>
+                            <label for="status_matrimonial"><%= translate('inscription').rightside.labels.status_marital %></label>
                             <select id="status_matrimonial" name="status_matrimonial" required require>
                                 <option value="Celibataire et 0 enfant en charge">Celibataire et 0 enfant en charge</option>
                                 <option value="Marie">Marie</option>
@@ -92,7 +92,7 @@
                    
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="pays">Pays d'origine<em class="red">*</em></label>
+                            <label for="pays"><%= translate('inscription').rightside.labels.pays %><em class="red">*</em></label>
                             <select  class="form-select" name="pays" id="pays" require>
                                 
                                     <% if(countries) { for(var i=0; i<countries.length; i++) {%>
@@ -102,7 +102,7 @@
                             </select>
                         </div>
                         <div class="input-div">
-                            <label for="ville">Ville de residence</label>
+                            <label for="ville"><%= translate('inscription').rightside.labels.ville %></label>
                             <input type="text" id="ville" name="ville" >         
                         </div>
                     </div>
@@ -110,19 +110,19 @@
 
 
                     <div class="buttons">
-                        <button class="next_button">Suivant</button>
+                        <button class="next_button"><%= translate('inscription').rightside.labels.suivant %></button>
                     </div>
                 </div>
                 
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>Information sur votre physiologie</h2>
-                        <p>Information sur  votre  présentation physiologie.</p>
+                        <h2><%= translate('inscription').rightside.title[1] %></h2>
+                        <p><%= translate('inscription').rightside.subtitle[1] %>.</p>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="sexe">Sexe<em class="red">*</em></label>
+                            <label for="sexe"><%= translate('inscription').rightside.labels.sexe %><em class="red">*</em></label>
                             <select  class="form-select" name="sexe" id="sexe" require required>
                                 
                                  <option value="Masculin"> Masculin </option>
@@ -131,10 +131,10 @@
                             </select>
                         </div>
                         <div class="input-div">
-                            <label for="language">Langue Officielle<em class="red">*</em></label>
-                            <select  class="form-select" name="language" id="language" require required>
+                            <label for="employe"><%= translate('inscription').rightside.labels.situation %><em class="red">*</em></label>
+                            <select  class="form-select" name="employe" id="employe" require required>
                                 
-                                <option value="Sans emploi"> Francais </option>
+                                <option value="Sans emploi"> Sans emploi </option>
                                 <option value="Employe"> Employe </option>
 
                            </select>
@@ -143,18 +143,18 @@
 
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="enfant">Nombre d'enfant</label>
+                            <label for="enfant"><%= translate('inscription').rightside.labels.enfant %></label>
                             <input type="number" name="enfant" value="0" id="enfant" />
                         </div>
                         <div class="input-div">
-                            <label for="Code">Code Postal<em class="red">*</em></label>
+                            <label for="Code"><%= translate('inscription').rightside.labels.postal %><em class="red">*</em></label>
                             <input type="text" name="code" id="Code">
                         </div>
                     </div>
 
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="situation">Situation d'emploi</label>
+                            <label for="situation"><%= translate('inscription').rightside.labels.situation %></label>
                             <select  class="form-select" name="situation" id="situation" require required>
                                 
                                 <option value="Sans emploi"> Sans emploi </option>
@@ -163,7 +163,7 @@
                            </select>
                         </div>
                         <div class="input-div">
-                            <label for="handicape">Handicapé</label>
+                            <label for="handicape"><%= translate('inscription').rightside.labels.handicape %></label>
                             <select  class="form-select" name="handicape" id="handicape">
                                 
                                 <option value="Oui"> Oui </option>
@@ -174,80 +174,80 @@
                     </div>
                     
                     <div class="buttons button_space">
-                        <button class="back_button">Précèdent</button>
-                        <button class="next_button">Suivant</button>
+                        <button class="back_button"><%= translate('inscription').rightside.labels.precede %></button>
+                        <button class="next_button"><%= translate('inscription').rightside.labels.suivant %></button>
                     </div>
                 </div>
                
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>Informations sur les Parents</h2>
-                        <p>Renseigner les informations sur vos parents</p>
+                        <h2><%= translate('inscription').rightside.title[2] %></h2>
+                        <p><%= translate('inscription').rightside.subtitle[2] %>.</p>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="nom_pere">Nom du pere</label>
+                            <label for="nom_pere"><%= translate('inscription').rightside.labels.nom_pere %></label>
                             <input type="text" id="nom_pere" name="nom_pere" >
                         </div>
                         <div class="input-div">
-                            <label for="nom_mere">Nom de la mere</label>
+                            <label for="nom_mere"><%= translate('inscription').rightside.labels.nom_mere %></label>
                             <input type="text" id="nom_mere" name="nom_mere" >
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="addr_pere">Adresse du pere</label>
+                            <label for="addr_pere"><%= translate('inscription').rightside.labels.addr_pere %></label>
                             <input type="text" id="addr_pere" name="addr_pere">
                         </div>
                         <div class="input-div">
-                            <label for="addr_mere">Adresse de la mere</label>
+                            <label for="addr_mere"><%= translate('inscription').rightside.labels.addr_mere %></label>
                             <input type="text" id="addr_mere" name="addr_mere" >
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="prof_pere">Profession du pere</label>
+                            <label for="prof_pere"><%= translate('inscription').rightside.labels.prof_pere %></label>
                             <input type="text" id="prof_pere" name="prof_pere">
                         </div>
                         <div class="input-div">
-                            <label for="prof_pere">Profession de la mere</label>
+                            <label for="prof_pere"><%= translate('inscription').rightside.labels.prof_mere %></label>
                             <input type="text" id="prof_mere" name="prof_mere">
                         </div>
                     </div>
                     
                     <div class="buttons button_space">
-                        <button class="back_button">Précèdent </button>
-                        <button class="next_button">Suivant</button>
+                        <button class="back_button"><%= translate('inscription').rightside.labels.precede %> </button>
+                        <button class="next_button"><%= translate('inscription').rightside.labels.suivant %></button>
                     </div>
                 </div>
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>Education</h2>
-                        <p>À propos de votre éducation du sécondaire</p>
+                        <h2><%= translate('inscription').rightside.title[3] %></h2>
+                        <p><%= translate('inscription').rightside.subtitle[3] %>.</p>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="dernEtab">Dernier etablissement frequenté <em class="red">*</em></label>
+                            <label for="dernEtab"><%= translate('inscription').rightside.labels.ecole %> <em class="red">*</em></label>
                             <input type="text" required require id="dernEtab" name="dernEtab" required require>
                             <span></span>
                         </div>
                         <div class="input-div"> 
-                            <label for="moyenne_bac">Moyenne obtenu au bac </label>
+                            <label for="moyenne_bac"><%= translate('inscription').rightside.labels.bac %> </label>
                             <input type="text" id="moyenne_bac" name="moyenne_bac">
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="type_form">Type de formation <em class="red">*</em></label>
+                            <label for="type_form"><%= translate('inscription').rightside.labels.formation %> <em class="red">*</em></label>
                             <input type="text" id="type_form" name="type_form" require required>
                         </div>
                
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="filiere">Selectionne la Filiere<em class="red">*</em></label>
+                            <label for="filiere"><%= translate('inscription').rightside.labels.filiere %><em class="red">*</em></label>
                             <select id="filiere"  id="filiere" name="filiere" required require>
                                 <% if(filiere) { for(var i=0; i<filiere.length; i++) {%>
                                     <option  value=<%- filiere[i].dataValues.id %>><%- filiere[i].dataValues.nom_filiere %></option>
@@ -257,7 +257,7 @@
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="specialite">Selectionner la Specialite<em class="red">*</em></label>
+                            <label for="specialite"><%= translate('inscription').rightside.labels.specialite %><em class="red">*</em></label>
                             <select id="specialite" id="specialite" name="specialite" required require>
                              <% if(filiere) { for(var i=0; i<filiere.length; i++) {%>
                                     <% if(specialites) { for(var j=0; j<specialites.length; j++) {%>
@@ -271,7 +271,7 @@
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="profil">Photo de Profil</label>
+                            <label for="profil"><%= translate('inscription').rightside.labels.profile %></label>
                             <input type="file" id="profil" name="image">
                         </div>
                     </div>
@@ -283,8 +283,8 @@
                     </div>
 
                     <div class="buttons button_space">
-                        <button class="back_button">Précèdent</button>
-                        <button type="submit"  class="submit_button">Valider</button>
+                        <button class="back_button"><%= translate('inscription').rightside.labels.precede %></button>
+                        <button type="submit"  class="submit_button"><%= translate('inscription').rightside.labels.valide %></button>
                     </div>
                 </div>
                 
@@ -440,7 +440,7 @@
                                     </select>
                                 </div>
                                 <div class="input-div">
-                                    <label for="language">Langue Officielle<em class="red">*</em></label>
+                                    <label for="language"><%= translate('inscription').rightside.labels.langue %><em class="red">*</em></label>
                                     <select  class="form-select" name="language" id="language" require required>
                                         
                                         <% if(etudiant.dataValues.langue == "francais") { %><option value="francais" selected> francais </option><% } else { %><option value="francais"> Masculin </option><% } %>

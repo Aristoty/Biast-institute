@@ -5,27 +5,27 @@
             
             <div class="left-side">
                 <div class="left-heading h3_i">
-                    Connectez vous à votre espace privé
+                    <%= translate('connexion').leftside %>
                 </div>
             </div>
             <div class="right-side">
                 <div class="main active">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>Renseignez vos paramettres de connexions</h2>
-                        <p>Veillez renseigner votre Login et votre Mot de passe</p>
+                        <h2><%= translate('connexion').rightside.title %></h2>
+                        <p><%= translate('connexion').rightside.subtitle %></p>
                         <% if(message) {%><div class="alert alert-danger"><%- message %></div><% } %>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
                             <input type="text" name="login" required require id="user_name">
-                            <span>Login</span>
+                            <span><%= translate('connexion').rightside.login %></span>
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
                             <input type="password" name="password" required require>
-                            <span>Password</span>
+                            <span><%= translate('connexion').rightside.password %></span>
                         </div>
                     </div>
                    

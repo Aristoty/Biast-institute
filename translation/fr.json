@@ -84,8 +84,79 @@
 	"etudiant": "ÉTUDIANTS",
 	"reusite": "reussite en %",
 	"reussite": "reussite",
-    "voir" : "Voir l'evenement",
-    "from" : "De",
-    "to" : "à"
-
+	"voir": "Voir l'evenement",
+	"from": "De",
+	"to": "à",
+	"inscription": {
+		"leftside": {
+			"title": "Prennez vos inscriptions en ligne",
+			"etape": "Etape",
+			"infor": "Renseignez vos informations personnelles",
+			"stepper": [
+				"Informations Personnelles",
+				"Informations Physiologique",
+				"Informations sur les Parents",
+				"Education"
+			]
+		},
+		"rightside": {
+			"title": [
+				"Renseignez vos informations Personnelles",
+				"Information sur votre physiologie",
+				"Informations sur les Parents",
+				"Education"
+			],
+			"subtitle": [
+				"Renseigner vos informations",
+				"Information sur votre présentation physiologie.",
+				"Renseigner les informations sur vos parents",
+				"À propos de votre éducation du sécondaire"
+			],
+			"labels": {
+				"nom": "Nom",
+				"prenom": "Prenom",
+				"date_de_naissance": "Date de naissance",
+				"lieu_de_naissance": "Lieu de naissance",
+				"region_origine": "Région d'origine",
+				"departement_origine": "Département d'origine",
+				"email": "Email",
+				"telephone": "Téléphone",
+				"numero_cni": "Numéro de cni",
+				"status_marital": "Status Matrimonial",
+				"pays": "Pays d'origine",
+				"ville": "Ville de résidence",
+				"sexe": "Sexe",
+				"langue": "Langue Officielle",
+				"enfant": "Nombre d'enfant",
+				"postal": "Code Postal",
+				"situation": "Situation d'emploi",
+				"handicape": "Handicapé",
+				"nom_pere": "Nom du père",
+				"nom_mere": "Nom de la mère",
+				"addr_pere": "Adresse du père",
+				"addr_mere": " Adresse de la mère",
+				"prof_pere": "Profession du père",
+				"prof_mere": "Profession de la mère",
+				"ecole": "Dernier etablissement frequenté",
+				"bac": "Moyenne obtenu au bac",
+				"formation": "Type de formation",
+				"filiere": "Sélectionnez la Filière",
+				"specialite": "Sélectionnez la Spécialité",
+				"profile": "Photo de Profil",
+				"precede": "Précèdent",
+				"suivant": "Suivant",
+				"valide": "Submit"
+			}
+		}
+	},
+	"connexion" : {
+		"leftside" : "Connectez vous à votre espace privé",
+		"rightside" : {
+			"title": "Renseignez vos paramettres de connexions",
+			"subtitle" : "Veillez renseigner votre Login et votre Mot de passe",
+			"login": "Login",
+			"password": "Mot de passe"
+		}
+	},
+	"etape": "etape"
 }

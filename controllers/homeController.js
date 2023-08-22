@@ -171,7 +171,7 @@ const connexionView = (req, res, next) => {
     if(req.query.token){
         return res.render('connexion', {path:req.path, detail: false, message:'',user: res.locals.user})
     }
-    res.render('connexion', {path:req.path, detail: false, message:'',user: null})
+    res.render('connexion', {translate:res.__,path:req.path, detail: false, message:'',user: null})
     
     
 }

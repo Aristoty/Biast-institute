@@ -16,7 +16,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@chilkat/ck-electron3-win64": "^9.50.88",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "connect-flash": "^0.1.1",

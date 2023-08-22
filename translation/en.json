@@ -83,7 +83,79 @@
 	"filiere": "Courses",
 	"etudiant": "Students",
 	"reussite": "success rate",
-	"voir" : "Read more",
+	"voir": "Read more",
 	"from": "from",
-	"to" : "to"
+	"to": "to",
+	"inscription": {
+		"leftside": {
+			"title": "Take your registrations online",
+			"etape": "Step",
+			"infor": "Fill in your personal informations",
+			"stepper": [
+				"Personal informations",
+				"Physiological Information",
+				"Parent Information",
+				"Education"
+			]
+		},
+		"rightside": {
+			"title": [
+				"Enter your Personal Information",
+				"Information about your physiology",
+				"Parent Information",
+				"Education"
+			],
+			"subtitle": [
+				"Enter your information",
+				"Information about your presentation physiology.",
+				"Fill in information about your parents",
+				"About Your High School Education"
+			],
+			"labels": {
+				"nom": "First Name",
+				"prenom": "Last name",
+				"date_de_naissance": "Date of birth",
+				"lieu_de_naissance": "Place of birth",
+				"region_origine": "Native Region",
+				"departement_origine": "Native Department",
+				"email": "Email",
+				"telephone": "Telephone",
+				"numero_cni": "Cni number",
+				"status_marital": "Marital Status",
+				"pays": "Native Country",
+				"ville": "City of residence",
+				"sexe": "Sex",
+				"langue": "Official Language",
+				"enfant": "Number of children",
+				"postal": "Zip Code",
+				"situation": "Employment status",
+				"handicape": "Inapte",
+				"nom_pere": "Father's name",
+				"nom_mere": "Mother's name",
+				"addr_pere": "Father's Address",
+				"addr_mere": "Mother's Address",
+				"prof_pere": "Father's profession",
+				"prof_mere": "Mother's profession",
+				"ecole": "Last school attended",
+				"bac": "Average obtained at the baccalaureate",
+				"formation": "Type of training",
+				"filiere": "Select the Filière",
+				"specialite": "Select the Specialty",
+				"profile": "Profile Picture",
+				"precede": "Previous",
+				"suivant": "Next",
+				"valide": "Submit"
+			}
+		}
+	},
+	"connexion" : {
+		"leftside" : "Log in to your private area",
+		"rightside" : {
+			"title": "Enter your connection parameters",
+			"subtitle" : "Please fill in your Login and Password",
+			"login": "Login",
+			"password": "Password"
+		}
+	},
+	"etape": "etape"
 }
