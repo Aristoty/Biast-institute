@@ -515,7 +515,11 @@
         <tr>
             <td width="100px"  rowspan="9" align="center">
                 
-                    <img  alt="<%- etudiant.dataValues.photo_profil %>" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="160" width="160" title="<%- etudiant.dataValues.photo_profil %>"><br> <%= translate('personalPage').photo.ancien %>
+                <% if(etudiant.dataValues.photo_profil) { %>
+                    <img class="rounded"  alt="profile" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="120" width="120" title="<%- etudiant.dataValues.photo_profil %>"></a>
+                <% } else { %>
+                    <img class="rounded" alt="profile" src="/assets/images/avatar/noprofile.png"  height="120" width="120" title="<%- etudiant.dataValues.photo_profil %>"></a>
+                <% } %><br> <%= translate('personalPage').photo.ancien %>
             </td>
             <td width="200px" class="textstyle"></td>
     
