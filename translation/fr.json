@@ -3,9 +3,20 @@
 	"nav": {
 		"home": "ACCUEILLE",
 		"about": "À PROPOS DE NOUS",
-		"cours": "FILIÉRES",
+		"cours": "FILIÈRES",
 		"event": "ÉVÈNEMENTS",
 		"contact": "CONTACTS"
+	},
+	"navfooter": {
+		"home": "Accueille",
+		"about": "À propos",
+		"cours": "filières",
+		"event": "Évènement",
+		"contact": "Contacts",
+		"inscription": "Inscription",
+		"connexion": "Connexion",
+		"session": "Ma Séssion",
+		"admin": "Admin"
 	},
 	"ecrire": "Nous écrire",
 	"call": "Nous appelé",
@@ -149,14 +160,157 @@
 			}
 		}
 	},
-	"connexion" : {
-		"leftside" : "Connectez vous à votre espace privé",
-		"rightside" : {
-			"title": "Renseignez vos paramettres de connexions",
-			"subtitle" : "Veillez renseigner votre Login et votre Mot de passe",
+	"connexion": {
+		"leftside": "Connectez vous à votre espace privé",
+		"rightside": {
+			"title": "Renseignez vos paramètres de connexions",
+			"subtitle": "Veillez renseigner votre Login et votre Mot de passe",
 			"login": "Login",
 			"password": "Mot de passe"
 		}
 	},
-	"etape": "etape"
+	"footer": {
+		"header": {
+			"addr": "Addresse",
+			"tel": "Numéros de téléphone",
+			"mail": "Addresse Email"
+		},
+		"titles": {
+			"biast": "INSTITUT BIAST",
+			"pub": "PUBLICATION RÉCENTE",
+			"carte": "LA CARTE DU SITE",
+			"news": "NEWSLETTER"
+		},
+		"citation": "Connaissez-vous la différence entre l'éducation et l'expérience ? L'éducation, c'est quand vous lisez tous les alinéas d'un contrat. L'expérience, c'est ce qui vous arrive quand vous ne le faites pas.",
+		"auteur": "De Ludmila Oulitskaïa/ Sincèrement vôtre, Chourik",
+		"resent1": {
+			"title": "Présentation de l'institut Biast",
+			"content": "Professeur Talla prends la parole"
+		},
+		"resent2": {
+			"title": "Visite du directeur de l'INSET de Nkongsamba.",
+			"content": "Signature de contrats"
+		},
+		"newscontent": "Abonnez-vous à notre newsletter pour obtenir les dernières mises à jour et Prestations de service",
+		"copy": "Tous les droits sont réservés."
+	},
+	"events": {
+		"title": "TOUS NOS ÉVÈNEMENTS",
+		"voir": "Voir Plus"
+	},
+	"courses": {
+		"title": "TOUS NOS COURS DISPONIBLES",
+		"voir": "Voir Plus"
+	},
+	"getIn": {
+		"inscription": "Inscription",
+		"connexion": "Connexion",
+		"deconnexion": "Déconnexion",
+		"session": "Ma Séssion"
+	},
+	"contact": {
+		"addresse": "Addresse",
+		"camer": "Ouest Cameroun",
+		"phone": "Numéro de téléphone",
+		"mail": "Addresse Email",
+		"comment": "LAISSEZ NOUS UN COMMENTAIRE",
+		"nom": "Nom",
+		"prenom": "Prenom",
+		"email": "Email",
+		"sujet": "Subject",
+		"message": "Message",
+		"valider": "Valider"
+	},
+	"database": {
+		"filiere": {
+			"Génie Electrique": "Génie Electrique",
+			"Génie Civil": "Génie Civil",
+			"Génie Mécanique et Productique": "Génie Mécanique et Productique",
+			"Génie Réseaux et télécommunications": "Génie Réseaux et télécommunications",
+			"Génie Informatique": "Génie Informatique",
+			"Commerce et Vente": "Commerce et Vente",
+			"Gestion": "Gestion",
+			"Agriculture et Élevage": "Agriculture et Élevage",
+			"Étude Médico-Sanitaire": "Étude Médico-Sanitaire",
+			"Science et Techniques Biomedicale": "Science et Techniques Biomedicale"
+		},
+		"speciality": "Spécialités",
+		"events": {
+			"LA VISITE DE L’UNIVERSITÉ DE NANCY DE FRANCE": "LA VISITE DE L’UNIVERSITÉ DE NANCY DE FRANCE",
+			"PRÉSENTATION DES NOUVEAUX BACHELIERS": "PRÉSENTATION DES NOUVEAUX BACHELIERS",
+			"ÉPANOUISSEMENT DES ÉTUDIANTS DE L’INSTITUT BIAST": "ÉPANOUISSEMENT DES ÉTUDIANTS DE L’INSTITUT BIAST",
+			"EXPLICATION DES LEÇONS AUX ÉTUDIANTS DU GÉNIE CIVIL": "EXPLICATION DES LEÇONS AUX ÉTUDIANTS DU GÉNIE CIVIL",
+			"LA VISITE DU DOYEN DE DSCHANG ET SIGNATURE DES ACCORDS": "LA VISITE DU DOYEN DE DSCHANG ET SIGNATURE DES ACCORDS"
+		}
+	},
+	"about": {
+		"histoire": "NOTRE HISTORE",
+		"mission": "NOTRE MISSION",
+		"vision": "NOTRE VISION",
+		"hiscont": {
+			"p1": "Le développement d’un pays est tributaire de la formation de sa jeunesse et de l’insertion de celle-ci dans les circuits de production. En clair, pour être émergent en 2035, comme l’invoque le gouvernement de la République, il faut mettre un accent sur la professionnalisation des enseignements dans l’Enseignement Supérieur. Ceci, bien entendu, suppose la formation à l’entreprenariat, la mise sur pied des formations professionnalisantes et l’appui à la création des entreprises, vivier de création d’emplois.",
+			"p2": "Le volet formation apparaît, à ce titre, être la pierre angulaire pour tout développement durable. Ceci expliquant cela, on comprend la floraison des Instituts d’Enseignement Supérieur dans notre pays depuis un certain temps.",
+			"p3": "Malheureusement, force est de constater que, malgré la floraison des IPES (Institut Privé de l’Enseignements Supérieurs) au Cameroun, on constate qu’il existe toujours un fossé entre la formation et les compétences recherchées par les employeurs."
+		},
+		"miscont": {
+			"p1": "Nantis de tout ce qui précède, j’ai décidé afin de laisser à la prospérité le savoir qui est le nôtre, de constituer un groupe de Professeurs pour la création d’un IPES qui va répondre à l’adéquation Formation/Emploi ce qui permettra à coup sûr de contribuer à l’émergence tant souhaitée par le Président de la République, du Cameroun, horizon 2035.",
+			"p2": "BIAST, Institut Universitaire Bilingue des Sciences Appliquées et Technologie (Bilingual Institute of Applied Sciences and Technology) est donc l’émanation d’un groupe de Professeurs des universités camerounaises et de l’extérieur, soucieux du devenir et de la formation de la jeunesse Camerounaise et Africaine pour un développement durable, d’où notre slogan 'Sciences Appliquées et Technologies au service du Développement Durable'.",
+			"p3": "La valeur ajoutée que nous apportons dans ce secteur se situe sur deux points :",
+			"p4": "La professionnalisation véritable des enseignements : A BIAST nous essayons de créer dans toutes les spécialités et ce par nos ateliers (workshops) l’environnement industriel adéquat dans lequel l’étudiant finissant est appelé à exercer ;",
+			"p5": "L’entreprenariat : Après analyse, ce groupe de Professeurs s’est rendu compte que quand bien même la jeunesse est bien formée, elle attend toujours d’être employée. Or comme nous le savons tous, nous sommes actuellement à l’ère où la fonction publique n’absorbe plus tous les diplômés de l’Enseignement Supérieur."
+		},
+		"viscont": {
+			"p1": "C’est ici que BIAST se démarque des autres IPES, en ce sens qu’avant la fin de la formation chaque étudiant élabore un projet banquable dans lequel il se doit de se réaliser à la fin de ses études. En relation avec les moyens disponibles nous les aiderons le maximum possible à implémenter leur projet.",
+			"p2": "Il ne serait pas superflu tout en concluant ce mot, de préciser que nous avons des filières innovantes tels que : la Maintenance des Appareils Biomédicaux (MAB), Géomètre Topographe (GT) ; Géotechnique et Géologie Appliquée (GGA) pour ne citer que celles-là.",
+			"p3": "En plus de toutes ces formations BTS /HND dispensée dans nos deux campus à Bafoussam - Cameroun, nous avons, avec nos partenaires, créé des formations initiales (02) deux ans sur place, et la possibilité d’obtenir l’inscription directe de vos enfants dans les Grandes Écoles d’Ingénieries et de Médecine dans universités partenaires d’Afrique et d’Europe.",
+			"p4": "Mesdames, Messieurs, Vous qui visitez à l’instant ce site, non seulement nous vous remercions pour l’intérêt porté à notre structure, mais nous vous prions aussi, afin d’avoir d’amples d’informations, de vous rendre dans les différentes rubriques."
+		}
+	},
+	"after": {
+		"inscrit": "Inscrit avec Succès",
+		"confiance": "Merci de nous faire confiance.  BIAST vous souhaite une fois de plus la bienvenue",
+		"password": "Mot de passe",
+		"oriente": "Ces paramètres sont le vôtre et vous pouvez les utiliser pour vous connecter à votre compte"
+	},
+	"courseDetail": {
+		"description": "Description du cours",
+		"detail": "DETAIL DE LA FILIÈRE",
+		"branche": "Les différentes Branches"
+	},
+	"personalPage": {
+		"bienvenu": "Bienvenue dans votre espace privé",
+		"nav": [
+			"Espace privé",
+			"Modifier mon password",
+			"Modifier ma photo",
+			"Consulter Mes Note"
+		],
+		"info": "Informations personnelles",
+		"labels": {
+			"nom": "Nom",
+			"lieu_de_naissance": "Lieu de naissance",
+			"email": "Email",
+			"numero_cni": "Numéro de cni",
+			"pays": "Pays de résidence",
+			"region_origine": "Région d'origine",
+			"ville": "Ville de résidence"
+		},
+		"fiche": "Voir ma fiche d'inscription",
+		"password": {
+			"edit": "Modifier Mon mot de passe",
+			"ancien": "Ancien Password",
+			"nouveau": "Nouveau password",
+			"confirmer": "Entrer à nouveau",
+			"modifier": "Modifier"
+		},
+		"photo": {
+			"edit": "Modifier ma photo de profile",
+			"ancien": "Ancienne Photo",
+			"profil": "Photo de Profil",
+			"charger": "Charger",
+			"caution": "NB: la photo à importer ne doit pas dépasser 10Mo"
+		},
+		"eventDetail": "DÉTAIL DE L'ÉVÈNEMENT"
+	}
+	
 }

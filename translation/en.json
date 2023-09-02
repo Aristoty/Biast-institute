@@ -7,11 +7,22 @@
 		"event": "EVENTS",
 		"contact": "CONTACTS"
 	},
+	"navfooter": {
+		"home": "Home",
+		"about": "About Us",
+		"cours": "Courses",
+		"event": "Events",
+		"contact": "Contacts",
+		"inscription": "Registration",
+		"connexion": "Sign In",
+		"session": "My Session",
+		"admin": "Admin page"
+	},
 	"ecrire": "Mail Us",
 	"call": "Call Us",
 	"slider": {
 		"slider1": "WELCOME TO BIAST",
-		"slider2": "ARE YOU READY TO START WITH BIAST?",
+		"slider2": "ARE YOU READY TO START WITH BIAST ?",
 		"slider3": "CHOOSE THE BEST, CHOOSE THE BIAST"
 	},
 	"title": "BILINGUAL INSTITUTE OF APPLIED SCIENCES AND TECHNOLOGY",
@@ -139,7 +150,7 @@
 				"ecole": "Last school attended",
 				"bac": "Average obtained at the baccalaureate",
 				"formation": "Type of training",
-				"filiere": "Select the Filière",
+				"filiere": "Select the Course",
 				"specialite": "Select the Specialty",
 				"profile": "Profile Picture",
 				"precede": "Previous",
@@ -148,14 +159,156 @@
 			}
 		}
 	},
-	"connexion" : {
-		"leftside" : "Log in to your private area",
-		"rightside" : {
+	"connexion": {
+		"leftside": "Log in to your private area",
+		"rightside": {
 			"title": "Enter your connection parameters",
-			"subtitle" : "Please fill in your Login and Password",
+			"subtitle": "Please fill in your Login and Password",
 			"login": "Login",
 			"password": "Password"
 		}
 	},
-	"etape": "etape"
+	"footer": {
+		"header": {
+			"addr": "Address",
+			"tel": "telephone Number",
+			"mail": "Email Address "
+		},
+		"titles": {
+			"biast": "BIAST INSTITUTE ",
+			"pub": "RECENTE PUBLICATION ",
+			"carte": "THE SITE MAP",
+			"news": "NEWSLETTER"
+		},
+		"citation": "Do you know the difference between education and experience? Education is when you read all the clauses of a contract. Experience is what happens to you when you don't.",
+		"auteur": "By Ludmila Ulitskaya/ Sincerely yours, Shurik",
+		"resent1": {
+			"title": "Presentation of the Biast Institute",
+			"content": "Professor Talla take the floor"
+		},
+		"resent2": {
+			"title": "Visit of the director of the INSET of Nkongsamba.",
+			"content": "Signing of contracts"
+		},
+		"newscontent": "Subscribe to our newsletter to get the latest updates and services",
+		"copy": "All right reserved"
+	},
+	"events": {
+		"title": "ALL OUR EVENTS",
+		"voir": "Read more"
+	},
+	"courses": {
+		"title": "ALL OUR AVAILABLE COURSES",
+		"voir": "Read more"
+	},
+	"getIn": {
+		"inscription": "Registration",
+		"connexion": "Sign In",
+		"deconnexion": "Log Out",
+		"session": "My Session"
+	},
+	"contact": {
+		"addresse": "Address",
+		"camer": "West Cameroon",
+		"phone": "Telephone Number",
+		"mail": "Email Address",
+		"comment": "LEAVE US A COMMENT",
+		"nom": "Name",
+		"prenom": "Surname",
+		"email": "Email",
+		"sujet": "Subject",
+		"message": "Message",
+		"valider": "Send"
+	},
+	"database": {
+		"filiere": {
+			"Génie Electrique": "Electrical Engineering",
+			"Génie Civil": "Civil Engineering",
+			"Génie Mécanique et Productique": "Mechanical and Production Engineering",
+			"Génie Réseaux et télécommunications": "Network and telecommunications engineering",
+			"Génie Informatique": "Computer Engineering",
+			"Commerce et Vente": "Trade and Sale",
+			"Gestion": "Management",
+			"Agriculture et Elevage": "Agriculture and Livestock",
+			"Etude Medico-Sanitaire": "Medical-Health Study",
+			"Science et Techniques Biomedicale": "Biomedical Science and Techniques"
+		},
+		"speciality": "Speciality",
+		"events": {
+			"LA VISITE DE L’UNIVERSITÉ DE NANCY DE FRANCE": "THE VISIT OF THE UNIVERSITY OF NANCY OF FRANCE",
+			"PRÉSENTATION DES NOUVEAUX BACHELIERS": "PRESENTATION OF THE NEW BACHELORS",
+			"ÉPANOUISSEMENT DES ÉTUDIANTS DE L’INSTITUT BIAST": "DEVELOPMENT OF BIAST INSTITUTE STUDENTS",
+			"EXPLICATION DES LEÇONS AUX ÉTUDIANTS DU GÉNIE CIVIL": "EXPLANATION OF LESSONS TO CIVIL ENGINEERING STUDENTS",
+			"LA VISITE DU DOYEN DE DSCHANG ET SIGNATURE DES ACCORDS": "THE VISIT OF THE DEAN OF DSCHANG AND SIGNATURE OF THE AGREEMENTS"
+		}
+	},
+	"about": {
+		"histoire": "OUR HISTORY",
+		"mission": "OUR MISSION",
+		"vision": "OUR VISION",
+		"hiscont": {
+			"p1": "The development of a country depends on the training of its young people and their integration into production circuits. Clearly, to be emerging in 2035, as invoked by the government of the Republic, there must be an emphasis on the professionalization of teaching in Higher Education. This, of course, presupposes training in entrepreneurship, the setting up of professional training and support for the creation of businesses, a breeding ground for job creation.",
+			"p2": "The training component appears, as such, to be the cornerstone for any sustainable development. This explaining this, we understand the flowering of Institutes of Higher Education in our country for some time.",
+			"p3": "Unfortunately, it is clear that, despite the flowering of IPES (Private Institute of Higher Education) in Cameroon, there is still a gap between training and the skills sought by employers."
+		},
+		"miscont": {
+			"p1": "Armed with all the above, I have decided in order to leave the knowledge that is ours to prosperity, to form a group of Professors for the creation of an IPES which will respond to the Training/Employment match, which will allow sure to contribute to the emergence so desired by the President of the Republic, of Cameroon, horizon 2035.",
+			"p2": "BIAST, Bilingual University Institute of Applied Sciences and Technology (Bilingual Institute of Applied Sciences and Technology) is therefore the emanation of a group of Professors from Cameroonian universities and from outside, concerned about the future and the training of Cameroonian youth and Africa for sustainable development, hence our slogan 'Applied Sciences and Technologies at the service of Sustainable Development'.",
+			"p3": "The added value that we bring in this sector is based on two points:",
+			"p4": "The real professionalization of teaching: At BIAST we try to create in all specialties and this through our workshops (workshops) the appropriate industrial environment in which the graduating student is called upon to practice;",
+			"p5": "Entrepreneurship: After analysis, this group of Professors realized that even when young people are well trained, they are still waiting to be employed. However, as we all know, we are currently in an era where the public service no longer absorbs all graduates of Higher Education."
+		},
+		"viscont": {
+			"p1": "This is where BIAST stands out from other IPES, in the sense that before the end of the training each student develops a bankable project in which he must realize himself at the end of his studies. In relation to the means available, we will help them as much as possible to implement their project.",
+			"p2": "It would not be superfluous while concluding this word, to specify that we have innovative sectors such as: Maintenance of Biomedical Devices (MAB), Surveyor Topographer (GT); Geotechnics and Applied Geology (GGA) to name but a few.",
+			"p3": "In addition to all these BTS / HND training provided in our two campuses in Bafoussam - Cameroon, we have, with our partners, created initial training (02) two years on site, and the possibility of obtaining the direct registration of your children in the Grandes Ecoles of Engineering and Medicine in partner universities in Africa and Europe.",
+			"p4": "Ladies and Gentlemen, You who are just visiting this site, not only do we thank you for your interest in our structure, but we also ask you, in order to have ample information, to go to the different headings."
+		}
+	},
+	"after": {
+		"inscrit": "Successfully Registered",
+		"confiance": "Thanks for trusting us. BIAST welcomes you once again",
+		"Password": "Password",
+		"oriente": "These credentials are yours and you can use them to sign into your account"
+	},
+	"courseDetail":{
+		"description":"Course Description",
+		"detail" : "COURSE DETAILS",
+		"branche":"The differents Branches"
+	},
+	"personalPage":{
+		"bienvenu":"Welcome to your private space",
+		"nav":[
+			"Private Space",
+			"Edit my password",
+			"Edit my picture",
+			"Check my notes"
+		],
+		"info":"Personal informations",
+		"labels":{
+			"nom":"Name",
+			"lieu_de_naissance":"Birth place",
+			"email":"Email",
+			"numero_cni":"CNI number",
+			"pays":"Country of residence",
+			"region_origine":"Native Region",
+			"ville":"Town of residence"
+		},
+		"fiche":"Check my registration form",
+		"password":{
+			"edit":"Edit my password",
+			"ancien":"Last Password",
+			"nouveau":"New password",
+			"confirmer": "Enter it again",
+			"modifier": "Edit"
+		},
+		"photo":{
+			"edit":"Edit my profile picture",
+			"ancien":"Last picture",
+			"profil":"Profile picture",
+			"charger":"Upload",
+			"caution":"NB: The picture that will be import must not be more than 10 Bytes"
+		},
+		"eventDetail":"DETAILS OF THIS EVENT"
+	}
 }

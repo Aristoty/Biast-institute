@@ -1,5 +1,6 @@
 
 
+
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
@@ -47,67 +48,6 @@ const data = [
   
   ]
 
-// const getSpecialities = () => {
-//     var deleted = []
-//     let filiere = document.querySelector('#filiere')
-//     let specialites_content = document.querySelector('#specialite')
-//     let my_specialites = document.querySelector('#specialite').children 
-//     console.log(my_specialites)
-//     for(let i = 0; i<data.length;i++){
-//       if(my_specialites[i].getAttribute('value') != filiere.value){
-//         my_specialites[i].style.display="none"
-//       }else{
-//         my_specialites[i].style.display="block"
-//         my_specialites[i].setAttribute('selected',true)
-//       }
-//     }
-
-// }
-
-    // var jeu = setInterval(getSpecialities, 100)
-      
-//     // try {
-//     //   const response = await axios.get(`http://localhost:3000/specialities/`).then((res) => {
-//     //     console.log(res.data)
-//     //   } );
-  
-//       // const data = Object.values(response.data);
-     
-//       for(let i = 0; i<data.length; i++){
-//         if(data[i].dataValues.filiereId == filiere.value){
-//                 var option = document.createElement("option");
-//                 option.value= data[i].dataValues.id;
-//                 option.innerHTML = data[i].dataValues.nom_specialite;
-//                 specialite.appendChild(option)
-//         }
-//       }
-      
-
-//     // } catch (errors) {
-//     //   console.error(errors);
-//     // }
-//   };
-
-// function toastify(){
- 
- 
-// }
-
-    
-   
-  // }
-
-
-  // const response = await axios.get(`http://localhost:3000/specialities/`);
-         
-  
-   // let url = window.location.href;    
-// if (url.indexOf('?') > -1){
-//    url += '&param=1'
-// } else {
-//    url += '?param=1'
-// }
-// window.location.href = url;
 
 const language = document.querySelector('#language')
 

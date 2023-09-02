@@ -38,12 +38,11 @@ i18n.configure({
     defaultLocale: 'fr',
     queryParameter: 'lang', // query parameter to switch locale (ie. /home?lang=ch) - defaults to NULL
     directory: path.join(__dirname , 'translation')
-  });
+});
 
+app.use(cookieParser());
 
-  app.use(cookieParser());
-
-  app.use(i18n.init);
+app.use(i18n.init);
 
 const PORT = process.env.SERVER_PORT || 3000
 

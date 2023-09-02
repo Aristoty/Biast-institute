@@ -4,17 +4,23 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 rs-vertical-bottom mobile-mb-50">
                     <a href="#">
-                        <img src="/assets/images/about/history.jpg" alt="History Image"/>
+                        <img src="/assets/images/biast.jpg" style="height:500px; width:auto"  alt="History Image"/>
                     </a>
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="abt-title">
-                        <h2>NOTRE HISTORE</h2>
+                        <h2><%= translate('about').histoire %></h2>
                     </div>
                     <div class="about-desc">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehe derit in voluptate velit esse cillum.</p>
+                        <p><%= translate('about').hiscont.p1 %></p>
 
-                        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot fore see the pain and trouble that are bound to belongs to who fail in their duty.</p>
+                        <p>
+                            <%= translate('about').hiscont.p2 %>
+                        </p>
+
+                        <p>
+                            <%= translate('about').hiscont.p3 %>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -28,26 +34,26 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 mobile-mb-50">
                     <div class="abt-title">
-                        <h2>NOTRE MISSION</h2>
+                        <h2><%= translate('about').mission %></h2>
                     </div>
                     <div class="about-desc">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehe derit in voluptate velit esse cillum.</p>
+                        <p><%= translate('about').miscont.p1 %></p>
 
-                        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, that they cannot fore see the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty.</p>
+                        <p><%= translate('about').miscont.p2 %>
+                         </p>
+                         <p><%= translate('about').miscont.p3 %></p>
+                         <ul>
+                            <li><%= translate('about').miscont.p4 %></li>
+                            <li><%= translate('about').miscont.p5 %></li>
+                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="row">
-                        <div class="col-md-6 mobile-mb-30">
-                            <a href="#">
-                                <img src="/assets/images/about/mission1.jpg" alt="Mission Image"/>
-                            </a> 
-                        </div>
-                        <div class="col-md-6">
-                            <a href="#">
-                                <img src="/assets/images/about/mission2.jpg" alt="Mission Image"/>
-                            </a>                 			
-                        </div>
+                        <video width="530"  height="270" src="/assets/video/video.mp4" type="video/mp4" controls>
+                           
+                        </video><br>
+                    
                     </div>
                 </div>
             </div>
@@ -60,21 +66,35 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12 mobile-mb-50">
-                    <div class="vision-img rs-animation-hover">
-                        <img src="/assets/images/about/vision.jpg" alt="img02"/>
-                        <a class="popup-youtube rs-animation-fade" href="https://drive.google.com/file/d/1d2CDeo1R24SXZhVnnMzEZHUzdXVXtNtA/view?usp=drive_link" title="Video Icon">
-                        </a>
-                        <div class="overly-border"></div>
-                    </div>
+                    <!-- <div class="vision-img rs-animation-hover"> -->
+                        <video width="530"  height="240" src="/assets/video/video.mp4" type="video/mp4" controls>
+                           
+                          </video>
+                        <!-- <div class="overly-border"></div> -->
+                    <!-- </div> -->
+                    <p>A propos de nous</p>
+                    <p>Institut d'Excellence et d'Innovation avec:</p>
+                    <ul type="square">
+                        <li>une équipe d'enseignants qualifiés et expérimentés</li>
+                        <li>une administration de proximité</li>
+                        <li>Des agents d'appuis au service des étudiants</li>
+                        <li>Des relations cordiales entre étudiants</li>
+                        <li>Frais de scolarité accessibles pour tous et modulables</li>
+                        <li>Deux Campus tous propriétés de BIAST</li>
+                    </ul>
+
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="abt-title">
-                        <h2>NOTRE VISION</h2>
+                        <h2><%= translate('about').vision %></h2>
                     </div>
                     <div class="vision-desc">
                         
 
-                        <p>BIAST, Institut Universitaire Bilingue des Sciences Appliquées et Technologie (Bilingual Institute of Applied Sciences and Technology) est donc l’émanation d’un groupe de Professeurs des universités camerounaises et de l’extérieur, soucieux du devenir et de la formation de la jeunesse Camerounaise et Africaine pour un développement durable, d'où notre slogan "Sciences Appliquées et Technologies au service du Développement Durable".</p>
+                        <p><%= translate('about').viscont.p1 %></p>
+                        <p><%= translate('about').viscont.p2 %></p>
+                        <p><%= translate('about').viscont.p3 %></p>
+                        <p><%= translate('about').viscont.p4 %></p>
                     </div>
                 </div>
             </div>

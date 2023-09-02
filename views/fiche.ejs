@@ -8,8 +8,12 @@
     <tr>
         <td width="100px" rowspan="9" align="center">
             <a class="icon-16-trash" href="/espaceprive/uploadpic" >
-                <img class="photo"id="show-form-changeimage" alt="<%- etudiant.dataValues.photo_profil %>" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="160" width="160" title="<%- etudiant.dataValues.photo_profil %>">           </a>
-        </td>
+                <% if(etudiant.dataValues.photo_profil) { %>
+                    <img class="photo" id="show-form-changeimage" alt="profile" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="140" width="140" title="<%- etudiant.dataValues.photo_profil %>"></a>
+                <% } else { %>
+                    <img class="photo" id="show-form-changeimage" alt="profile" src="/assets/images/avatar/noprofile.png" class="rounded" height="140" width="140" title="<%- etudiant.dataValues.photo_profil %>"></a>
+                <% } %>
+                </td>
         <td width="200px" class="textstyle">Matricule : <strong>CM-BIAST-23GEEL001</strong></td>
 
         <td width="200px" class="textstyle">Nombre d'enfant : <strong><%- etudiant.dataValues.nbr_enfant %></strong></td>
@@ -143,7 +147,7 @@
 </tbody></table></center>
 <br>
 
-<center><button class="btn"><i class="fa fa-download"></i> Telecharger</button></center>
+
 <br>
 <br>
 

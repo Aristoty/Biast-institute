@@ -2,7 +2,7 @@
         <div id="rs-courses-3" class="rs-courses-3">
 			<div class="container">
 				<div class="abt-title">
-				    <h2>TOUS NOS COURS DISPONIBLES</h2>
+				    <h2><%= translate('courses').title %></h2>
 				</div>
              
 				<div class="row space-bt30">
@@ -14,24 +14,22 @@
 		                       
 		                        <div class="course-toolbar">
 		                        	<div class="course-date">
-		                        		<i class="fa fa-book"></i> <%= filiere[i].dataValues.nbr_specialite %> Specialités
+		                        		<i class="fa fa-book"></i> <%= filiere[i].dataValues.nbr_specialite %> <%= translate('database').speciality %>
 		                        	</div>
 		                        </div>
 		                    </div>
 		                    <div class="course-body">
 		                    	<div class="course-desc">
-		                    		<h4 class="course-title"><a href="/courses/<%= filiere[i].dataValues.id %>"><%= filiere[i].dataValues.nom_filiere %></a></h4>
+		                    		<h4 class="course-title"><a href="/courses/<%= filiere[i].dataValues.id %>"><%= translate('database').filiere[filiere[i].dataValues.nom_filiere] %></a></h4>
 		                    		<p>
 		                    			<%= filiere[i].dataValues.description %>
 		                    		</p>
 		                    	</div>
 		                    </div>
 		                    <div class="course-footer">
-		                    	<div class="course-seats">
-		                    		<i class="fa fa-users" style="color:green"></i> <%= filiere[i].dataValues.nbr_inscrits %>
-		                    	</div>
+		                    
 		                    	<div class="course-button">
-		                    		<a href="/courses/<%= filiere[i].dataValues.id %>">Voir plus</a>
+		                    		<a href="/courses/<%= filiere[i].dataValues.id %>"><%= translate('courses').voir %></a>
 		                    	</div>
 		                    </div>
 		                </div>						
@@ -46,8 +44,8 @@
         
             <div class="container">
                 <div class="abt-title mb-70 text-center">
-					<h2>NOS UNIVERSITÉS PARTENAIRES</h2>      
-					<p>Tous nos universités et entreprises partenaires partout dans le monde entier.</p>
+					<h2><%= translate('subtitle').content7.title %></h2>     
+					<p><%= translate('subtitle').content7.resume %></p>
                 </div>
                 <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
                     <div class="partner-item">

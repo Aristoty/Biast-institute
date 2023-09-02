@@ -70,7 +70,7 @@ getSpecialities()
 
     
 const indexView = async (req, res, next) => {
-    // i18n.setLocale(req, req.headers['en'])
+    // console.log(res.locale)
     const events = await Event.findAll().then(res => {
         return res
     }).catch((error) => {
@@ -94,10 +94,11 @@ const indexView = async (req, res, next) => {
             )
         }
      })  
-     return res.render('home', {events:events,filiere:courses,path:req.path,detail: true,user: res.locals.user,etudiant:etudiant})
+     
+     return res.render('home', {lang:res.locale,translate:res.__,events:events,filiere:courses,path:req.path,detail: true,user: res.locals.user,etudiant:etudiant})
     }
 
-        res.render('home', {translate:res.__,events:events,filiere:courses,path:req.path,detail: true,user:null,etudiant:null})
+        res.render('home', {lang:res.locale,translate:res.__,events:events,filiere:courses,path:req.path,detail: true,user:null,etudiant:null})
 }
 
 const aboutView = async(req, res, next) => {
@@ -113,9 +114,9 @@ const aboutView = async(req, res, next) => {
             )
         }
      })  
-        return res.render('about', {etuduant:etudiant,path:req.path, detail: false,user: res.locals.user})
+        return res.render('about', {lang:res.locale,translate:res.__,etuduant:etudiant,path:req.path, detail: false,user: res.locals.user})
     }
-    res.render('about', {translate:res.__,path:req.path, detail: false,user: null})
+    res.render('about', {lang:res.locale,translate:res.__,path:req.path, detail: false,user: null})
 }
 
     
@@ -139,9 +140,9 @@ const coursesView = async(req, res, next) => {
             )
         }
      })  
-        return res.render('courses', {filiere:coures,etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
+        return res.render('courses', {lang:res.locale,translate:res.__,filiere:coures,etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
     }
-    res.render('courses', {filiere:coures,path:req.path, detail: false,user:null})
+    res.render('courses', {lang:res.locale,translate:res.__,filiere:coures,path:req.path, detail: false,user:null})
 }
 
 const eventView = async(req, res, next) => {
@@ -162,16 +163,16 @@ const eventView = async(req, res, next) => {
             )
         }
      })  
-        return res.render('events', {events:events,etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
+        return res.render('events', {lang:res.locale,translate:res.__,events:events,etudiant:etudiant,path:req.path, detail: false,user:res.locals.user})
     }
-    res.render('events', {events:events,path:req.path, detail: false,user:null})
+    res.render('events', {lang:res.locale,translate:res.__,events:events,path:req.path, detail: false,user:null})
 }
 
 const connexionView = (req, res, next) => {
     if(req.query.token){
-        return res.render('connexion', {path:req.path, detail: false, message:'',user: res.locals.user})
+        return res.render('connexion', {lang:res.locale,translate:res.__,path:req.path, detail: false, message:'',user: res.locals.user})
     }
-    res.render('connexion', {translate:res.__,path:req.path, detail: false, message:'',user: null})
+    res.render('connexion', {lang:res.locale,translate:res.__,path:req.path, detail: false, message:'',user: null})
     
     
 }
@@ -200,11 +201,11 @@ const loginTraitement = async (req, res, next) => {
                 
             }else{
                 console.log("Mot de passe Incorect")
-                return res.render('connexion',{path:req.path, detail: false,message:"Mot de password invalide",user: null})
+                return res.render('connexion',{lang:res.locale,translate:res.__,path:req.path, detail: false,message:"Mot de password invalide",user: null})
             }  
         }else{
           
-            return res.render('connexion',{path:req.path, detail: false,message:"L'utilisateur N'existe pas veillez vous inscrire",user: null})
+            return res.render('connexion',{lang:res.locale,translate:res.__,path:req.path, detail: false,message:"L'utilisateur N'existe pas veillez vous inscrire",user: null})
         }          
         
     }
@@ -212,10 +213,10 @@ const loginTraitement = async (req, res, next) => {
 
 const inscrptionView = (req, res, next) => {
     if(req.query.token){
-        return  res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:res.locals.user,message:'',modifier:false})
+        return  res.render('inscription', {lang:res.locale,translate:res.__,specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:res.locals.user,message:'',modifier:false})
    
     }
-    res.render('inscription', {translate:res.__,specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:'',modifier:false})
+    res.render('inscription', {lang:res.locale,translate:res.__,specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:'',modifier:false})
 }
 
 const contactView = async(req, res, next) => {
@@ -230,9 +231,9 @@ const contactView = async(req, res, next) => {
             )
         }
      })  
-        return res.render('contact', {path:req.path,detail: false,user:res.locals.user})
+        return res.render('contact', {lang:res.locale,translate:res.__,path:req.path,detail: false,user:res.locals.user})
     }
-    res.render('contact', {path:req.path,detail: false,user: null})
+    res.render('contact', {lang:res.locale,translate:res.__,path:req.path,detail: false,user: null})
 }
 
 const TraitementInscription = async (req, res, next) => {
@@ -251,11 +252,11 @@ const TraitementInscription = async (req, res, next) => {
     })
 
     if(student_by_cni){
-        return res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Ce numero de CNI a deja ete utiliser",modifier:false})  
+        return res.render('inscription', {lang:res.locale,translate:res.__,specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Ce numero de CNI a deja ete utiliser",modifier:false})  
     }
 
     if(student_by_email){
-        return res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Cet Email a deja ete utiliser", modifier:false})  
+        return res.render('inscription', {lang:res.locale,translate:res.__,specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Cet Email a deja ete utiliser", modifier:false})  
     }
 
     // Student.sync().then(() => {
@@ -354,7 +355,7 @@ const TraitementInscription = async (req, res, next) => {
 
 
         }else{
-        return res.render('inscription', {specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Oups, quelque chose c'est mal passe",modifier:false})  
+        return res.render('inscription', {lang:res.locale,translate:res.__,specialites:my_specialites,path:req.path, detail: false,countries:Object.values(countries),filiere:my_filieres,user:null,message:"Oups, quelque chose c'est mal passe",modifier:false})  
         
         }
 
@@ -362,7 +363,7 @@ const TraitementInscription = async (req, res, next) => {
             
       
   
-    res.render('after_inscription',{specialites:my_specialites,credential:mycredentials, surname:responce.prenom, name:responce.nom,path:req.path, detail: false,user:null})
+    res.render('after_inscription',{lang:res.locale,translate:res.__,specialites:my_specialites,credential:mycredentials, surname:responce.prenom, name:responce.nom,path:req.path, detail: false,user:null})
 }
 
 const mesInfos = async (req, res, next) => {
@@ -392,7 +393,7 @@ const mesInfos = async (req, res, next) => {
          return res.dataValues.nom_specialite
      }
   )
-    res.render("personalPage", {specialite:specialite,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:1,message:''})
+    res.render("personalPage", {lang:res.locale,translate:res.__,specialite:specialite,filiere:filiere, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:1,message:''})
 
 }
 
@@ -424,7 +425,7 @@ const ficheInscription = async (req, res, next) => {
       }
    )
 
-    res.render("fiche",{filiere:filiere,specialite:specialite,etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0,message:''})
+    res.render("fiche",{lang:res.locale,translate:res.__,filiere:filiere,specialite:specialite,etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0,message:''})
 }
 
 
@@ -445,9 +446,9 @@ const coursesDetailView = async(req, res, next) => {
    
     
     if(req.query.token){
-        return res.render('coursesDetails', {title: 'name',detail: false,path:req.path,user:res.locals.user})
+        return res.render('coursesDetails', {lang:res.locale,translate:res.__,title: 'name',detail: false,path:req.path,user:res.locals.user})
     }
-    res.render('coursesDetails', {student:student,cours:cours,specialite:specialite,title: 'name',detail: false,path:req.path,user:null})
+    res.render('coursesDetails', {lang:res.locale,translate:res.__,student:student,cours:cours,specialite:specialite,title: 'name',detail: false,path:req.path,user:null})
 }
 
 const eventsDetailView = async (req, res, next) => {
@@ -461,10 +462,10 @@ const eventsDetailView = async (req, res, next) => {
 
     if(req.query.token){
        
-        return res.render('eventsDetails', {title: 'name',detail: false,path:req.path,user:res.locals.user})
+        return res.render('eventsDetails', {lang:res.locale,translate:res.__,title: 'name',detail: false,path:req.path,user:res.locals.user})
     }
     
-    res.render('eventsDetails', {events:events,title: 'name',detail: false,path:req.path,user:null})
+    res.render('eventsDetails', {lang:res.locale,translate:res.__,events:events,title: 'name',detail: false,path:req.path,user:null})
 }
 
 
@@ -503,7 +504,7 @@ const personalPage = async (req, res, next) => {
         }
      })  
 
-    res.render("personalPage", {etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0,message:''})
+    res.render("personalPage", {lang:res.locale,translate:res.__,etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0,message:''})
 }
 
 const modifierInfos = async (req, res, next) => {
@@ -517,7 +518,7 @@ const modifierInfos = async (req, res, next) => {
             )
         }
     })
-    return res.render('inscription', {path:req.path, detail: false,etudiant:etudiant,countries:Object.values(countries),specialites:my_specialites,filiere:my_filieres,user:res.locals.user,message:'', modifier:true})  
+    return res.render('inscription', {lang:res.locale,translate:res.__,path:req.path, detail: false,etudiant:etudiant,countries:Object.values(countries),specialites:my_specialites,filiere:my_filieres,user:res.locals.user,message:'', modifier:true})  
 
 }
 
@@ -581,7 +582,7 @@ const modifPassword = async (req, res, next) => {
         }
     })
 
-    res.render("personalPage", {specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:2,message:''})
+    res.render("personalPage", {lang:res.locale,translate:res.__,specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:2,message:''})
 
 }
 
@@ -598,7 +599,7 @@ const modifPhoto = async (req, res, next) => {
         }
     })
 
-    res.render("personalPage", {specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:3,message:''})
+    res.render("personalPage", {lang:res.locale,translate:res.__,specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:3,message:''})
 
 }
 
@@ -628,7 +629,7 @@ const modifPhotoTraitement = async (req, res, next) => {
         )
     }
 
-    return res.render("personalPage", {specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0, message:""})
+    return res.render("personalPage", {lang:res.locale,translate:res.__,specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user:res.locals.user,page:0, message:""})
 
 }
 
@@ -647,7 +648,7 @@ const modifPasswordTraitement = async (req, res, next) => {
     const {ancien, nouveau, confirm} = req.body
     if(ancien && nouveau && confirm){
         if(nouveau != confirm){
-            return res.render("personalPage", {specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user: res.locals.user,page:2, message:"Le mot nouveau de passe doit etre similaire a la confirmation"})
+            return res.render("personalPage", {lang:res.locale,translate:res.__,specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user: res.locals.user,page:2, message:"Le mot nouveau de passe doit etre similaire a la confirmation"})
         }
 
         const user = await User.findOne({
@@ -656,7 +657,7 @@ const modifPasswordTraitement = async (req, res, next) => {
 
         const comp = await comparePassword(ancien,user.dataValues.password)
         if(!comp){
-            return res.render("personalPage", {specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user: res.locals.user,page:2, message:"Cet ancien mot de passe est incorrect"})
+            return res.render("personalPage", {lang:res.locale,translate:res.__,specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user: res.locals.user,page:2, message:"Cet ancien mot de passe est incorrect"})
         }
            
         await User.update(
@@ -671,7 +672,7 @@ const modifPasswordTraitement = async (req, res, next) => {
 
         )
 
-        return res.render("personalPage", {specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user: res.locals.user,page:0, message:""})
+        return res.render("personalPage", {lang:res.locale,translate:res.__,specialite:null,filiere:my_filieres, etudiant : etudiant,detail: false,path:req.path,user: res.locals.user,page:0, message:""})
 
     }
 

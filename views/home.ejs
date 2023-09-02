@@ -82,12 +82,12 @@
                                 </a>
                             </div>
                             <div class="course-body">
-                                <h4 class="course-title"><a href="/courses/<%= filiere[j].dataValues.id %>"><%= filiere[j].dataValues.nom_filiere %></a></h4>
+                                <h4 class="course-title"><a href="/courses/<%= filiere[j].dataValues.id %>"><%= translate('database').filiere[filiere[j].dataValues.nom_filiere] %></a></h4>
                                 <div class="review-wrap">
                                 </div>
                                 <div class="course-desc">
                                     <p>
-                                        <%= filiere[j].dataValues.nbr_specialite %> Specialités
+                                        <%= filiere[j].dataValues.nbr_specialite + ' ' + translate('database').speciality %> 
                                     </p>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                     <i class="fa fa-calendar"></i>
                                     <span><%= events[i].dataValues.date %></span>
                                 </div>
-                                <h4 class="event-title"><a href="/events/<%= events[i].dataValues.id %>"><%= events[i].dataValues.title %> </a></h4>
+                                <h4 class="event-title"><a href="/events/<%= events[i].dataValues.id %>"><%= translate('database').events[events[i].dataValues.title] %> </a></h4>
                                 <div class="event-meta">
                                     <div class="event-time">
                                         <i class="fa fa-clock-o"></i>
@@ -187,7 +187,7 @@
                                     </div>
                                 </div>
                                 <div class="event-btn">
-                                    <a href="#"><%= translate('voir') %>  <i class="fa fa-angle-double-right"></i></a>
+                                    <a href="/events/<%= events[i].dataValues.id %>"><%= translate('voir') %>  <i class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
                         </div>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta lang="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biast institute</title>
     <meta name="description" content="">
@@ -63,7 +64,7 @@
             <div class="container">
                 <div class="row">
              
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="rs-toolbar-left" style="color: white; padding-top: 6px;">
                             <div class="welcome-message">
                                 <i class="fa fa-bank" style="color:green;"></i><span><%= translate('bienvenu') %></span> 
@@ -71,30 +72,30 @@
                         </div>
                     </div>
                 
-                    <div class="col-md-4">
-                        <div class="rs-toolbar-right" style="width: 50%; padding-left: 60px;">
+                    <div class="col-md-6">
+                        <center><div class="rs-toolbar-right" style="width: 25%;">
                     
-                        <select id="language" name="language" >
+                        <select class="form-select" id="language" name="language" >
                             <option>Language</option>
                             <option value="fr">French</option>
                             <option value="en">English</option>
                         </select>
                     
-                    </div>
+                    </div></center>
                 </div>
 
                     
 
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="rs-toolbar-right"  style="font-size: 16px; padding-top: 6px;">
                             <div class="toolbar-share-icon">
                                 <ul>
-                                    <% if(user) { %><li class="menu-item-has-children <% if(path == '/deconnexion') { %> active <% } %>"> <a class="active" href="/deconnexion">Déconnexion</a></li><% } else { %><li class="menu-item-has-children <% if(path == '/connexion') { %> active <% } %>"> <a href=<%= "/connexion?token=" + (user ? user.token : '') %>>Connexion</a></li><% } %>
+                                    <% if(user) { %><li class="menu-item-has-children <% if(path == '/deconnexion') { %> active <% } %>"> <a class="active" href=<%= "/deconnexion?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('getIn').deconnexion %></a></li><% } else { %><li class="menu-item-has-children <% if(path == '/connexion') { %> active <% } %>"> <a href=<%= "/connexion?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('getIn').connexion %></a></li><% } %>
                                     <!--End Icons -->
                                     
                                     <!--blog Menu Start-->
-                                    <% if(!user) { %><li class="menu-item-has-children <% if(path == '/inscription') { %> active <% } %>"> <a href="/inscription">Inscription</a><% } else { %> <li class="menu-item-has-children <% if(path.split('/')[1] == 'personalPage' || path=='/personalpage') { %> active <% } %>"> <a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>Ma Session</a><% } %>
+                                    <% if(!user) { %><li class="menu-item-has-children <% if(path == '/inscription') { %> active <% } %>"> <a href=<%= "/inscription?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('getIn').inscription %></a><% } else { %> <li class="menu-item-has-children <% if(path.split('/')[1] == 'personalPage' || path=='/personalpage') { %> active <% } %>"> <a href=<%= "/personalpage?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('getIn').session %></a><% } %>
                             
                                     </li>
                                 </ul>
@@ -135,7 +136,7 @@
                         <div class="col-md-4 col-sm-12">
                             <div class="header-contact pull-right">
                                 <div id="phone-details" class="widget-text">
-                                    <i class="glyph-icon flaticon-phone-call" style="color: green;"></i>
+                                    <i class="glyph-icon flaticon-phone-call rotating" style="color: green;"></i>
                                     <div class="info-text">
                                         <a href="tel:4155551234">
                                             <span><%= translate('call') %></span>
@@ -166,7 +167,11 @@
                             </div>
                             <div class="col-md-4 col-sm-12">
                                 <center><div class="logo-area text-center w-25" style="display: inline-block;">
-                                    <a href="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>"><img src="./../../tmp/<%- etudiant.dataValues.photo_profil %>" alt="" width="80" height="80"></a>
+                                    <% if(etudiant.dataValues.photo_profil) { %>
+                                        <img class="rounded"  alt="profile" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="60" width="60" title="<%- etudiant.dataValues.photo_profil %>"></a>
+                                    <% } else { %>
+                                        <img class="rounded" alt="profile" src="/assets/images/avatar/noprofile.png"  height="60" width="60" title="<%- etudiant.dataValues.photo_profil %>"></a>
+                                    <% } %>
                                     <!-- <i class="fa fa-camera" aria-hidden="true"></i> -->
                                 </div></center>
                             </div>
@@ -202,40 +207,40 @@
                                     <ul class="nav-menu">
                                         <!-- Home -->
                                         
-                                        <li  class="menu-item-has-children <% if(path == '/') { %> active <% } %>"> <a href=<%= "/?token=" + (user ? user.token : '') %> class="home"><%= translate('nav').home %></a>
+                                        <li  class="menu-item-has-children <% if(path == '/') { %> active <% } %>"> <a href=<%= "/?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %> class="home"><%= translate('nav').home %></a>
                                         
                                         </li>
                                         
                                         <!-- End Home --> 
                                         
                                         <!--About Menu Start-->
-                                        <li class="menu-item-has-children <% if(path == '/about') { %> active <% } %>"> <a href=<%= "/about?token=" + (user ? user.token : '') %>><%= translate('nav').about %></a>
+                                        <li class="menu-item-has-children <% if(path == '/about') { %> active <% } %>"> <a href=<%= "/about?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('nav').about %></a>
                                         
                                         </li>
                                       
-                                        <li class="menu-item-has-children <% if(path == '/courses') { %> active <% } %>"> <a href=<%= "/courses?token=" + (user ? user.token : '') %>><%= translate('nav').cours %></a>
+                                        <li class="menu-item-has-children <% if(path == '/courses') { %> active <% } %>"> <a href=<%= "/courses?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('nav').cours %></a>
                                         
                                         </li>
                                         <!--Courses Menu End-->
                                         
                                         <!--Events Menu Start-->
-                                        <li class="menu-item-has-children <% if(path == '/events') { %> active <% } %>"> <a href=<%= "/events?token=" + (user ? user.token : '') %>><%= translate('nav').event %></a>
+                                        <li class="menu-item-has-children <% if(path == '/events') { %> active <% } %>"> <a href=<%= "/events?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('nav').event %></a>
                                         
                                         </li>
                                         <!--Events Menu End-->
                                         
                                         <!-- Drop Down -->
-                                        <!-- <% if(user) { %><li class="menu-item-has-children <% if(path == '/deconnexion') { %> active <% } %>"> <a href="/deconnexion">Déconnexion</a></li><% } else { %><li class="menu-item-has-children <% if(path == '/connexion') { %> active <% } %>"> <a href=<%= "/connexion?token=" + (user ? user.token : '') %>>Connexion</a></li><% } %> -->
+                                        <!-- <% if(user) { %><li class="menu-item-has-children <% if(path == '/deconnexion') { %> active <% } %>"> <a href="/deconnexion">Déconnexion</a></li><% } else { %><li class="menu-item-has-children <% if(path == '/connexion') { %> active <% } %>"> <a href=<%= "/connexion?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>>Connexion</a></li><% } %> -->
                                         <!--End Icons -->
                                         
                                         <!--blog Menu Start-->
-                                        <!-- <% if(!user) { %><li class="menu-item-has-children <% if(path == '/inscription') { %> active <% } %>"> <a href="/inscription">Inscription</a><% } else { %> <li class="menu-item-has-children <% if(path.split('/')[1] == 'personalPage' || path=='/personalpage') { %> active <% } %>"> <a href=<%= "/personalpage?token=" + (user ? user.token : "") %>>Ma Session</a><% } %> -->
+                                        <!-- <% if(!user) { %><li class="menu-item-has-children <% if(path == '/inscription') { %> active <% } %>"> <a href="/inscription">Inscription</a><% } else { %> <li class="menu-item-has-children <% if(path.split('/')[1] == 'personalPage' || path=='/personalpage') { %> active <% } %>"> <a href=<%= "/personalpage?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>>Ma Session</a><% } %> -->
                                 
                                         <!-- </li> -->
                                         <!--blog Menu End-->
                                         
                                         <!--Contact Menu Start-->
-                                        <li class="menu-item-has-children <% if(path == '/contact') { %> active <% } %>"> <a href=<%= "/contact?token=" + (user ? user.token : "") %>><%= translate('nav').contact %></a></li>
+                                        <li class="menu-item-has-children <% if(path == '/contact') { %> active <% } %>"> <a href=<%= "/contact?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('nav').contact %></a></li>
                                         <!--Contact Menu End-->
                                     </ul>
                                 </nav>
@@ -380,17 +385,17 @@
                     <div class="col-md-4">
                         <div class="contact-inner">
                             <i class="fa fa-map-marker" style="color: green;"></i>
-                            <h4 class="contact-title">Addresse</h4>
+                            <h4 class="contact-title"><%= translate('footer').header.addr %></h4>
                             <p class="contact-desc">
                                 B.P: 1026 Bafoussam<br>
-                                Ouest Cameroun
+                                <%= translate('contact').camer %>
                             </p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="contact-inner">
                             <i class="fa fa-phone" style="color: green;"></i>
-                            <h4 class="contact-title">Numéros de téléphone</h4>
+                            <h4 class="contact-title"><%= translate('footer').header.tel %></h4>
                             <p class="contact-desc">
                                 +237 674 784 870<br>
                                 +237 695 998 714
@@ -400,7 +405,7 @@
                     <div class="col-md-4">
                         <div class="contact-inner">
                             <i class="fa fa-map-marker" style="color: green;"></i>
-                            <h4 class="contact-title">Addresse Email</h4>
+                            <h4 class="contact-title"><%= translate('footer').header.mail %></h4>
                             <p class="contact-desc">
                                 <a href="mailto:ubiast@yahoo.com">mailto:ubiast@yahoo.com</a><br>
                                 www.biast.com
@@ -417,13 +422,13 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-12">
                         <div class="about-widget">
-                            <i class="fa fa-bank footer-title" ></i><span>INSTITUT BIAST</span> 
-                            <p><q>Connaissez-vous la différence entre l'éducation et l'expérience ? L'éducation, c'est quand vous lisez tous les alinéas d'un contrat. L'expérience, c'est ce qui vous arrive quand vous ne le faites pas.</q></p>
-                            <p class="margin-remove">De Ludmila Oulitskaïa/ Sincèrement vôtre, Chourik</p>
+                            <i class="fa fa-bank footer-title" ></i><span><%= translate('footer').titles.biast %></span> 
+                            <p><q><%= translate('footer').citation %></q></p>
+                            <p class="margin-remove"><%= translate('footer').auteur %></p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-12">
-                        <h5 class="footer-title">PUBLICATION RÉCENTE </h5>
+                        <h5 class="footer-title"><%= translate('footer').titles.pub %> </h5>
                         <div class="recent-post-widget">
                             <div class="post-item">
                                 <div class="post-date">
@@ -431,8 +436,8 @@
                                     <span>AOÛT</span>
                                 </div>
                                 <div class="post-desc">
-                                    <h5 class="post-title"><a href="#">Présentation de l'institut Biast </a></h5>
-                                    <span class="post-category">Professeur Talla prends la parole</span>
+                                    <h5 class="post-title"><a href="#"><%= translate('footer').resent1.title %></a></h5>
+                                    <span class="post-category"><%= translate('footer').resent1.content %></span>
                                 </div>
                             </div>
                             <div class="post-item">
@@ -441,30 +446,30 @@
                                     <span>JUILLET</span>
                                 </div>
                                 <div class="post-desc">
-                                    <h5 class="post-title"><a href="#">Visite du directeur de l'INSET de Nkongsamba.</a></h5>
-                                    <span class="post-category">Signature de contrats</span>
+                                    <h5 class="post-title"><a href="#"><%= translate('footer').resent2.title %></a></h5>
+                                    <span class="post-category"><%= translate('footer').resent2.content %></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-12">
-                        <h5 class="footer-title">LA CARTE DU SITE</h5>
+                        <h5 class="footer-title"><%= translate('footer').titles.carte %></h5>
                         <ul class="sitemap-widget">
-                            <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>Accueille</a></li>
-                            <li ><a href="/about"><i class="fa fa-angle-right" aria-hidden="true"></i>A propos</a></li>
-                            <li><a href="/courses"><i class="fa fa-angle-right" aria-hidden="true"></i>Filiéres</a></li>
-                            <li><a href="/events"><i class="fa fa-angle-right" aria-hidden="true"></i>Évènements</a></li>
-                            <li><a href="/inscription"><i class="fa fa-angle-right" aria-hidden="true"></i>Inscription</a></li>
-                            <li><a href="/connexion"><i class="fa fa-angle-right" aria-hidden="true"></i>Connexion</a></li>
-                            <li><a href="/admin"><i class="fa fa-angle-right" aria-hidden="true"></i>Page Admin</a></li>
+                            <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i><%= translate('navfooter').home %></a></li>
+                            <li ><a href="/about"><i class="fa fa-angle-right" aria-hidden="true"></i><%= translate('navfooter').about %></a></li>
+                            <li><a href="/courses"><i class="fa fa-angle-right" aria-hidden="true"></i><%= translate('navfooter').cours %></a></li>
+                            <li><a href="/events"><i class="fa fa-angle-right" aria-hidden="true"></i><%= translate('navfooter').event %></a></li>
+                            <li><a href="/inscription"><i class="fa fa-angle-right" aria-hidden="true"></i><%= translate('navfooter').inscription %></a></li>
+                            <li><a href="/connexion"><i class="fa fa-angle-right" aria-hidden="true"></i><%= translate('navfooter').connexion %></a></li>
+                            <li><a href="/personalPage"><i class="fa fa-angle-right" aria-hidden="true"></i><%= translate('navfooter').admin %></a></li>
                             <!-- <li><a href="teachers-single.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Teachers Details</a></li> -->
-                            <li><a href="/contact"><i class="fa fa-angle-right" aria-hidden="true"></i>Contacts</a></li>
+                            <li><a href="/contact"><i class="fa fa-angle-right" aria-hidden="true"></i><%= translate('navfooter').contact %></a></li>
                             <!-- <li><a href="error-404.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Error 404</a></li> -->
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-12">
-                        <h5 class="footer-title">NEWSLETTER</h5>
-                        <p>Abonnez-vous à notre newsletter pour obtenir les dernières mises à jour et Prestations de service</p>
+                        <h5 class="footer-title"><%= translate('footer').titles.news %></h5>
+                        <p><%= translate('footer').newscontent %></p>
                         <form class="news-form">
                             <input type="text" class="form-input" placeholder="Enter Your Email">
                             <button type="submit" class="form-button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
@@ -487,7 +492,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="copyright">
-                    <p>© 2023 <a href="#">ETS BIAST</a>. Tous les droits sont réservés.</p>
+                    <p>© 2023 <a href="#">ETS BIAST</a>. <%= translate('footer').copy %></p>
                 </div>
             </div>
         </div>

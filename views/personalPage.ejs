@@ -50,7 +50,7 @@
 <% if(page == 0) { %>
     
 <center>
- <h1 style="color:green"> Bienvenue dans votre espace privé </h1>
+ <h1 style="color:green"><%= translate('personalPage').bienvenu %></h1>
 <div id="toto" class="container" style="font-size:15px; width: 70%; text-align: center;">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -62,18 +62,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %>
+                        <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>> <%= translate('personalPage').nav[0] %>  </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>> <%= translate('personalPage').nav[0] %></a><% } %>
                     </li>
                    <li class="nav-item">
-                    <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %>
+                    <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[1] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>> <%= translate('personalPage').nav[1] %></a><% } %>
                    </li>
                    <li class="nav-item">
                     
-                       <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %>
+                       <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[2] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>><%= translate('personalPage').nav[2] %></a><% } %>
                    </li>
                    <li class="nav-item">
                        
-                       <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %>
+                       <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[3] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>><%= translate('personalPage').nav[3] %></a><% } %>
                    </li>
                </ul>
            </div>
@@ -86,48 +86,50 @@
 
 
 
- <div style="font-size:18px;border: 8px solid green; width: 70%;">
+ <div style="background-color: rgba(240,243,250,0.4); font-size:18px;border: 8px solid green; width: 70%;">
 <div class="container" >
     
     <div>
         <div style=" color: green; border-bottom: 3px solid black;">
-            <span>Informations personnelles</span>
+            <span><%= translate('personalPage').info %></span>
         </div>
     <br>
    
       
-     
+     <div style="text-align: left; padding-left: 35%;">
+        <%= translate('personalPage').labels.nom %> :
+        <strong><%- etudiant.dataValues.nom %> <%- etudiant.dataValues.prenom %></strong><br>
+        <br>
+        <%= translate('personalPage').labels.lieu_de_naissance %> :
+        <strong><%- etudiant.dataValues.lieu_de_naissance %></strong><br>
+        <br>
+    
+        <%= translate('personalPage').labels.email %> :
+        <strong><%- etudiant.dataValues.email %></strong><br>
+        <br>
+        <%= translate('personalPage').labels.numero_cni %> :
+        <strong><%- etudiant.dataValues.numero_cni %></strong><br>
+        <br>
+        <%= translate('personalPage').labels.pays %> :
+        <strong><%- etudiant.dataValues.pays %></strong><br>
+        <br>
+        <%= translate('personalPage').labels.region_origine %> :
+        <strong><%- etudiant.dataValues.region %></strong><br>
+        <br>
+        <%= translate('personalPage').labels.email %> :
+        <strong><%- etudiant.dataValues.ville %></strong><br>
+
+     </div>
             
    
      
 
-                Nom :
-                <strong><%- etudiant.dataValues.nom %> <%- etudiant.dataValues.prenom %></strong><br>
-                <br>
-                Lieu de Naissance :
-                <strong><%- etudiant.dataValues.lieu_de_naissance %></strong><br>
-                <br>
-            
-                Email :
-                <strong><%- etudiant.dataValues.email %></strong><br>
-                <br>
-                Numero de CNI :
-                <strong><%- etudiant.dataValues.numero_cni %></strong><br>
-                <br>
-                Pays de residence :
-                <strong><%- etudiant.dataValues.pays %></strong><br>
-                <br>
-                Region d'origine :
-                <strong><%- etudiant.dataValues.region %></strong><br>
-                <br>
-                Ville de residence :
-                <strong><%- etudiant.dataValues.ville %></strong><br>
-        
+              
         
         </div>
         <br>
 
-        <a href=<%= "/personalPage/ma_fiche_inscription?token=" + (user ? user.token : "") %> target="_blank"><img src="/assets/images/main.png" height="50" width="50"  alt="main"/> Voir ma fiche d'inscription</a>
+        <a href=<%= "/personalPage/ma_fiche_inscription?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> target="_blank"><img src="/assets/images/main.png" height="50" width="50"  alt="main"/> Voir ma fiche d'inscription</a>
 
 </div>
 
@@ -140,9 +142,9 @@
 
     <table class="deux" style="border-spacing:14px">
         <tr>
-            <td ><a href=<%= "/personalPage/mesInfos?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/mesinformation.png" style="border: 2px solid green;" alt="" width="100" height="100"></a></td>
-            <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/maphoto.png"  style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
-            <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/modepasse.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
+            <td ><a href=<%= "/personalPage/mesInfos?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/mesinformation.png" style="border: 2px solid green;" alt="" width="100" height="100"></a></td>
+            <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/maphoto.png"  style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
+            <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/modepasse.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
             <td> <a href="#" class="info"><img src="/assets/images/suggection.png"  style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
             <td> <a href="#" class="info"><img src="/assets/images/message.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
             <td> <a href="#" class="info"><img src="/assets/images/note.png" style="border: 2px solid green;" alt="" width="100" height="100"></a> </td>
@@ -161,7 +163,7 @@
 
 <% } else if(page == 1)  {%>
 
-   <div class="container" style="font-size:18px; width: 70%; text-align: center;">
+   <div class="container" style="font-size:16px; width: 70%; text-align: center;">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -172,18 +174,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %>
+                        <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[0] %></a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[0] %>  </a><% } %>
                     </li>
                    <li class="nav-item">
-                    <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %>
+                    <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[1] %>  </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>> <%= translate('personalPage').nav[1] %> </a><% } %>
                    </li>
                    <li class="nav-item">
                     
-                       <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %>
+                       <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[2] %>  </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>><%= translate('personalPage').nav[2] %> </a><% } %>
                    </li>
                    <li class="nav-item">
                        
-                       <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %>
+                       <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[3] %>  </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>><%= translate('personalPage').nav[3] %> </a><% } %>
                    </li>
                </ul>
            </div>
@@ -195,9 +197,9 @@
 <br>
     <table class="deux" style="border-spacing:14px">
         <tr>
-            <td ><a href=<%= "/personalPage/modifierInfos?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
-            <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
-            <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
+            <td><a href=<%= "/personalPage/modifierInfos?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/modifier.png" alt="" width="80" height="80"></a></td>
+            <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/ma_photo.png"  alt="" width="80" height="80"></a> </td>
+            <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/password.png"  alt="" width="80" height="80"></a> </td>
 
         </tr>
     </table>
@@ -207,14 +209,18 @@
     <center><table border="1" width="70%" align="center">
         <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
             <td colspan="5">
-                Information Personnelle
+                <%= translate('personalPage').info %>
             </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
             <td width="100px" rowspan="9" align="center">
                 <a class="icon-16-trash" href="/espaceprive/uploadpic" >
-                    <img class="photo"id="show-form-changeimage" alt="<%- etudiant.dataValues.photo_profil %>" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="160" width="160" title="<%- etudiant.dataValues.photo_profil %>"><br>Modifier            </a>
+                    <% if(etudiant.dataValues.photo_profil) { %>
+                        <img class="photo rounded" id="show-form-changeimage" alt="profile" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="120" width="120" title="<%- etudiant.dataValues.photo_profil %>"></a>
+                    <% } else { %>
+                        <img class="photo rounded" id="show-form-changeimage" alt="profile" src="/assets/images/avatar/noprofile.png"  height="120" width="120" title="<%- etudiant.dataValues.photo_profil %>"></a>
+                    <% } %>
             </td>
             <td width="200px" class="textstyle">Matricule : <strong>CM-BIAST-23GEEL001</strong></td>
     
@@ -352,7 +358,7 @@
 
 <% } else if(page == 2) { %>
 
-    <div class="container" style="font-size:18px; width: 70%; text-align: center;">
+    <div class="container" style="font-size:16px; width: 70%; text-align: center;">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -363,18 +369,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %>
+                            <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[0] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[0] %> </a><% } %>
                         </li>
                        <li class="nav-item">
-                        <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %>
+                        <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[1] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>> <%= translate('personalPage').nav[1] %></a><% } %>
                        </li>
                        <li class="nav-item">
                         
-                           <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %>
+                           <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[2] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>><%= translate('personalPage').nav[2] %></a><% } %>
                        </li>
                        <li class="nav-item">
                            
-                           <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %>
+                           <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[3] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>><%= translate('personalPage').nav[3] %></a><% } %>
                        </li>
                    </ul>
                </div>
@@ -386,21 +392,21 @@
     <br>
         <table class="deux" style="border-spacing:14px">
             <tr>
-                <td ><a href=<%= "/personalPage/modifierInfos?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
-                <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
-                <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
+                <td ><a href=<%= "/personalPage/modifierInfos?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/modifier.png" alt="" width="80" height="80"></a></td>
+                <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/ma_photo.png"  alt="" width="80" height="80"></a> </td>
+                <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/password.png"  alt="" width="80" height="80"></a> </td>
     
             </tr>
         </table>
     
         <br>
-    </div>
+    </div >
     
     
-        <center><table border="1" width="70%" align="center">
+        <center><table border="1" width="70%" style="background-color: rgba(240,243,250,0.4);" align="center">
             <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
                 <td colspan="5">
-                    Modifier Mon mot de passe
+                    <%= translate('personalPage').password.edit %>
                 </td>
             </tr>
 
@@ -411,30 +417,30 @@
                         <% if(message) { %><%- message %> <% } %>
                     </div>
 
-                   <form action=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> method="post">
+                   <form action=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> method="post">
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="ancien">Ancien Password </label>
+                            <label for="ancien"><%= translate('personalPage').password.ancien %> </label>
                             <input type="text" id="ancien" name="ancien" required require id="user_name">
                             
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="ancien">Nouveau password </label>
+                            <label for="ancien"><%= translate('personalPage').password.nouveau %> </label>
                             <input type="password" name="nouveau" required require>
                             
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <label for="ancien">Confirmer </label>
+                            <label for="ancien"><%= translate('personalPage').password.confirmer %> </label>
                             <input type="password" name="confirm" required require>
                         </div>
                     </div>
 
                     <div class="buttons" style="padding-bottom: 4px;">
-                        <button type="submit"  class="submit_button">Modifier</button>
+                        <button type="submit"  class="submit_button"><%= translate('personalPage').password.modifier %></button>
                     </div>
                    </form> 
                    
@@ -453,7 +459,7 @@
 
 <% } else if(page==3) { %>
 
-    <div class="container" style="font-size:18px; width: 70%; text-align: center;">
+    <div class="container" style="font-size:16px; width: 70%; text-align: center;">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -464,18 +470,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") %>>  Espace privé </a><% } %>
+                            <% if(path == "/personalpage") { %><a class="nav-link active" href=<%= "/personalpage?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[0] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[0] %> </a><% } %>
                         </li>
                        <li class="nav-item">
-                        <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>>  Modifier mon password </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %>> Modifier mon password</a><% } %>
+                        <% if(path == "/personalpage/modifPassword") { %><a class="nav-link active" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[1] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>> <%= translate('personalPage').nav[1] %></a><% } %>
                        </li>
                        <li class="nav-item">
                         
-                           <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>  Modifier ma photo </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %>>Modifier ma photo</a><% } %>
+                           <% if(path == "/personalpage/modifPhoto") { %><a class="nav-link active" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[2] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>><%= translate('personalPage').nav[2] %></a><% } %>
                        </li>
                        <li class="nav-item">
                            
-                           <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>  Consulter Mes Note </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") %>>Consulter Mes Note</a><% } %>
+                           <% if(path == "/personalpage/consultNotes") { %><a class="nav-link active" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>>  <%= translate('personalPage').nav[3] %> </a><% } else { %><a class="nav-link" href=<%= "/personalpage/consultNotes?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %>><%= translate('personalPage').nav[3] %></a><% } %>
                        </li>
                    </ul>
                </div>
@@ -487,9 +493,9 @@
     <br>
         <table class="deux" style="border-spacing:14px">
             <tr>
-                <td ><a href=<%= "/personalPage/modifierInfos?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/modifier.png" alt="" width="100" height="100"></a></td>
-                <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/ma_photo.png"  alt="" width="100" height="100"></a> </td>
-                <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") %> class="info"><img src="/assets/images/password.png"  alt="" width="100" height="100"></a> </td>
+                <td ><a href=<%= "/personalPage/modifierInfos?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/modifier.png" alt="" width="80" height="80"></a></td>
+                <td><a href=<%= "/personalpage/modifPhoto?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/ma_photo.png"  alt="" width="80" height="80"></a> </td>
+                <td><a href=<%= "/personalpage/modifPassword?token=" + (user ? user.token : "") + (lang ? '&lang='+lang : '') %> class="info"><img src="/assets/images/password.png"  alt="" width="80" height="80"></a> </td>
     
             </tr>
         </table>
@@ -497,11 +503,11 @@
         <br>
     </div>
     
-    <center><table border="1" width="70%" align="center">
-        <p style="color: red; font-style: italic; font-size: small; font-family: consolas;">NB: la photo a charger ne doit pas depasser plus de 10Mo</p>
+    <center><table border="1" width="70%" style="background-color: rgba(240,243,250,0.4);" align="center">
+        <p style=" color: red; font-style: italic; font-size: small; font-family: consolas;"><%= translate('personalPage').photo.caution %></p>
         <tbody><tr id="titrerubrique" style="color:white;background-color: black;">
             <td colspan="5">
-                Modifier ma photo de profil
+                <%= translate('personalPage').photo.edit %>
             </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
@@ -509,7 +515,7 @@
         <tr>
             <td width="100px"  rowspan="9" align="center">
                 
-                    <img  alt="<%- etudiant.dataValues.photo_profil %>" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="160" width="160" title="<%- etudiant.dataValues.photo_profil %>"><br>Ancienne Photo
+                    <img  alt="<%- etudiant.dataValues.photo_profil %>" src="/assets/images/avatar/<%- etudiant.dataValues.photo_profil %>" height="160" width="160" title="<%- etudiant.dataValues.photo_profil %>"><br> <%= translate('personalPage').photo.ancien %>
             </td>
             <td width="200px" class="textstyle"></td>
     
@@ -517,7 +523,7 @@
                 <div class="input-text">
                     <form action="/personalpage/modifPhoto?token=<%- (user ? user.token : '') %>" method="post" name="chargePicture" enctype="multipart/form-data">
                         <div class="input-div">
-                            <label for="image">Photo de Profil</label>
+                            <label for="image"><%= translate('personalPage').photo.profil %></label>
                             <input type="file" id="image" name="image">
                         </div>
                         
@@ -525,7 +531,7 @@
                         
                         <br>
                         <div class="buttons" style="padding-bottom: 4px;">
-                            <button type="submit"  class="submit_button">Upload</button>
+                            <button type="submit"  class="submit_button"><%= translate('personalPage').photo.charger %></button>
                         </div>
                     </form>
                 

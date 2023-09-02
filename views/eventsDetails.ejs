@@ -1,5 +1,5 @@
 <div class="abt-title text-center">
-    <h2>Détail de l'Évènement </h2>
+    <h2><%= translate('personalPage').eventDetail %> </h2>
 </div>
 <!-- Event Details Start -->
 <div class="rs-event-details pt-70 pb-70">
@@ -7,7 +7,7 @@
         <div class="row">
             <!-- <div class="col-lg-8 col-md-12"> -->
                 <div class="event-details-content">
-                    <h3 class="event-title"><a href="events-details.html"><%= events.dataValues.title  %></a></h3>
+                    <h3 class="event-title"><%= translate('database').events[events.dataValues.title]  %></h3>
                     <div class="event-meta">
                         <div class="event-date">
                             <i class="fa fa-calendar"></i>
@@ -43,12 +43,13 @@
 </div>
 
 
+
 <div id="rs-partner" class="rs-partner pt-30 pb-70">
         
     <div class="container">
         <div class="abt-title mb-70 text-center">
-            <h2>NOS UNIVERSITÉS PARTENAIRES</h2>      
-            <p>Tous nos universités et entreprises partenaires partout dans le monde entier.</p>
+            <h2><%= translate('subtitle').content7.title %></h2>     
+            <p><%= translate('subtitle').content7.resume %></p>
         </div>
         <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
             <div class="partner-item">
