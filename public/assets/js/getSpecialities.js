@@ -48,22 +48,41 @@ const data = [
   
   ]
 
+// const changeLanguage = (e) => {
 
-const language = document.querySelector('#language')
+  
+// }
 
 
-language.addEventListener("change", (e) => {
-    let url = window.location.href; 
-    url = url.replace("&lang=en", "")
-    url = url.replace("&lang=fr", "")
-    url = url.replace("?lang=en", "")
-    url = url.replace("?lang=fr", "")
-    if(url.indexOf('?') > -1)  {
-      window.location.href = `${url}&lang=${e.target.value}`;
-    }else{
-      window.location.href = `${url}?lang=${e.target.value}`;
-    }
-    
+const french = document.querySelector('#language_french')
+const english = document.querySelector('#language_english')
+
+french.addEventListener("click", (e) => {
+  console.log(e.target.alt)
+  let url = window.location.href; 
+  url = url.replace("&lang=en", "")
+  url = url.replace("&lang=fr", "")
+  url = url.replace("?lang=en", "")
+  url = url.replace("?lang=fr", "")
+  if(url.indexOf('?') > -1)  {
+    window.location.href = `${url}&lang=${e.target.alt}`;
+  }else{
+    window.location.href = `${url}?lang=${e.target.alt}`;
+  }
+})
+
+english.addEventListener("click", (e) => {
+  console.log(e.target.alt)
+  let url = window.location.href; 
+  url = url.replace("&lang=en", "")
+  url = url.replace("&lang=fr", "")
+  url = url.replace("?lang=en", "")
+  url = url.replace("?lang=fr", "")
+  if(url.indexOf('?') > -1)  {
+    window.location.href = `${url}&lang=${e.target.alt}`;
+  }else{
+    window.location.href = `${url}?lang=${e.target.alt}`;
+  }
 })
 
 const verify = (table, item) => {
@@ -74,3 +93,4 @@ const verify = (table, item) => {
   }
   return false
 }
+
