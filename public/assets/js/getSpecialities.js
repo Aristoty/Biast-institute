@@ -65,9 +65,13 @@ french.addEventListener("click", (e) => {
   url = url.replace("?lang=en", "")
   url = url.replace("?lang=fr", "")
   if(url.indexOf('?') > -1)  {
+    location.reload()
     window.location.href = `${url}&lang=${e.target.alt}`;
+    
   }else{
+    location.reload()
     window.location.href = `${url}?lang=${e.target.alt}`;
+    
   }
 })
 
@@ -79,9 +83,13 @@ english.addEventListener("click", (e) => {
   url = url.replace("?lang=en", "")
   url = url.replace("?lang=fr", "")
   if(url.indexOf('?') > -1)  {
+    location.reload()
     window.location.href = `${url}&lang=${e.target.alt}`;
+    
   }else{
+    location.reload()
     window.location.href = `${url}?lang=${e.target.alt}`;
+   
   }
 })
 
