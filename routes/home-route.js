@@ -1,6 +1,5 @@
 const express = require('express')
 
-
 const {
     indexView, 
     aboutView, 
@@ -27,13 +26,13 @@ const {
     modifPhotoTraitement
     
 } = require('../controllers/homeController')
+
 const multer = require('multer')
 const path = require('path')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join(__dirname, '../../../public/assets/images/avatar'))
-        console.log('juste pour voir',path.join(__dirname, '../../../tmp'))
     },
 
     filename : (req, file, cb) => {

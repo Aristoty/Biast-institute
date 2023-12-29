@@ -1,0 +1,47 @@
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker compose reference guide at
+# https://docs.docker.com/compose/compose-file/
+
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+services:
+  server:
+    build:
+      context: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+    volumes: 
+     - .:/usr/src/app
+     - /usr/src/app/node_modules
+    depends_on:
+      - db
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=ba2ndivq93vckjxtbshv
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=biast@dmin
+      - MYSQL_ROOT_HOST='%'
+    expose:
+      - 3306
+    ports:
+      - "3306:3306" 
+    healthcheck:
+      test: mysqladmin ping -h mysql --user=$$MYSQL_USER --password=$$MYSQL_ROOT_PASSWORD
+      interval: 30s
+      timeout: 12s
+      retries: 10
+
+volumes:
+  db-data:
+

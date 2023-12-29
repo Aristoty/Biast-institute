@@ -12,26 +12,6 @@ const jwt = require('jsonwebtoken')
 const { Event, User, Student } = require('./models/homeModel')
 const i18n = require('i18n')
 
-// const i18n = new I18n({
-//     locales: ["fr", "en"],
-//     directory : path.join(__dirname, 'translation'),
-//     defaultLocale : "fr"
-// })
-
-// app.use(i18n.init)
-
-// app.use((req, res, next) => {
-
-//         if(req.query.lang){
-//             i18n.setLocale(req, req.headers['abcd'])
-//         }
-//         // if(req.query.lang == "en"){
-//         //     i18n.setLocale(req, req.headers['abcd'])
-//         // }
-
-//     next()
-// })
-
 
 i18n.configure({
     locales: ['en', 'fr'], // set the languages here
