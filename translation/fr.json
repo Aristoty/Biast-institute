@@ -1,5 +1,5 @@
 {
-	"bienvenu": "Bienvenu à Biast",
+	"bienvenu": "Bienvenue à Biast",
 	"nav": {
 		"home": "ACCUEILLE",
 		"about": "À PROPOS DE NOUS",
@@ -19,9 +19,9 @@
 		"admin": "Admin"
 	},
 	"ecrire": "Nous écrire",
-	"call": "Nous appelé",
+	"call": "Nous appeler",
 	"slider": {
-		"slider1": "BIENVENU À BIAST",
+		"slider1": "BIENVENUE À BIAST",
 		"slider2": "ÊTES VOUS PRÊT À DÉMARRER AVEC BIAST",
 		"slider3": "CHOISISSEZ LE MEILLEUR, CHOISISSEZ BIAST"
 	},
@@ -30,11 +30,11 @@
 	"start": "COMMENCEZ MAINTENANT",
 	"tendance": {
 		"title": "Tendance des cours",
-		"content": " Biast propose un grand nombre de cours et de filières hautement dispensés"
+		"content": " BIAST propose un grand nombre de filières et les cours sont hautement dispensés"
 	},
 	"book": {
 		"title": "Livres et Bibliothèque",
-		"content": "Les manuels scolaires tels que les supports de cours sont fourni gratuitement"
+		"content": "Les manuels scolaires tels que les supports de cours sont fournis gratuitement"
 	},
 	"teacher": {
 		"title": "Enseignants Qualifiés",
@@ -47,7 +47,7 @@
 	"subtitle": {
 		"content1": {
 			"title": "À PROPOS DE NOUS",
-			"resume": "Biast est un institut créé en 2020 par le Professeur Tala Pierre Kisito, Chef de département de physique à l'université de Dschang"
+			"resume": "BIAST est un institut créé en 2020 par le Professeur TALLA Pierre Kisito, Chef de département de physique (a.i) et ses collaborateurs à l'université de Dschang"
 		},
 		"content2": {
 			"title": "NOS SUJETS LES PLUS POPULAIRES",
@@ -55,7 +55,7 @@
 		},
 		"content3": {
 			"title": "LAUREATS ET STATISTIQUES",
-			"resume": "Biast, pour année antérieure est entrain de totaliser les effectifs suivants"
+			"resume": "BIAST a quatre annee d'existance, et totalise les presents effectifs "
 		},
 		"content4": {
 			"title": "NOS DIFFÉRENTS ÉVÈNEMENTS",
@@ -63,11 +63,11 @@
 		},
 		"content5": {
 			"title": "NOTRE PERSONNEL EXPÉRIMENTÉ",
-			"resume": "Les experts de BIAST sont là pour tous vos préoccupations et vous encourage dans vos diffèrent choix de filières"
+			"resume": "Les experts de BIAST sont là pour tous vos préoccupations et vous encouragent dans vos diffèrents choix de filières"
 		},
 		"content6": {
 			"title": "NOS PUBLICATIONS LES PLUS RÉCENTES",
-			"resume": "Les Informations quelques peu inportantes pour les étudiants inscrit à Biast."
+			"resume": "Les Informations quelques peu inportantes pour les étudiants inscrit à BIAST."
 		},
 		"content7": {
 			"title": "NOS UNIVERSITÉS PARTENAIRES",
@@ -75,19 +75,19 @@
 		}
 	},
 	"description": {
-		"title": "BIENVENU CHEZ BIAST",
-		"intro": "Avec Biast, votre formation est garantie et votre avenir n’est plus une préoccupation majeure. Tous nos filières sont reconnues pas des pays étrangers tels que : la France, l’Allemagne, l’Autriche etc...",
+		"title": "BIENVENU A BIAST",
+		"intro": "Avec BIAST, votre formation est garantie et votre avenir n'est plus une préoccupation majeure. Toutes nos filières sont reconnues pas des universités partenaires en France en Allemagne en Autriche au Congo, en RDC etc...",
 		"hystory": {
 			"title": "NOTRE HISTORE",
-			"content": "La brillante pensée du professeur Talla Pierre Kisito à faire naitre les étincelles de l’institut Biast en 2020. C’est grâce a ces nombreux voyages de part le monde en générale, et les différente coopération avec les grand chef d’entreprise en particulier, qui a donnée vie a cette institut.."
+			"content": "La brillante pensée du professeur Talla Pierre Kisito à fait naitre les étincelles de l’institut BIAST en 2020. C’est grâce a ses nombreux voyages de part le monde en générale, et les différentes coopérations avec les grands chefs d’entreprises en particulier, qui a donnée vie à cet institut.."
 		},
 		"mission": {
 			"title": "NOTRE MISSION",
-			"content": "Assurer l’avenir des enfants est une problématique des plus fréquents dans une famille. La mission de Biast est de former les enfants et de les garantir un avenir meilleur dans des grands écoles de grand pays.."
+			"content": "Assurer l’avenir des enfants est une problématique des plus fréquents dans une famille. La mission de Biast est de former les enfants et de les garantir un avenir meilleur dans des grandes écoles de grands pays.."
 		},
 		"vision": {
 			"title": "NOTRE VISION",
-			"content": "Biast vise à établir une connexion solide entre le Cameroun et les pays étrangers afin que tous les étudiants qui se forme, puisse bénéficier de l’aide des mains extérieurs plus expérimenter pour ainsi faire avancer sa connaissance et faire avancer la technique et l’éducation dans notre pays."
+			"content": "BIAST vise à établir une connexion solide entre le Cameroun et les pays étrangers afin que tous les étudiants qui s'y forment, puissent bénéficier de l’aide des mains extérieures plus expérimentées pour ainsi faire avancer sa connaissance et faire avancer la technique et l’éducation dans notre pays."
 		}
 	},
 	"enseignant": "Enseignants",
@@ -185,10 +185,10 @@
 		"auteur": "De Ludmila Oulitskaïa/ Sincèrement vôtre, Chourik",
 		"resent1": {
 			"title": "Présentation de l'institut Biast",
-			"content": "Professeur Talla prends la parole"
+			"content": "Professeur Talla prend la parole"
 		},
 		"resent2": {
-			"title": "Visite du directeur de l'INSET de Nkongsamba.",
+			"title": "Visite du doyen de l'INSET de Nkongsamba.",
 			"content": "Signature de contrats"
 		},
 		"newscontent": "Abonnez-vous à notre newsletter pour obtenir les dernières mises à jour et Prestations de service",
@@ -232,14 +232,14 @@
 			"Gestion": "Gestion",
 			"Agriculture et Élevage": "Agriculture et Élevage",
 			"Étude Médico-Sanitaire": "Étude Médico-Sanitaire",
-			"Science et Techniques Biomedicale": "Science et Techniques Biomedicale"
+			"Sciences et Techniques Biomédicales": "Sciences et Techniques Biomédicales"
 		},
 		"speciality": "Spécialités",
 		"events": {
-			"LA VISITE DE L’UNIVERSITÉ DE NANCY DE FRANCE": "LA VISITE DE L’UNIVERSITÉ DE NANCY DE FRANCE",
-			"PRÉSENTATION DES NOUVEAUX BACHELIERS": "PRÉSENTATION DES NOUVEAUX BACHELIERS",
+			"LA VISITE DE L’UNIVERSITÉ DE NANCY LORRAINE EN FRANCE": "LA VISITE DE L’UNIVERSITÉ DE NANCY LORRAINE EN FRANCE",
+			"JOURNÉE D'ORIENTATION PORTE OUVERTE": "JOURNÉE D'ORIENTATION PORTE OUVERTE",
 			"ÉPANOUISSEMENT DES ÉTUDIANTS DE L’INSTITUT BIAST": "ÉPANOUISSEMENT DES ÉTUDIANTS DE L’INSTITUT BIAST",
-			"EXPLICATION DES LEÇONS AUX ÉTUDIANTS DU GÉNIE CIVIL": "EXPLICATION DES LEÇONS AUX ÉTUDIANTS DU GÉNIE CIVIL",
+			"PRISE DE CONTACT AVEC LES NOUVEAUX BACHELIERS": "EXPLICATION DES LEÇONS AUX ÉTUDIANTS DU GÉNIE CIVIL",
 			"LA VISITE DU DOYEN DE DSCHANG ET SIGNATURE DES ACCORDS": "LA VISITE DU DOYEN DE DSCHANG ET SIGNATURE DES ACCORDS"
 		}
 	},
@@ -248,7 +248,7 @@
 		"mission": "NOTRE MISSION",
 		"vision": "NOTRE VISION",
 		"hiscont": {
-			"p1": "Créé par des scientifiques et professeurs universitaires par le décret n°19/00/649/MINESUP/SG/DDES/ESUP du 10 juillet 2019, l'Institut Universitaire Bilingue des Sciences Appliquées et Technologie (BIAST) / Institut Universitaire Bilingue des Sciences Appliquées et Technologie (BIAST) est un institut d'excellence et d'innovation bilingue (anglais et français) doté d'une équipe d'enseignants qualifiés et expérimentés, de laboratoires et d'ateliers équipés d'équipements de pointe. La BIAST est en partenariat avec certaines universités camerounaises, comme l'Université de Dschang qui est l'une des meilleures universités d'État d'Afrique centrale. BIAST est également en partenariat avec d'autres universités étrangères, comme l'UNIVERSITE DE LORRAINE en France. Notre mission est de contribuer et de permettre aux étudiants d'acquérir une excellente formation professionnelle faisant d'eux de meilleurs techniciens/ingénieurs supérieurs capables de bâtir une nation solide. BIAST offre des facilités pour les études, une meilleure formation académique, professionnelle et pratique, y compris l'esprit d'entrepreneuriat et d'innovation. BIAST facilite également l'inscription dans les grandes écoles de médecine et d'ingénierie à l'étranger, comme en République démocratique du Congo."
+			"p1": "Créé par des scientifiques et professeurs universitaires par le décret n°19/00/649/MINESUP/SG/DDES/ESUP du 10 juillet 2019, Bilingual Institute of Applied Science and Technology  (BIAST) / Institut Universitaire Bilingue des Sciences Appliquées et Technologie (BIAST) est un institut d'excellence et d'innovation bilingue (anglais et français) doté d'une équipe d'enseignants qualifiés et expérimentés, de laboratoires et d'ateliers équipés d'équipements de pointe. La BIAST est en partenariat avec certaines universités camerounaises, comme l'Université de Dschang qui est l'une des meilleures universités d'État d'Afrique centrale. BIAST est également en partenariat avec d'autres universités étrangères, comme l'UNIVERSITE DE LORRAINE en France. Notre mission est de contribuer et de permettre aux étudiants d'acquérir une excellente formation professionnelle faisant d'eux de meilleurs techniciens/ingénieurs supérieurs capables de bâtir une nation solide. BIAST offre des facilités pour les études, une meilleure formation académique, professionnelle et pratique, y compris l'esprit d'entrepreneuriat et d'innovation. BIAST facilite également l'inscription dans les grandes écoles de médecine et d'ingénierie à l'étranger, comme en République démocratique du Congo."
 		},
 		"miscont": {
 			"p1": "Doter les jeunes des aptitudes et des compétences dont ils ont besoin pour faire face aux réalités changeantes du monde moderne, grâce à notre programme de formation diversifié, pratique et innovant."
@@ -262,7 +262,7 @@
 		"inscrit": "Inscrit avec Succès",
 		"confiance": "Merci de nous faire confiance.  BIAST vous souhaite une fois de plus la bienvenue",
 		"password": "Mot de passe",
-		"oriente": "Ces paramètres sont le vôtre et vous pouvez les utiliser pour vous connecter à votre compte"
+		"oriente": "Ces paramètres sont les vôtres et vous pouvez les utiliser pour vous connecter à votre compte"
 	},
 	"courseDetail": {
 		"description": "Description du cours",
@@ -275,7 +275,7 @@
 			"Espace privé",
 			"Modifier mon password",
 			"Modifier ma photo",
-			"Consulter Mes Note"
+			"Consulter Mes Notes"
 		],
 		"info": "Informations personnelles",
 		"labels": {

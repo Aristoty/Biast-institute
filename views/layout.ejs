@@ -65,7 +65,7 @@
             <div class="container">
                 <div class="row">
              
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="rs-toolbar-left" style="color: white; padding-top: 10px;">
                             <div class="welcome-message">
                                 <span><%= translate('bienvenu') %></span> 
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <center><div class="rs-toolbar-center" style="width: 25%;">
                              <img style="cursor: pointer;" id="language_french" src="/assets/images/languages/<%= !lang || lang=='fr' ? 'english.png' : 'french.png' %>" alt="<%= !lang || lang=='fr' ? 'en' : 'fr' %>" width="43" height="43">
                     </div>
@@ -83,15 +83,15 @@
                     
 
 
-                    <div class="col-md-3">
-                        <div class="rs-toolbar-right"  style="font-size: 16px; padding-top: 8px;">
+                    <div class="col-md-4">
+                       <center><div class="rs-toolbar-right"  style="font-size: 16px; padding-top: 8px;">
                             <div class="toolbar-share-icon">
                                 <ul>
                                     <% if(user) { %><li class="menu-item-has-children <% if(path == '/deconnexion') { %> active <% } %>"> <a  class="active" href=<%= "/deconnexion?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('getIn').deconnexion %></a></li><% } else { %><li class="menu-item-has-children <% if(path == '/connexion') { %> active <% } %>"> <a href=<%= "/connexion?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('getIn').connexion %></a></li><% } %>
 
-                                    <% if(!user) { %><li class="menu-item-has-children <% if(path == '/inscription') { %> active <% } %>"> <a href=<%= "/inscription?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('getIn').inscription %></a><% } else { %> <li class="menu-item-has-children <% if(path.split('/')[1] == 'personalPage' || path=='/personalpage') { %> active <% } %>"> <a href=<%= "/personalpage?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('getIn').session %></a><% } %>
+                                    <% if(!user) { %><li class="menu-item-has-children <% if(path == '/inscription') { %> active <% } %>"> <a href=<%= "/inscription?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('getIn').inscription %></a><% } else { %> <li class="menu-item-has-children <% if(path.split('/')[1] == 'personalPage' || path=='/personalpage') { %> active <% } %>"> <a href=<%= "/personalpage?token=" + (user ? user.token : '') + (lang ? '&lang='+lang : '') %>><%= translate('getIn').session %></a></li><% } %>
                             
-                                    </li>
+                                    
                                 </ul>
                             </div>
                             
@@ -168,7 +168,7 @@
                                     <% } %>
                                     <!-- <i class="fa fa-camera" aria-hidden="true"></i> -->
                                 </div></center>
-                            </div>
+                            </div></center>
                             <div class="col-md-4 col-sm-12">
                                 <div class="header-contact pull-right">
                                     <div id="phone-details" class="widget-text">
@@ -270,6 +270,7 @@
                             </div>
                         </div>
                     </div>
+                   
                 </div>
             </div>
 
@@ -401,8 +402,8 @@
                             <i class="fa fa-map-marker" style="color: green;"></i>
                             <h4 class="contact-title"><%= translate('footer').header.mail %></h4>
                             <p class="contact-desc">
-                                <a href="mailto:ubiast@yahoo.com">mailto:ubiast@yahoo.com</a><br>
-                                www.biast.com
+                               <p>international@ubiast.cm</p>
+                             
                             </p>
                         </div>
                     </div>
@@ -486,7 +487,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="copyright">
-                    <p>© 2023 <a href="#">ETS BIAST</a>. <%= translate('footer').copy %></p>
+                    <p>© 2024 <a href="#">ETS BIAST</a>. <%= translate('footer').copy %></p>
                 </div>
             </div>
         </div>

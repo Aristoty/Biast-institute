@@ -96,6 +96,29 @@
   background-color: #cde5d7;
 }
 
+.partner-item{
+  /* border: 1px solid red; */
+  border-radius: 30px;
+  border-top: none;
+  border-left: none;
+  border-right:none;
+  height: 100%;
+  justify-content: space-between;
+  display: block;
+  background-color: #458882;
+}
+
+.image_partner{
+  height: 70%;
+}
+
+.description_partner{
+  height: 20%;
+  text-align: center;
+  /* border-top: 1px solid red; */
+ 
+}
+
 
 [class*='rs-animation-'] {
   -webkit-animation-duration: 0.5s;
@@ -1145,6 +1168,7 @@ ul {
 }
 .rs-toolbar .rs-toolbar-right {
   text-align: right;
+  justify-content: space-between;
 }
 .rs-toolbar .rs-toolbar-right .toolbar-share-icon {
   display: inline-block;

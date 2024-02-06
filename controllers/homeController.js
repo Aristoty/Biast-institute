@@ -6,9 +6,7 @@ const countries = require('../data/countries.json')
 const jwt = require('jsonwebtoken')
 const my_filieres = require('../data/filieres.json')
 const my_specialites = require('../data/specialites.json')
-var filiere = null
-var specialites = null
-var credential = null
+
 
 const  generateRandomString = (num) => {
     const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
