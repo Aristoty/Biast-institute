@@ -1,4 +1,5 @@
 const {sequelize} = require('./sequelize')
+// import { DataTypes } from '@sequelize/core';
 const { Filiere, Specialite } = require("./models/homeModel");
 
 // sequelize.sync().then(() => {

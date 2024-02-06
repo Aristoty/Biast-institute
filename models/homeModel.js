@@ -5,7 +5,7 @@ authenticate()
 
 const Student = sequelize.define('students', {
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         unique: true,
@@ -119,11 +119,11 @@ const Student = sequelize.define('students', {
         allowNull: true
     },
     filiereId: {
-        type : DataTypes.INTEGER.UNSIGNED,
+        type : DataTypes.INTEGER,
         allowNull: false,
     },
     specialiteId: {
-        type : DataTypes.INTEGER.UNSIGNED,
+        type : DataTypes.INTEGER,
         allowNull: false,
     },
     photo_profil: {
@@ -135,7 +135,7 @@ const Student = sequelize.define('students', {
 
 const User = sequelize.define('users', {
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         unique: true,
@@ -150,14 +150,14 @@ const User = sequelize.define('users', {
         allowNull: false,
     },
     studentId: {
-        type : DataTypes.INTEGER.UNSIGNED,
+        type : DataTypes.INTEGER,
         allowNull: false,
     },
 });
 
 const Filiere = sequelize.define('filieres', {
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         unique: true,
@@ -187,7 +187,7 @@ const Filiere = sequelize.define('filieres', {
 
 const Specialite = sequelize.define('specialites', {
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         unique: true,
@@ -201,14 +201,14 @@ const Specialite = sequelize.define('specialites', {
         allowNull: true,
     },
     filiereId : {
-        type : DataTypes.INTEGER.UNSIGNED,
+        type : DataTypes.INTEGER,
         allowNull: false,
     }
 })
 
 const Credential = sequelize.define('credentials', {
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         unique: true,
@@ -225,7 +225,7 @@ const Credential = sequelize.define('credentials', {
 
 const Event = sequelize.define('events', {
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         unique: true,
@@ -252,6 +252,14 @@ const Event = sequelize.define('events', {
     },
     image_dsc:{
         type: DataTypes.STRING(255),
+        allowNull: true,
+    },
+    createdAt:{
+        type:DataTypes.DATE,
+        allowNull: true,
+    },
+    updatedAt:{
+        type:DataTypes.DATE,
         allowNull: true,
     }
 })
