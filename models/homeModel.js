@@ -130,6 +130,14 @@ const Student = sequelize.define('students', {
         type: DataTypes.STRING,
         allowNull: true
     },
+    createdAt:{
+        type:DataTypes.DATE,
+        allowNull: true,
+    },
+    updatedAt:{
+        type:DataTypes.DATE,
+        allowNull: true,
+    }
   });
 
 
@@ -153,6 +161,14 @@ const User = sequelize.define('users', {
         type : DataTypes.INTEGER,
         allowNull: false,
     },
+    createdAt:{
+        type:DataTypes.DATE,
+        allowNull: true,
+    },
+    updatedAt:{
+        type:DataTypes.DATE,
+        allowNull: true,
+    }
 });
 
 const Filiere = sequelize.define('filieres', {
@@ -182,6 +198,14 @@ const Filiere = sequelize.define('filieres', {
     nbr_inscrits:{
         type:DataTypes.INTEGER,
         defaultValue: 0
+    },
+    createdAt:{
+        type:DataTypes.DATE,
+        allowNull: true,
+    },
+    updatedAt:{
+        type:DataTypes.DATE,
+        allowNull: true,
     }
 })
 
@@ -203,6 +227,14 @@ const Specialite = sequelize.define('specialites', {
     filiereId : {
         type : DataTypes.INTEGER,
         allowNull: false,
+    },
+    createdAt:{
+        type:DataTypes.DATE,
+        allowNull: true,
+    },
+    updatedAt:{
+        type:DataTypes.DATE,
+        allowNull: true,
     }
 })
 
@@ -219,6 +251,14 @@ const Credential = sequelize.define('credentials', {
     },
     password: {
         type: DataTypes.STRING(255),
+        allowNull: true,
+    },
+    createdAt:{
+        type:DataTypes.DATE,
+        allowNull: true,
+    },
+    updatedAt:{
+        type:DataTypes.DATE,
         allowNull: true,
     }
 })
