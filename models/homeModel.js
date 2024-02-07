@@ -157,7 +157,7 @@ const User = sequelize.define('users', {
         type: DataTypes.STRING(255),
         allowNull: false,
     },
-    studentId: {
+    studentid: {
         type : DataTypes.INTEGER,
         allowNull: false,
     },
@@ -328,6 +328,7 @@ Student.belongsTo(Specialite, {
   foreignKey: "specialiteid",
   as: "specialites",
 });
+
 
 
 module.exports = {
