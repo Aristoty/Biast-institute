@@ -1,0 +1,12 @@
+{
+    "apps": [
+      {
+        "name": "biast-backend-service",
+        "cwd": "./",
+        "script": "index.js"
+      }
+    ]
+}
+
+  
+  
