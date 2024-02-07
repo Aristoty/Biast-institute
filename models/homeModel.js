@@ -118,11 +118,11 @@ const Student = sequelize.define('students', {
         type: DataTypes.STRING,
         allowNull: true
     },
-    filiereId: {
+    filiereid: {
         type : DataTypes.INTEGER,
         allowNull: false,
     },
-    specialiteId: {
+    specialiteid: {
         type : DataTypes.INTEGER,
         allowNull: false,
     },
@@ -224,7 +224,7 @@ const Specialite = sequelize.define('specialites', {
         type: DataTypes.TEXT,
         allowNull: true,
     },
-    filiereId : {
+    filiereid : {
         type : DataTypes.INTEGER,
         allowNull: false,
     },
@@ -304,6 +304,7 @@ const Event = sequelize.define('events', {
     }
 })
 
+
  sequelize.sync().then(() => {
      console.log('Migration made successfully!');
      }).catch((error) => {
@@ -313,19 +314,19 @@ const Event = sequelize.define('events', {
 
 Filiere.hasMany(Specialite, { as: "specialites" });
 Specialite.belongsTo(Filiere, {
-  foreignKey: "filiereId",
+  foreignKey: "filiereid",
   as: "filieres",
 });
 
 Filiere.hasMany(Student, { as: "students" });
 Student.belongsTo(Filiere, {
-  foreignKey: "filiereId",
+  foreignKey: "filiereid",
   as: "filieres",
 });
 
 Specialite.hasMany(Student, { as: "students" });
 Student.belongsTo(Specialite, {
-  foreignKey: "specialiteId",
+  foreignKey: "specialiteid",
   as: "specialites",
 });
 
