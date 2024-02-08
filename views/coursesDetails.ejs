@@ -1,18 +1,9 @@
-
-<div class="abt-title text-center">
-    <h2><%= translate('courseDetail').detail %>  :<%= translate('database').filiere[cours.dataValues.nom_filiere] %> </h2>
+<div class="rs-courses-details  pb-70">
+    <div class="container">
+<div class="abt-title ml-5">
+    <h2><%= translate('courseDetail').detail %>  <%= translate('database').filiere[cours.dataValues.nom_filiere] %> </h2>
 </div><br>
 
-<div class="rs-courses-details  pb-70">
-<div class="container">
-    <!-- <div class="row"> -->
-        <!-- <div class="col-lg-8 col-md-12"> -->
-            <!-- <div class="detail-img">
-                <img src="/assets/images/courses/<%-cours.dataValues.image_desc %>" alt="Courses Images" />
-                <div class="course-seats">
-                    170 <span>SEATS</span>
-                </div>
-            </div> -->
            
             <div class="course-desc">
                 <h3 class="desc-title"><%= translate('courseDetail').description %></h3>

@@ -266,7 +266,7 @@
 	},
 	"courseDetail": {
 		"description": "Description du cours",
-		"detail": "DETAIL DE LA FILIÈRE",
+		"detail": "",
 		"branche": "Les différentes Branches"
 	},
 	"personalPage": {
