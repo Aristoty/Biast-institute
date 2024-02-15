@@ -3,10 +3,10 @@
         <div class="abt-title">
             <h2><%= translate('events').title %></h2>
         </div>
-       <% for(let i = 0; i< events.length; i=i+2) { %> 
-            <div class="row space-bt30">
+       <% for(let i = 0; i< events.length; i=i+1) { %> 
+            <div class="row">
               <% if(events[i]) { %>
-                <div class="col-lg-6 col-md-12 md-mb-30">
+                <div >
                     <div class="event-item">
                         <div class="row rs-vertical-middle">
                             <div class="col-md-6">
@@ -28,54 +28,16 @@
                                             <i class="fa fa-clock-o"></i>
                                             <span><%= events[i].dataValues.temps_debut %> - <%= events[i].dataValues.temps_fin %></span>
                                         </div>
-                                    </div>
+                                    </div></BR></BR>
                                     <h3 class="event-title"><a href="/events/<%= events[i].dataValues.id %>"><%= translate('database').events[events[i].dataValues.title] %></a></h3>
+                                    <BR><BR>
                                     <div class="event-location">
                                         <i class="fa fa-map-marker"></i>
                                         <span><%= events[i].dataValues.lieu %></span>
                                     </div>
-                                
+                                    <BR><BR>
                                     <div class="event-btn">
                                         <a href="/events/<%= events[i].dataValues.id %>"><%= translate('events').voir %></a>
-                                    </div>
-                                </div>                    		
-                            </div>
-                        </div>                    		
-                    </div>
-                </div>
-              <% } %>
-              <% if(events[i+1]) { %>
-                <div class="col-lg-6 col-md-12">
-                    <div class="event-item">
-                        <div class="row rs-vertical-middle">
-                            <div class="col-md-6">
-                                <div class="event-img">
-                                    <img src="/assets/images/events/<%= events[i+1].dataValues.image_dsc %>" alt="<%= events[i+1].dataValues.image_dsc %>" style="height: 100%;" />
-                                    <a class="image-link" href="/events/<%= events[i+1].dataValues.id %>" title="University Tour 2018">
-                                        <i class="fa fa-link"></i>
-                                    </a>
-                                </div>                        		
-                            </div>
-                            <div class="col-md-6">
-                                <div class="event-content">
-                                    <div class="event-meta">
-                                        <div class="event-date">
-                                            <i class="fa fa-calendar"></i>
-                                            <span><%= events[i+1].dataValues.date %></span>
-                                        </div>
-                                        <div class="event-time">
-                                            <i class="fa fa-clock-o"></i>
-                                            <span><%= events[i+1].dataValues.temps_debut %> - <%= events[i+1].dataValues.temps_fin %></span>
-                                        </div>
-                                    </div>
-                                    <h3 class="event-title"><a href="/events/<%= events[i+1].dataValues.id %>"><%= translate('database').events[events[i+1].dataValues.title] %></a></h3>
-                                    <div class="event-location">
-                                        <i class="fa fa-map-marker"></i>
-                                        <span><%= events[i+1].dataValues.lieu %></span>
-                                    </div>
-                                 
-                                    <div class="event-btn">
-                                        <a href="/events/<%= events[i+1].dataValues.id %>"><%= translate('events').voir %></a>
                                     </div>
                                 </div>                    		
                             </div>
@@ -90,32 +52,3 @@
     </div>
 </div>
 
-<div id="rs-partner" class="rs-partner pb-70 sec-spacer">
-        
-    <div class="container">
-        <div class="abt-title mb-70 text-center">
-            <h2><%= translate('subtitle').content7.title %></h2>     
-            <p><%= translate('subtitle').content7.resume %></p>
-        </div>
-        <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/1.png" alt="Partner Image"></a>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/2.jpeg" alt="Partner Image"></a>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/3.png" alt="Partner Image"></a>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/4.png" alt="Partner Image"></a>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/5.jpeg" alt="Partner Image"></a>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/6.jpeg" alt="Partner Image"></a>
-            </div>
-        </div>
-    </div>
-</div>

@@ -294,6 +294,10 @@ const Event = sequelize.define('events', {
         type: DataTypes.STRING(255),
         allowNull: true,
     },
+    description:{
+        type: DataTypes.TEXT,
+        allowNull: true,
+    },
     createdAt:{
         type:DataTypes.DATE,
         allowNull: true,
@@ -312,10 +316,12 @@ sequelize.sync().then(() => {
 
 
 Filiere.hasMany(Specialite, { as: "specialites" });
+
 Specialite.belongsTo(Filiere, {
   foreignKey: "filiereid",
   as: "filieres",
 });
+
 
 Filiere.hasMany(Student, { as: "students" });
 Student.belongsTo(Filiere, {
@@ -328,7 +334,6 @@ Student.belongsTo(Specialite, {
   foreignKey: "specialiteid",
   as: "specialites",
 });
-
 
 
 module.exports = {
