@@ -287,7 +287,7 @@ const TraitementInscription = async (req, res, next) => {
                 dernier_ecole: responce.dernEtab,
                 moyenne_bac: responce.moyenne_bac,
                 type_formation: responce.type_form,
-                filiereId: responce.filiere,
+                filiereid: responce.filiere,
                 specialiteId: responce.specialite,
                 photo_profil: responce.test
             },
@@ -377,7 +377,7 @@ const mesInfos = async (req, res, next) => {
  })  
 
  const filiere = await Filiere.findOne({
-   where : { id: etudiant.dataValues.filiereId}
+   where : { id: etudiant.dataValues.filiereid}
  }).then(
     res => {
         return res.dataValues.nom_filiere
@@ -408,7 +408,7 @@ const ficheInscription = async (req, res, next) => {
     }
  })  
  const filiere = await Filiere.findOne({
-    where : { id: etudiant.dataValues.filiereId}
+    where : { id: etudiant.dataValues.filiereid}
   }).then(
      res => {
          return res.dataValues.nom_filiere
@@ -430,7 +430,7 @@ const ficheInscription = async (req, res, next) => {
 const coursesDetailView = async(req, res, next) => {
     const id = req.params.id
     const specialite = await Specialite.findAll({
-        where : { filiereId: id}
+        where : { filiereid: id}
     })
 
     const cours = await Filiere.findOne({
@@ -438,7 +438,7 @@ const coursesDetailView = async(req, res, next) => {
     })
 
     const student = await Student.findAll({
-        where : {filiereId : id}
+        where : {filiereid : id}
     })
 
    
@@ -551,7 +551,7 @@ const updateInscription = async (req, res, next) => {
             dernier_ecole: responce.dernEtab,
             moyenne_bac: responce.moyenne_bac,
             type_formation: responce.type_form,
-            filiereId: responce.filiere,
+            filiereid: responce.filiere,
             specialiteId: responce.specialite,
         },
         {

@@ -1,18 +1,9 @@
-
-<div class="abt-title text-center">
-    <h2><%= translate('courseDetail').detail %>  :<%= translate('database').filiere[cours.dataValues.nom_filiere] %> </h2>
+<div class="rs-courses-details  pb-70">
+    <div class="container">
+<div class="abt-title ml-5">
+    <h2><%= translate('courseDetail').detail %>  <%= translate('database').filiere[cours.dataValues.nom_filiere] %> </h2>
 </div><br>
 
-<div class="rs-courses-details  pb-70">
-<div class="container">
-    <!-- <div class="row"> -->
-        <!-- <div class="col-lg-8 col-md-12"> -->
-            <!-- <div class="detail-img">
-                <img src="/assets/images/courses/<%-cours.dataValues.image_desc %>" alt="Courses Images" />
-                <div class="course-seats">
-                    170 <span>SEATS</span>
-                </div>
-            </div> -->
            
             <div class="course-desc">
                 <h3 class="desc-title"><%= translate('courseDetail').description %></h3>
@@ -58,32 +49,3 @@
 
 </div>
 
-<div id="rs-partner" class="rs-partner pt-30 pb-70">
-        
-    <div class="container">
-        <div class="abt-title mb-70 text-center">
-            <h2><%= translate('subtitle').content7.title %></h2>     
-            <p><%= translate('subtitle').content7.resume %></p>
-        </div>
-        <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/1.png" alt="Partner Image"></a>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/2.jpeg" alt="Partner Image"></a>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/3.png" alt="Partner Image"></a>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/4.png" alt="Partner Image"></a>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/5.jpeg" alt="Partner Image"></a>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="/assets/images/partner/6.jpeg" alt="Partner Image"></a>
-            </div>
-        </div>
-    </div>
-</div>

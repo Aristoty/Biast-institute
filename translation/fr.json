@@ -1,14 +1,14 @@
 {
 	"bienvenu": "Bienvenue à Biast",
 	"nav": {
-		"home": "ACCUEILLE",
+		"home": "ACCUEIL",
 		"about": "À PROPOS DE NOUS",
 		"cours": "FILIÈRES",
 		"event": "ÉVÈNEMENTS",
 		"contact": "CONTACTS"
 	},
 	"navfooter": {
-		"home": "Accueille",
+		"home": "Accueil",
 		"about": "À propos",
 		"cours": "filières",
 		"event": "Évènement",
@@ -22,7 +22,7 @@
 	"call": "Nous appeler",
 	"slider": {
 		"slider1": "BIENVENUE À BIAST",
-		"slider2": "ÊTES VOUS PRÊT À DÉMARRER AVEC BIAST",
+		"slider2": "ÊTES VOUS PRÈS À DÉMARRER AVEC BIAST ?",
 		"slider3": "CHOISISSEZ LE MEILLEUR, CHOISISSEZ BIAST"
 	},
 	"title": "INSTITUT UNIVERSITAIRE BILINGUE DES SCIENCES APPLIQUÉES ET TECHNOLOGIE",
@@ -34,28 +34,28 @@
 	},
 	"book": {
 		"title": "Livres et Bibliothèque",
-		"content": "Les manuels scolaires tels que les supports de cours sont fournis gratuitement"
+		"content": "Les supports de cours sont fournis gratuitement; BIAST dispose d'une Bibliothèque numérique bien fournie"
 	},
 	"teacher": {
 		"title": "Enseignants Qualifiés",
-		"content": "Tous nos enseignants ont la maitrise de leurs domaines et sont qualifiés pour les cours qu'ils dispensent"
+		"content": "Tous nos enseignants sont de haut vol et ont la maitrise de leurs domaines de competences"
 	},
 	"certify": {
-		"title": "Certifications",
-		"content": "Une certification reconnue, est décernée aux etudiants en fin de formation"
+		"title": "Diplômes",
+		"content": "Les diplômes délivrés chez nous, sont reconnus sur le plan national qu'international "
 	},
 	"subtitle": {
 		"content1": {
 			"title": "À PROPOS DE NOUS",
-			"resume": "BIAST est un institut créé en 2020 par le Professeur TALLA Pierre Kisito, Chef de département de physique (a.i) et ses collaborateurs à l'université de Dschang"
+			"resume": "BIAST est un institut crée en 2019 par un groupe d'enseignant du superieur"
 		},
 		"content2": {
-			"title": "NOS SUJETS LES PLUS POPULAIRES",
-			"resume": "Les filières les plus fréquemment solliciter par les étudiants qui s'inscrivent à Biast"
+			"title": "NOS FILIERES LES PLUS POPULAIRES",
+			"resume": "Nos filières les plus fréquemment sollicitées par les étudiants qui s'inscrivent à Biast"
 		},
 		"content3": {
 			"title": "LAUREATS ET STATISTIQUES",
-			"resume": "BIAST a quatre annee d'existance, et totalise les presents effectifs "
+			"resume": "BIAST a cinq année d'existance, et totalise les présents effectifs "
 		},
 		"content4": {
 			"title": "NOS DIFFÉRENTS ÉVÈNEMENTS",
@@ -71,30 +71,30 @@
 		},
 		"content7": {
 			"title": "NOS UNIVERSITÉS PARTENAIRES",
-			"resume": "Tous nos universités et entreprises partenaires partout dans le monde entier."
+			"resume": "Toutes nos universités et entreprises partenaires partout dans le monde."
 		}
 	},
 	"description": {
-		"title": "BIENVENU A BIAST",
-		"intro": "Avec BIAST, votre formation est garantie et votre avenir n'est plus une préoccupation majeure. Toutes nos filières sont reconnues pas des universités partenaires en France en Allemagne en Autriche au Congo, en RDC etc...",
+		"title": "BIENVENUE A BIAST",
+		"intro": "Avec BIAST, votre formation est garantie et votre avenir n'est plus une préoccupation majeure. Toutes nos filières sont reconnues pas des universités partenaires en France, Allemagne, Autriche, Congo, Canada, Chine et en RDC.",
 		"hystory": {
-			"title": "NOTRE HISTORE",
-			"content": "La brillante pensée du professeur Talla Pierre Kisito à fait naitre les étincelles de l’institut BIAST en 2020. C’est grâce a ses nombreux voyages de part le monde en générale, et les différentes coopérations avec les grands chefs d’entreprises en particulier, qui a donnée vie à cet institut.."
+			"title": "NOTRE HISTOIRE",
+			"content": "Créé par des scientifiques et professeurs universitaires par le décret n°19/00/649/MINESUP/SG/DDES/ESUP du 10 juillet 2019, Bilingual Institute of Applied Science and Technology / Institut Universitaire Bilingue des Sciences Appliquées et Technologie (BIAST) est un institut d'excellence et d'innovation bilingue (anglais et français) doté d'une équipe d'enseignants qualifiés et expérimentés, de laboratoires et d'ateliers équipés d'équipements de pointe"
 		},
 		"mission": {
 			"title": "NOTRE MISSION",
-			"content": "Assurer l’avenir des enfants est une problématique des plus fréquents dans une famille. La mission de Biast est de former les enfants et de les garantir un avenir meilleur dans des grandes écoles de grands pays.."
+			"content": "Notre mission est de contribuer et de permettre aux étudiants d'acquérir une excellente formation professionnelle faisant d'eux de meilleurs techniciens supérieurs capables de bâtir une nation solide"
 		},
 		"vision": {
 			"title": "NOTRE VISION",
-			"content": "BIAST vise à établir une connexion solide entre le Cameroun et les pays étrangers afin que tous les étudiants qui s'y forment, puissent bénéficier de l’aide des mains extérieures plus expérimentées pour ainsi faire avancer sa connaissance et faire avancer la technique et l’éducation dans notre pays."
+			"content": "BIAST vise a offrir des facilités pour les études, une meilleure formation académique, professionnelle et pratique, y compris l'esprit d'entrepreneuriat et d'innovation. BIAST vise a faciliter également l'inscription dans les grandes écoles de médecine et d'ingénierie à l'étranger, comme en République démocratique du Congo, Cannada, Autriche, France, Allemagne ... ."
 		}
 	},
 	"enseignant": "Enseignants",
 	"filiere": "FILIÈRES",
 	"etudiant": "ÉTUDIANTS",
 	"reusite": "reussite en %",
-	"reussite": "reussite",
+	"reussite": "BTS/HND",
 	"voir": "Voir l'evenement",
 	"from": "De",
 	"to": "à",
@@ -231,24 +231,24 @@
 			"Commerce et Vente": "Commerce et Vente",
 			"Gestion": "Gestion",
 			"Agriculture et Élevage": "Agriculture et Élevage",
-			"Étude Médico-Sanitaire": "Étude Médico-Sanitaire",
+			"Étude Médico-Sanitaire": "Études Médico-Sanitaires",
 			"Sciences et Techniques Biomédicales": "Sciences et Techniques Biomédicales"
 		},
 		"speciality": "Spécialités",
 		"events": {
-			"LA VISITE DE L’UNIVERSITÉ DE NANCY LORRAINE EN FRANCE": "LA VISITE DE L’UNIVERSITÉ DE NANCY LORRAINE EN FRANCE",
-			"LA JOURNÉE D'ORIENTATION PORTES OUVERTES": "LA JOURNÉE D'ORIENTATION PORTES OUVERTES",
+			"LA VISITE DE L’UNIVERSITÉ DE NANCY LORRAINE EN FRANCE": "LA VISITE DE L’UNIVERSITÉ DE NANCY LORRAINE EN FRANCE SESSION DE JUILLET 2022",
+			"LA JOURNÉE D'ORIENTATION PORTES OUVERTES": "LA JOURNÉE D'ORIENTATION",
 			"ÉPANOUISSEMENT DES ÉTUDIANTS DE L’INSTITUT BIAST": "ÉPANOUISSEMENT DES ÉTUDIANTS DE L’INSTITUT BIAST",
 			"PRISE DE CONTACT AVEC LES NOUVEAUX BACHELIERS": "PRISE DE CONTACT AVEC LES NOUVEAUX BACHELIERS",
-			"LA VISITE DU DOYEN DE DSCHANG ET SIGNATURE DES ACCORDS": "LA VISITE DU DOYEN DE DSCHANG ET SIGNATURE DES ACCORDS"
+			"LA VISITE DU DOYEN DE DSCHANG ET SIGNATURE DES ACCORDS": "LA VISITE DE LA COMMISSION D'ACREDITATION DE L'UDS EN VU DE L'OUVERTURE DES LICENCES PROFESSIONNELLES"
 		}
 	},
 	"about": {
-		"histoire": "NOTRE HISTORE",
+		"histoire": "NOTRE HISTOIRE",
 		"mission": "NOTRE MISSION",
 		"vision": "NOTRE VISION",
 		"hiscont": {
-			"p1": "Créé par des scientifiques et professeurs universitaires par le décret n°19/00/649/MINESUP/SG/DDES/ESUP du 10 juillet 2019, Bilingual Institute of Applied Science and Technology  (BIAST) / Institut Universitaire Bilingue des Sciences Appliquées et Technologie (BIAST) est un institut d'excellence et d'innovation bilingue (anglais et français) doté d'une équipe d'enseignants qualifiés et expérimentés, de laboratoires et d'ateliers équipés d'équipements de pointe. La BIAST est en partenariat avec certaines universités camerounaises, comme l'Université de Dschang qui est l'une des meilleures universités d'État d'Afrique centrale. BIAST est également en partenariat avec d'autres universités étrangères, comme l'UNIVERSITE DE LORRAINE en France. Notre mission est de contribuer et de permettre aux étudiants d'acquérir une excellente formation professionnelle faisant d'eux de meilleurs techniciens/ingénieurs supérieurs capables de bâtir une nation solide. BIAST offre des facilités pour les études, une meilleure formation académique, professionnelle et pratique, y compris l'esprit d'entrepreneuriat et d'innovation. BIAST facilite également l'inscription dans les grandes écoles de médecine et d'ingénierie à l'étranger, comme en République démocratique du Congo."
+			"p1": "Créé par des scientifiques et professeurs universitaires par le décret n°19/00/649/MINESUP/SG/DDES/ESUP du 10 juillet 2019, Bilingual Institute of Applied Science and Technology  (BIAST) / Institut Universitaire Bilingue des Sciences Appliquées et Technologie (BIAST) est un institut d'excellence et d'innovation bilingue (anglais et français) doté d'une équipe d'enseignants qualifiés et expérimentés, de laboratoires et d'ateliers équipés d'équipements de pointe. La BIAST est en partenariat avec certaines universités camerounaises, comme l'Université de Dschang qui est l'une des meilleures universités d'État d'Afrique centrale. BIAST est également en partenariat avec d'autres universités étrangères, comme l'UNIVERSITE DE LORRAINE en France. Notre mission est de contribuer et de permettre aux étudiants d'acquérir une excellente formation professionnelle faisant d'eux de meilleurs techniciens supérieurs capables de bâtir une nation solide. BIAST offre des facilités pour les études, une meilleure formation académique, professionnelle et pratique, y compris l'esprit d'entrepreneuriat et d'innovation. BIAST facilite également l'inscription dans les grandes écoles de médecine et d'ingénierie à l'étranger, comme en République démocratique du Congo."
 		},
 		"miscont": {
 			"p1": "Doter les jeunes des aptitudes et des compétences dont ils ont besoin pour faire face aux réalités changeantes du monde moderne, grâce à notre programme de formation diversifié, pratique et innovant."
@@ -266,7 +266,7 @@
 	},
 	"courseDetail": {
 		"description": "Description du cours",
-		"detail": "DETAIL DE LA FILIÈRE",
+		"detail": "",
 		"branche": "Les différentes Branches"
 	},
 	"personalPage": {
