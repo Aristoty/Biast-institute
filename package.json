@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
     "sequelize": "./node_modules/.bin/sequelize",
-    "migrate": "yarn run sequelize -- db:migrate",
+    "migrate": "node migration.js",
     "migrate:all": "yarn run sequelize -- db:migrate:all",
     "unmigrate": "yarn run sequelize -- db:migrate:undo",
     "unmigrate:all": "yarn run sequelize -- db:migrate:undo:all"

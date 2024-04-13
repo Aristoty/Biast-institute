@@ -308,12 +308,6 @@ const Event = sequelize.define('events', {
     }
 })
 
-sequelize.sync().then(() => {
-    console.log('Migration made successfully!');
-    }).catch((error) => {
-    console.error('Unable to create table : ', error);
-});
-
 
 Filiere.hasMany(Specialite, { as: "specialites" });
 

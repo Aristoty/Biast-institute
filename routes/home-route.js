@@ -23,7 +23,8 @@ const {
     modifPassword,
     modifPhoto,
     modifPasswordTraitement,
-    modifPhotoTraitement
+    modifPhotoTraitement,
+    constact_us
     
 } = require('../controllers/homeController')
 
@@ -51,6 +52,7 @@ router.get('/events', eventView)
 router.get('/connexion', connexionView)
 router.get('/inscription', inscrptionView)
 router.get('/contact', contactView)
+router.post('/contact', constact_us)
 router.get('/courses/(:id)', coursesDetailView)
 router.get('/events/(:id)', eventsDetailView)
 router.get('/specialities',getSpecialityByFK)
