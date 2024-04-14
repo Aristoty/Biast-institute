@@ -6,6 +6,91 @@ const countries = require('../data/countries.json')
 const jwt = require('jsonwebtoken')
 const my_filieres = require('../data/filieres.json')
 const my_specialites = require('../data/specialites.json')
+const nodemailer = require("nodemailer");
+
+const constact_us = (req, res, next) => {
+//     let responce = req.body
+//     const transporter = nodemailer.createTransport({
+//         service:"Gmail",
+//         host: "smtp.gmail.com",
+//         port: 465,
+//         secure: true,
+//         auth: {
+//           user: "fotsingriemann@gmail.com",
+//           pass: "unpp oyqh bxjr dgso",
+//         },
+// });
+      
+//       // async..await is not allowed in global scope, must use a wrapper
+//       const mailOptions = {
+//           from: "fotsingriemann@gmail.com",
+//           to: "biastuni@yahoo.com",
+//           subject: "Un vrai test",
+//           text: `nom : ${responce.fname}, prenom: ${responce.lname}, email : ${responce.email}, sujet : ${responce.subject}, Message :  ${responce.message} `,
+//         };
+      
+//         transporter.sendMail(mailOptions, (error, info) => {
+//           if (error) {
+//             console.error("Error sending email: ", error);
+//           } else {
+//             console.log("Email sent: ", info.response);
+//           }
+//         });
+const nodemailer = require("nodemailer");
+
+let user = "support@africasystems.com";
+let pass = "Supp@rt1";
+
+let transporter = nodemailer.createTransport({
+  host: "smtp.migadu.com",
+  port: 465,
+  secure: true,
+  requireTLS: true,
+  pool: true,
+  maxMessages: Infinity,
+  debug: true,
+  connectionTimeout: 3000,
+  auth: {
+    user: user,
+    pass: pass,
+  },
+});
+
+async function send_individual_email(to, subject, text) {
+  let mailOptions = {
+    from: user,
+    to: to,
+    subject: subject,
+    html: text,
+  };
+
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error(
+          "error in send_individual_email in function",
+          error.message,
+        );
+        //return console.error(error.message);
+        reject(error.message);
+      } else {
+        resolve(true);
+      }
+      console.log('Email Sent');
+    });
+  });
+}
+
+console.log(
+  send_individual_email(
+    "sumeet@zeliot.in",
+    "Test from africa email",
+    "Hi test mail",
+  ),
+);
+
+}
+
 
 
 const  generateRandomString = (num) => {
@@ -699,5 +784,6 @@ module.exports = {
     modifPassword,
     modifPhoto,
     modifPasswordTraitement,
-    modifPhotoTraitement
+    modifPhotoTraitement,
+    constact_us
 }
