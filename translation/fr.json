@@ -303,6 +303,6 @@
 			"caution": "NB: la photo à importer ne doit pas dépasser 10Mo"
 		},
 		"eventDetail": "DÉTAIL DE L'ÉVÈNEMENT"
-	}
-	
+	},
+	"MESSAGE": "MESSAGE"
 }
