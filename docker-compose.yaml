@@ -10,6 +10,7 @@ services:
        POSTGRES_DATABASE: ba2ndivq93vckjxtbshv
     volumes:
       - db_data:/var/postgresql/data
+    container_name: database_postgres
 
   server:
     depends_on:
@@ -25,6 +26,6 @@ services:
       DB_HOST: db:5432
       SERVER_PORT: 3000
       TOKEN_KEY: dgdhgfubvhvoljklkjyffcdcjcgcg
-
+    container_name: server_container
 volumes:
   db_data: {}
