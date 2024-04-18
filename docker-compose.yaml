@@ -23,7 +23,7 @@ services:
       DB_NAME: ba2ndivq93vckjxtbshv
       DB_USER: admin
       DB_PASSWORD: biast@dmin
-      DB_HOST: db:5432
+      DB_HOST: 79.143.185.100
       SERVER_PORT: 3000
       TOKEN_KEY: dgdhgfubvhvoljklkjyffcdcjcgcg
     container_name: server_container
