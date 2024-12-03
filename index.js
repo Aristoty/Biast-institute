@@ -24,7 +24,7 @@ app.use(cookieParser());
 
 app.use(i18n.init);
 
-const PORT = process.env.SERVER_PORT || 3000
+const PORT = process.env.SERVER_PORT || 4000
 
 app.use(express.urlencoded({extended: true})); 
 
